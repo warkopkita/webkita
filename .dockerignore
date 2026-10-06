@@ -2,8 +2,11 @@
 .github
 .claude
 node_modules
+vendor
 tests
 storage/*.key
+storage/backups
+storage/logs/*.log
 .phpunit.result.cache
 *.log
 .env

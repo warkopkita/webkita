@@ -1,3 +1,18 @@
+x-app-environment: &app-environment
+  APP_ENV: ${APP_ENV:-production}
+  APP_DEBUG: ${APP_DEBUG:-false}
+  DB_CONNECTION: mysql
+  DB_HOST: db
+  DB_PORT: "3306"
+  DB_DATABASE: ${DB_DATABASE:-webkita_db}
+  DB_USERNAME: ${DB_USERNAME:-webkita_user}
+  DB_PASSWORD: ${DB_PASSWORD:-Secret2026Webkita!}
+  REDIS_HOST: redis
+  REDIS_PORT: "6379"
+  QUEUE_CONNECTION: redis
+  CACHE_STORE: redis
+  SESSION_DRIVER: redis
+
 services:
   # ==========================================
   # 1. PHP-FPM Application Service
@@ -12,16 +27,7 @@ services:
     env_file:
       - .env
     environment:
-      - APP_ENV=${APP_ENV:-production}
-      - APP_DEBUG=${APP_DEBUG:-false}
-      - DB_CONNECTION=${DB_CONNECTION:-mysql}
-      - DB_HOST=${DB_HOST:-db}
-      - DB_PORT=${DB_PORT:-3306}
-      - DB_DATABASE=${DB_DATABASE:-webkita_db}
-      - DB_USERNAME=${DB_USERNAME:-webkita_user}
-      - DB_PASSWORD=${DB_PASSWORD:-Secret2026Webkita!}
-      - REDIS_HOST=${REDIS_HOST:-redis}
-      - REDIS_PORT=${REDIS_PORT:-6379}
+      <<: *app-environment
     volumes:
       - storage_data:/var/www/html/storage
       - ./database:/var/www/html/database
@@ -67,10 +73,11 @@ services:
     networks:
       - webkita-net
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -u root -p$$MYSQL_ROOT_PASSWORD || exit 1"]
       interval: 10s
       timeout: 5s
-      retries: 5
+      retries: 20
+      start_period: 120s
 
   # ==========================================
   # 4. Redis Cache & Queue Broker
@@ -88,6 +95,9 @@ services:
   # 5. Background Queue Worker Service
   # ==========================================
   queue:
+    build:
+      context: .
+      dockerfile: Dockerfile
     image: webkita-app:latest
     container_name: webkita_queue
     restart: unless-stopped
@@ -95,19 +105,24 @@ services:
     command: ["php", "artisan", "queue:work", "--tries=3", "--timeout=90", "--verbose"]
     env_file:
       - .env
+    environment:
+      <<: *app-environment
     volumes:
       - storage_data:/var/www/html/storage
     networks:
       - webkita-net
     depends_on:
       - app
-      - redis
       - db
+      - redis
 
   # ==========================================
   # 6. Task Scheduler (Cron Runner)
   # ==========================================
   scheduler:
+    build:
+      context: .
+      dockerfile: Dockerfile
     image: webkita-app:latest
     container_name: webkita_scheduler
     restart: unless-stopped
@@ -115,6 +130,8 @@ services:
     command: ["sh", "-c", "while true; do php /var/www/html/artisan schedule:run --verbose --no-interaction; sleep 60; done"]
     env_file:
       - .env
+    environment:
+      <<: *app-environment
     volumes:
       - storage_data:/var/www/html/storage
     networks:

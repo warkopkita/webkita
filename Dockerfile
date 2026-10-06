@@ -16,37 +16,12 @@ RUN npm run build
 # ==========================================
 FROM php:8.3-fpm-alpine AS production-app
 
-# System dependencies
-RUN apk add --no-cache \
-    curl \
-    git \
-    libpng-dev \
-    libjpeg-turbo-dev \
-    freetype-dev \
-    libzip-dev \
-    zip \
-    unzip \
-    oniguruma-dev \
-    libxml2-dev \
-    icu-dev \
-    sqlite-dev \
-    netcat-openbsd \
-    linux-headers \
-    $PHPIZE_DEPS \
-    && docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install -j$(nproc) \
-        pdo \
-        pdo_mysql \
-        pdo_sqlite \
-        bcmath \
-        mbstring \
-        opcache \
-        gd \
-        zip \
-        intl \
-    && pecl install redis \
-    && docker-php-ext-enable redis \
-    && apk del $PHPIZE_DEPS
+# System tools with reliable alpine mirror
+RUN apk update && apk add --no-cache curl git zip unzip netcat-openbsd
+
+# Fast pre-compiled PHP extension installer
+COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
+RUN install-php-extensions pdo_mysql bcmath gd zip redis
 
 # Composer from official image
 COPY --from=composer:2.7 /usr/bin/composer /usr/bin/composer
