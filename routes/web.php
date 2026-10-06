@@ -36,15 +36,15 @@ Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
 
 // Package Checkout & Payment Routes
 Route::get('/checkout/{package:slug}', [CheckoutController::class, 'show'])->name('checkout.show');
-Route::post('/checkout/{package:slug}', [CheckoutController::class, 'process'])->name('checkout.process');
+Route::post('/checkout/{package:slug}', [CheckoutController::class, 'process'])->middleware('throttle:10,1')->name('checkout.process');
 Route::get('/checkout/payment/{order:order_code}', [CheckoutController::class, 'payment'])->name('checkout.payment');
 Route::post('/checkout/payment/{order:order_code}/simulate', [CheckoutController::class, 'simulatePayment'])->name('checkout.simulate');
 
 // Midtrans Payment Webhook Notification
 Route::post('/api/payment/notification', [CheckoutController::class, 'webhookNotification'])->name('payment.webhook');
 
-// Lead Capture (Contact Brief Form)
-Route::post('/leads', [LeadController::class, 'store'])->name('leads.store');
+// Lead Capture (Contact Brief Form with Rate Limiter)
+Route::post('/leads', [LeadController::class, 'store'])->middleware('throttle:6,1')->name('leads.store');
 
 // Legal & Compliance Pages (UU PDP & SLA)
 Route::get('/kebijakan-privasi', [LegalController::class, 'privacyPolicy'])->name('legal.privacy');
@@ -62,11 +62,12 @@ Route::middleware('guest')->group(function () {
 Route::middleware('auth')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-    // Client Portal (Client Dashboard & Brief Tracker)
+    // Client Portal (Client Dashboard, Brief Tracker, & Notifications)
     Route::prefix('portal')->name('portal.')->group(function () {
         Route::get('/dashboard', [PortalController::class, 'dashboard'])->name('dashboard');
         Route::post('/orders/{order}/brief', [PortalController::class, 'storeBrief'])->name('brief.store');
         Route::get('/orders/{order}/invoice', [PortalController::class, 'invoice'])->name('orders.invoice');
+        Route::patch('/notifications/{notification}/read', [PortalController::class, 'markNotificationAsRead'])->name('notifications.read');
     });
 
     // Admin Panel (Protected by 'admin' role middleware)
@@ -75,6 +76,9 @@ Route::middleware('auth')->group(function () {
         Route::patch('/orders/{order}/status', [AdminController::class, 'updateOrderStatus'])->name('orders.status');
         Route::patch('/leads/{lead}/status', [AdminController::class, 'updateLeadStatus'])->name('leads.status');
         Route::get('/payments/export-csv', [AdminController::class, 'exportPaymentsCsv'])->name('payments.export');
+
+        // Client Direct Notifications
+        Route::post('/users/{user}/notifications', [AdminController::class, 'sendNotification'])->name('users.notify');
 
         // Blog Article CMS
         Route::get('/blog/create', [AdminController::class, 'createBlog'])->name('blog.create');

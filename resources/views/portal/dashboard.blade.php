@@ -76,10 +76,61 @@
             </div>
         </div>
 
+        <!-- Notifications & Project Updates Center -->
+        @if ($notifications->isNotEmpty())
+            <div class="studio-card-dark p-6 sm:p-8 rounded-3xl border border-purple-400/20 shadow-xl space-y-4">
+                <div class="flex items-center justify-between pb-3 border-b border-purple-500/20">
+                    <div>
+                        <span class="text-xs font-mono font-bold tracking-widest text-[#C8F169] uppercase">PUSAT NOTIFIKASI</span>
+                        <h3 class="text-lg font-bold text-white mt-0.5">Pembaruan Proyek &amp; Status Transaksi</h3>
+                    </div>
+                    <span class="px-3 py-1 rounded-full text-[10px] font-mono font-bold bg-[#C8F169]/20 text-[#C8F169] border border-[#C8F169]/30">
+                        {{ $notifications->where('is_read', false)->count() }} Notifikasi Belum Dibaca
+                    </span>
+                </div>
+
+                <div class="space-y-3">
+                    @foreach ($notifications as $notif)
+                        <div class="p-4 rounded-2xl {{ $notif->is_read ? 'bg-[#1A0630]/50 border-purple-500/10' : 'bg-[#1A0630] border-purple-500/30 ring-1 ring-[#C8F169]/30' }} border flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                            <div class="space-y-1">
+                                <div class="flex items-center gap-2">
+                                    @if (!$notif->is_read)
+                                        <span class="w-2 h-2 rounded-full bg-[#C8F169] animate-pulse"></span>
+                                        <span class="text-[10px] font-mono font-bold text-[#C8F169] uppercase">BARU</span>
+                                    @endif
+                                    <h4 class="text-xs font-bold text-white">{{ $notif->title }}</h4>
+                                    <span class="text-[10px] text-purple-400 font-mono">{{ $notif->created_at->diffForHumans() }}</span>
+                                </div>
+                                <p class="text-xs text-purple-200/80 leading-relaxed">{{ $notif->message }}</p>
+                            </div>
+
+                            <div class="flex items-center gap-2 shrink-0 self-end sm:self-center">
+                                @if ($notif->action_url)
+                                    <a href="{{ $notif->action_url }}" class="lime-pill px-3 py-1 rounded-lg text-[10px] font-bold">
+                                        Buka Tautan
+                                    </a>
+                                @endif
+
+                                @if (!$notif->is_read)
+                                    <form action="{{ route('portal.notifications.read', $notif) }}" method="POST" class="inline">
+                                        @csrf
+                                        @method('PATCH')
+                                        <button type="submit" class="px-3 py-1 rounded-lg text-[10px] text-purple-300 hover:text-white border border-white/10 hover:bg-white/10">
+                                            Tandai Dibaca
+                                        </button>
+                                    </form>
+                                @endif
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        @endif
+
         <!-- Orders Section -->
         <div class="space-y-4">
             <div class="flex items-center justify-between">
-                <h3 class="text-xl font-bold text-white">Daftar Proyek & Pesanan Anda</h3>
+                <h3 class="text-xl font-bold text-white">Daftar Proyek &amp; Pesanan Anda</h3>
                 <span class="text-xs text-purple-300">{{ $orders->count() }} Proyek Terdaftar</span>
             </div>
 

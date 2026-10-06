@@ -23,9 +23,24 @@ class PortalController extends Controller
             ->latest()
             ->get();
 
+        $notifications = $user->notifications()->latest()->take(20)->get();
         $availablePackages = Package::where('is_active', true)->orderBy('sort_order')->get();
 
-        return view('portal.dashboard', compact('user', 'orders', 'availablePackages'));
+        return view('portal.dashboard', compact('user', 'orders', 'notifications', 'availablePackages'));
+    }
+
+    /**
+     * Mark a client notification as read.
+     */
+    public function markNotificationAsRead(\App\Models\Notification $notification): RedirectResponse
+    {
+        if ($notification->user_id !== Auth::id()) {
+            abort(403, 'Akses tidak diizinkan.');
+        }
+
+        $notification->update(['is_read' => true]);
+
+        return back()->with('success', 'Notifikasi telah ditandai dibaca.');
     }
 
     /**

@@ -227,5 +227,28 @@ class AdminController extends Controller
 
         return back()->with('success', 'Status paket ' . $package->name . ' diperbarui.');
     }
+
+    /**
+     * Send direct project/milestone notification to a client.
+     */
+    public function sendNotification(Request $request, User $user): RedirectResponse
+    {
+        $validated = $request->validate([
+            'title' => 'required|string|max:150',
+            'message' => 'required|string|max:2000',
+            'action_url' => 'nullable|string|max:500',
+            'type' => 'nullable|string|in:order_update,payment_success,brief_received,general',
+        ]);
+
+        $user->notifications()->create([
+            'title' => $validated['title'],
+            'message' => $validated['message'],
+            'action_url' => $validated['action_url'] ?? null,
+            'type' => $validated['type'] ?? 'order_update',
+            'is_read' => false,
+        ]);
+
+        return back()->with('success', 'Notifikasi berhasil dikirimkan ke klien ' . $user->name . '.');
+    }
 }
 

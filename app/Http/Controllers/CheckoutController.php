@@ -85,6 +85,22 @@ class CheckoutController extends Controller
             'notes' => $validated['notes'] ?? null,
         ]);
 
+        // Send In-App Notification
+        $user->notifications()->create([
+            'type' => 'order_update',
+            'title' => 'Pesanan Dibuat: ' . $order->order_code,
+            'message' => 'Pesanan untuk paket ' . ($package->name) . ' telah dibuat. Silakan selesaikan pembayaran.',
+            'action_url' => route('checkout.payment', $order->order_code),
+            'is_read' => false,
+        ]);
+
+        // Send Email Confirmation
+        try {
+            \Illuminate\Support\Facades\Mail::to($order->customer_email)->send(new \App\Mail\OrderCreatedMail($order));
+        } catch (\Throwable $e) {
+            \Illuminate\Support\Facades\Log::warning('Gagal kirim email pesanan: ' . $e->getMessage());
+        }
+
         return redirect()->route('checkout.payment', $order->order_code);
     }
 

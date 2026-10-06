@@ -256,5 +256,46 @@ class WebkitaPlatformTest extends TestCase
         $package->refresh();
         $this->assertNotEquals($initialStatus, $package->is_active);
     }
+
+    /**
+     * Test notification creation, reading, and admin sending to client.
+     */
+    public function test_notifications_lifecycle(): void
+    {
+        $client = User::factory()->create([
+            'role' => 'client',
+            'whatsapp' => '081233445566',
+        ]);
+
+        $admin = User::where('role', 'admin')->first();
+
+        // 1. Admin sends notification to client
+        $notifyResponse = $this->actingAs($admin)->post('/admin/users/' . $client->id . '/notifications', [
+            'title' => 'Wireframe Desain Selesai',
+            'message' => 'Konsep tata letak beranda telah selesai dirancang dan siap Anda tinjau.',
+            'action_url' => '/portal/dashboard',
+            'type' => 'order_update',
+        ]);
+        $notifyResponse->assertRedirect();
+
+        $notification = $client->notifications()->first();
+        $this->assertNotNull($notification);
+        $this->assertFalse($notification->is_read);
+        $this->assertEquals('Wireframe Desain Selesai', $notification->title);
+
+        // 2. Client sees notification in dashboard
+        $portalResponse = $this->actingAs($client)->get('/portal/dashboard');
+        $portalResponse->assertStatus(200);
+        $portalResponse->assertSee('Wireframe Desain Selesai');
+        $portalResponse->assertSee('PUSAT NOTIFIKASI');
+
+        // 3. Client marks notification as read
+        $readResponse = $this->actingAs($client)->patch('/portal/notifications/' . $notification->id . '/read');
+        $readResponse->assertRedirect();
+
+        $notification->refresh();
+        $this->assertTrue($notification->is_read);
+    }
 }
+
 

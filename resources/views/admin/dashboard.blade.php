@@ -4,7 +4,7 @@
 @section('meta_description', 'Panel manajemen pesanan, prospek leads, dan metrik pendapatan Webkita.')
 
 @section('content')
-<div class="min-h-screen bg-[#381867] text-white pt-28 pb-24 px-4 sm:px-6 lg:px-8" x-data="{ viewBrief: null }">
+<div class="min-h-screen bg-[#381867] text-white pt-28 pb-24 px-4 sm:px-6 lg:px-8" x-data="{ viewBrief: null, notifyUser: null }">
     <!-- Ambient Glow -->
     <div class="absolute top-20 left-10 w-96 h-96 bg-[#C8F169]/10 rounded-full blur-3xl pointer-events-none"></div>
 
@@ -165,6 +165,13 @@
                                                 Update
                                             </button>
                                         </form>
+                                        @if ($order->user)
+                                            <button type="button" 
+                                                    @click="notifyUser = { id: {{ $order->user->id }}, name: '{{ addslashes($order->customer_name) }}', order_code: '{{ $order->order_code }}' }"
+                                                    class="inline-block mt-1 px-2.5 py-1 rounded-lg text-[10px] text-[#C8F169] border border-[#C8F169]/40 hover:bg-[#C8F169]/10 font-bold">
+                                                + Notifikasi Klien
+                                            </button>
+                                        @endif
                                     </td>
                                 </tr>
                             @endforeach
@@ -457,6 +464,63 @@
                     Tutup
                 </button>
             </div>
+        </div>
+    </div>
+
+    <!-- Direct Client Notification Modal for Admin -->
+    <div x-show="notifyUser !== null" 
+         x-transition:enter="transition ease-out duration-200"
+         x-transition:enter-start="opacity-0"
+         x-transition:enter-end="opacity-100"
+         x-transition:leave="transition ease-in duration-150"
+         x-transition:leave-start="opacity-100"
+         x-transition:leave-end="opacity-0"
+         x-cloak
+         class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+        
+        <div @click.away="notifyUser = null" class="max-w-md w-full bg-[#240B4D] border border-purple-400/30 rounded-3xl p-6 sm:p-8 shadow-2xl space-y-5">
+            <div class="flex items-center justify-between pb-3 border-b border-purple-500/20">
+                <div>
+                    <span class="text-xs font-mono font-bold text-[#C8F169]">KIRIM NOTIFIKASI KLIEN</span>
+                    <h3 class="text-base font-bold text-white mt-0.5" x-text="'Klien: ' + notifyUser?.name"></h3>
+                </div>
+                <button @click="notifyUser = null" class="text-purple-300 hover:text-white p-1 text-sm font-bold">✕</button>
+            </div>
+
+            <form :action="'/admin/users/' + notifyUser?.id + '/notifications'" method="POST" class="space-y-4">
+                @csrf
+
+                <div>
+                    <label class="block text-xs font-mono text-purple-200 uppercase font-bold mb-1">Judul Notifikasi *</label>
+                    <input type="text" name="title" required 
+                           :value="'Update Proyek ' + (notifyUser?.order_code || '')"
+                           placeholder="Contoh: Desain Wireframe Selesai & Siap Direview" 
+                           class="w-full px-3.5 py-2.5 rounded-xl bg-[#1A0630] border border-purple-500/30 text-xs text-white focus:outline-none focus:border-[#C8F169]">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-mono text-purple-200 uppercase font-bold mb-1">Isi Pesan Update *</label>
+                    <textarea name="message" rows="4" required 
+                              placeholder="Tuliskan perkembangan proyek, instruksi review, atau status go-live website..." 
+                              class="w-full px-3.5 py-2.5 rounded-xl bg-[#1A0630] border border-purple-500/30 text-xs text-white focus:outline-none focus:border-[#C8F169] leading-relaxed"></textarea>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-mono text-purple-200 uppercase font-bold mb-1">Tautan Aksi (Opsional)</label>
+                    <input type="text" name="action_url" value="/portal/dashboard" 
+                           placeholder="https://... atau /portal/dashboard" 
+                           class="w-full px-3.5 py-2.5 rounded-xl bg-[#1A0630] border border-purple-500/30 text-xs text-white focus:outline-none focus:border-[#C8F169]">
+                </div>
+
+                <div class="pt-3 border-t border-purple-500/20 flex items-center justify-between">
+                    <button type="button" @click="notifyUser = null" class="text-xs text-purple-300 hover:text-white">
+                        Batal
+                    </button>
+                    <button type="submit" class="lime-pill px-5 py-2 rounded-xl text-xs font-bold">
+                        Kirim Notifikasi Sekarang
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

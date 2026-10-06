@@ -139,5 +139,23 @@ class PaymentService
                 'paid_at' => Carbon::now(),
             ]
         );
+
+        // Send In-App Client Notification
+        if ($order->user) {
+            $order->user->notifications()->create([
+                'type' => 'payment_success',
+                'title' => 'Pembayaran Terverifikasi: ' . $order->order_code,
+                'message' => 'Pembayaran senilai Rp ' . number_format($order->total_price, 0, ',', '.') . ' telah lunas & terverifikasi. Silakan lengkapi brief proyek Anda sekarang.',
+                'action_url' => route('portal.dashboard'),
+                'is_read' => false,
+            ]);
+        }
+
+        // Send Transactional Email
+        try {
+            \Illuminate\Support\Facades\Mail::to($order->customer_email)->send(new \App\Mail\PaymentSuccessMail($order));
+        } catch (\Throwable $e) {
+            Log::warning('Gagal kirim email pembayaran: ' . $e->getMessage());
+        }
     }
 }
