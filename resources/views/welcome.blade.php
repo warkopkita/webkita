@@ -43,12 +43,11 @@
                     <span class="text-xs font-semibold tracking-wider text-purple-200/70 hidden sm:inline-block">WEBKITA STUDIO PRESENTATION</span>
                 </div>
 
-                <!-- Slide Navigation Pills (Exactly as Reference: "Pilih teks", "Vision & Mission", "Contact Us", "Get Started") -->
+                <!-- Slide Navigation Pills (Reference: "Pilih teks", "Vision & Mission", "Contact Us", "Get Started") -->
                 <div class="flex flex-wrap items-center gap-2.5">
-                    <!-- Search/Select Pill "Pilih teks" -->
-                    <div class="px-4 py-2 rounded-full bg-white text-[#230B48] font-bold text-xs shadow-md flex items-center gap-2">
+                    <!-- Text Pill "Pilih teks" -->
+                    <div class="px-5 py-2 rounded-full bg-white text-[#230B48] font-bold text-xs shadow-md">
                         <span>Pilih teks</span>
-                        <svg class="w-3.5 h-3.5 text-purple-900" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
                     </div>
 
                     <!-- Vision & Mission Pill -->
@@ -99,8 +98,7 @@
 
                         <a href="https://wa.me/6281234567890?text=Halo%20Webkita,%20saya%20tertarik%20dengan%20layanan%20pembuatan%20website%20dan%20UI/UX." 
                            target="_blank" 
-                           class="glass-pill px-5 py-3.5 rounded-full text-xs font-bold text-white hover:text-[#C8F169] flex items-center gap-2">
-                            <span class="w-2 h-2 rounded-full bg-[#C8F169] animate-ping"></span>
+                           class="glass-pill px-5 py-3.5 rounded-full text-xs font-bold text-white hover:text-[#C8F169]">
                             Konsultasi WhatsApp
                         </a>
                     </div>
@@ -159,16 +157,16 @@
                         </div>
 
                         <div class="absolute bottom-4 right-4 bg-[#1A0630]/90 backdrop-blur-md border border-white/20 px-4 py-2 rounded-xl text-[11px] font-semibold text-purple-200 flex items-center gap-2 shadow-xl">
-                            <span>⚡ Powered by</span>
+                            <span>Powered by</span>
                             <span class="text-[#C8F169] font-extrabold">Laravel 11.x</span>
                         </div>
                     </div>
 
                     <!-- Bottom Accent Pill Bar -->
                     <div class="mt-4 flex items-center justify-between text-xs text-purple-200/80 px-2">
-                        <span class="flex items-center gap-1.5"><span class="text-[#C8F169]">✓</span> Desain Responsif & Modern</span>
-                        <span class="flex items-center gap-1.5"><span class="text-[#C8F169]">✓</span> Integrasi QRIS & Otomatisasi</span>
-                        <span class="flex items-center gap-1.5"><span class="text-[#C8F169]">✓</span> Pengerjaan Cepat Mulai 3 Hari</span>
+                        <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#C8F169]"></span> Desain Responsif & Modern</span>
+                        <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#C8F169]"></span> Integrasi QRIS & Otomatisasi</span>
+                        <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#C8F169]"></span> Pengerjaan Cepat Mulai 3 Hari</span>
                     </div>
 
                 </div>
@@ -179,7 +177,7 @@
 
     </section>
 
-    <!-- SECTION: VISION & MISSION (Inspired by Reference Pill) -->
+    <!-- SECTION: VISION & MISSION (No icons, clean typography) -->
     <section id="vision" class="py-20 relative bg-[#270D52]/60 border-y border-purple-500/20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
@@ -199,19 +197,21 @@
                 <div class="studio-card-dark p-8 sm:p-10 rounded-3xl border border-purple-400/20 flex flex-col justify-between relative overflow-hidden">
                     <div class="absolute -top-10 -right-10 w-40 h-40 bg-[#C8F169]/10 rounded-full blur-2xl pointer-events-none"></div>
                     <div>
-                        <div class="w-12 h-12 rounded-2xl bg-[#C8F169]/15 border border-[#C8F169]/30 text-[#C8F169] flex items-center justify-center text-2xl mb-6">
-                            👁️
+                        <div class="flex items-center justify-between pb-4 mb-5 border-b border-purple-500/20">
+                            <span class="text-xs font-mono font-bold tracking-widest text-[#C8F169] uppercase">01 / VISI STRATEGIS</span>
+                            <span class="text-[10px] uppercase tracking-wider px-3 py-1 rounded-full bg-white/10 text-purple-200 font-semibold">Tujuan Jangka Panjang</span>
                         </div>
-                        <span class="text-xs font-bold uppercase tracking-wider text-[#C8F169]">Visi Strategis</span>
-                        <h3 class="text-2xl font-bold text-white mt-1 mb-4">Mendemokratisasi Desain & Teknologi Web Berkelas Dunia</h3>
+                        <h3 class="text-2xl font-bold text-white mb-4">Mendemokratisasi Desain & Teknologi Web Berkelas Dunia</h3>
                         <p class="text-sm text-purple-200/80 leading-relaxed">
                             Menjadi studio digital nomor satu di Indonesia yang memungkinkan setiap UMKM, profesional, dan brand lokal memiliki website berstandar internasional, berkecepatan tinggi, dan terbukti menghasilkan closing tanpa biaya agensi yang memberatkan.
                         </p>
                     </div>
-                    <div class="pt-6 mt-6 border-t border-purple-500/20 flex items-center gap-3 text-xs text-[#C8F169] font-semibold">
-                        <span>✦ Aksesibel</span>
-                        <span>✦ Kredibel</span>
-                        <span>✦ Berorientasi Hasil</span>
+                    <div class="pt-6 mt-6 border-t border-purple-500/20 flex items-center gap-4 text-xs text-[#C8F169] font-semibold">
+                        <span>Aksesibel</span>
+                        <span class="text-purple-400">•</span>
+                        <span>Kredibel</span>
+                        <span class="text-purple-400">•</span>
+                        <span>Berorientasi Hasil</span>
                     </div>
                 </div>
 
@@ -219,30 +219,24 @@
                 <div class="studio-card-dark p-8 sm:p-10 rounded-3xl border border-purple-400/20 flex flex-col justify-between relative overflow-hidden">
                     <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-purple-500/20 rounded-full blur-2xl pointer-events-none"></div>
                     <div>
-                        <div class="w-12 h-12 rounded-2xl bg-purple-400/15 border border-purple-400/30 text-purple-200 flex items-center justify-center text-2xl mb-6">
-                            🎯
+                        <div class="flex items-center justify-between pb-4 mb-5 border-b border-purple-500/20">
+                            <span class="text-xs font-mono font-bold tracking-widest text-white uppercase">02 / MISI UTAMA</span>
+                            <span class="text-[10px] uppercase tracking-wider px-3 py-1 rounded-full bg-[#C8F169]/15 text-[#C8F169] font-semibold">3 Pilar Kerja</span>
                         </div>
-                        <span class="text-xs font-bold uppercase tracking-wider text-[#C8F169]">Misi Nyata</span>
-                        <h3 class="text-2xl font-bold text-white mt-1 mb-4">3 Pilar Utama Dalam Setiap Proyek</h3>
+                        <h3 class="text-2xl font-bold text-white mb-4">Tiga Standar Dalam Setiap Proyek</h3>
                         
-                        <div class="space-y-3.5 text-xs text-purple-100">
-                            <div class="flex items-start gap-3">
-                                <span class="w-5 h-5 rounded-full bg-[#C8F169] text-[#1E0A38] font-bold flex items-center justify-center shrink-0 mt-0.5">1</span>
-                                <div>
-                                    <strong class="text-white">User-Centered & Problem Solving Design:</strong> Setiap tata letak, tombol, dan alur dirancang agar pengunjung mudah memahami penawaran dan segera menghubungi Anda.
-                                </div>
+                        <div class="space-y-4 text-xs text-purple-100">
+                            <div class="pb-3 border-b border-purple-500/15">
+                                <span class="font-mono text-[#C8F169] font-bold text-xs mr-2">01.</span>
+                                <strong class="text-white">User-Centered & Problem Solving:</strong> Tata letak dan alur dirancang agar pengunjung langsung memahami penawaran dan segera menghubungi Anda.
                             </div>
-                            <div class="flex items-start gap-3">
-                                <span class="w-5 h-5 rounded-full bg-[#C8F169] text-[#1E0A38] font-bold flex items-center justify-center shrink-0 mt-0.5">2</span>
-                                <div>
-                                    <strong class="text-white">High-Performance Engineering:</strong> Dibangun dengan performa kilat Laravel 11, mobile-first, dan optimasi Core Web Vitals untuk ranking SEO Google terbaik.
-                                </div>
+                            <div class="pb-3 border-b border-purple-500/15">
+                                <span class="font-mono text-[#C8F169] font-bold text-xs mr-2">02.</span>
+                                <strong class="text-white">High-Performance Engineering:</strong> Kecepatan kilat Laravel 11, mobile-first, dan optimasi Core Web Vitals untuk ranking Google terbaik.
                             </div>
-                            <div class="flex items-start gap-3">
-                                <span class="w-5 h-5 rounded-full bg-[#C8F169] text-[#1E0A38] font-bold flex items-center justify-center shrink-0 mt-0.5">3</span>
-                                <div>
-                                    <strong class="text-white">Transparansi Penuh & Garansi Resmi:</strong> Tanpa biaya siluman. Gratis hosting dan domain tahun pertama, plus garansi pendampingan purna jual hingga 60 hari.
-                                </div>
+                            <div>
+                                <span class="font-mono text-[#C8F169] font-bold text-xs mr-2">03.</span>
+                                <strong class="text-white">Transparansi Penuh & Garansi Resmi:</strong> Harga tertera tanpa biaya siluman, termasuk hosting/domain tahun pertama, serta pendampingan purna jual resmi.
                             </div>
                         </div>
                     </div>
@@ -255,7 +249,7 @@
         </div>
     </section>
 
-    <!-- SECTION: LAYANAN UNGGULAN (SERVICES GRID) -->
+    <!-- SECTION: LAYANAN UNGGULAN (SERVICES GRID - NO ICONS, PURE TYPOGRAPHY) -->
     <section id="layanan" class="py-24 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
@@ -272,21 +266,22 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 
-                <!-- Service 1: Landing Page Iklan -->
-                <div class="studio-glass studio-glass-hover p-7 rounded-3xl flex flex-col justify-between">
+                <!-- Service 1: Landing Page Iklan (NO ICON) -->
+                <div class="studio-glass studio-glass-hover p-8 rounded-3xl flex flex-col justify-between">
                     <div>
-                        <div class="w-12 h-12 rounded-2xl bg-[#C8F169]/15 border border-[#C8F169]/30 text-[#C8F169] flex items-center justify-center text-2xl mb-6">
-                            🚀
+                        <div class="flex items-center justify-between pb-4 mb-5 border-b border-purple-500/20">
+                            <span class="text-xs font-mono font-bold tracking-widest text-[#C8F169]">01</span>
+                            <span class="text-[10px] font-semibold tracking-wider uppercase px-2.5 py-0.5 rounded-full bg-white/10 text-purple-200">3 Hari Kerja</span>
                         </div>
                         <h3 class="text-xl font-bold text-white mb-1">Landing Page Iklan</h3>
                         <p class="text-xs text-[#C8F169] font-semibold mb-3">High-Converting Layout</p>
                         <p class="text-xs text-purple-200/80 leading-relaxed mb-6">
                             Dirancang khusus untuk kampanye iklan Google Ads, TikTok Ads, dan Meta Ads. Fokus 100% mengonversi pengunjung menjadi pesan WhatsApp.
                         </p>
-                        <ul class="space-y-2 text-xs text-purple-100 mb-6">
-                            <li class="flex items-center gap-2"><span class="text-[#C8F169] font-bold">✓</span> Copywriting berorientasi aksi</li>
-                            <li class="flex items-center gap-2"><span class="text-[#C8F169] font-bold">✓</span> Loading di bawah 2 detik</li>
-                            <li class="flex items-center gap-2"><span class="text-[#C8F169] font-bold">✓</span> Direct WhatsApp CTA</li>
+                        <ul class="space-y-2.5 text-xs text-purple-100 mb-6">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#C8F169]"></span> Copywriting berorientasi aksi</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#C8F169]"></span> Loading di bawah 2 detik</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#C8F169]"></span> Direct WhatsApp CTA</li>
                         </ul>
                     </div>
                     <a href="#paket" class="lime-pill px-4 py-2.5 rounded-xl text-center text-xs font-bold flex items-center justify-center gap-2">
@@ -294,21 +289,22 @@
                     </a>
                 </div>
 
-                <!-- Service 2: Company Profile -->
-                <div class="studio-glass studio-glass-hover p-7 rounded-3xl flex flex-col justify-between">
+                <!-- Service 2: Company Profile (NO ICON) -->
+                <div class="studio-glass studio-glass-hover p-8 rounded-3xl flex flex-col justify-between">
                     <div>
-                        <div class="w-12 h-12 rounded-2xl bg-purple-400/20 border border-purple-400/30 text-purple-200 flex items-center justify-center text-2xl mb-6">
-                            🏢
+                        <div class="flex items-center justify-between pb-4 mb-5 border-b border-purple-500/20">
+                            <span class="text-xs font-mono font-bold tracking-widest text-white">02</span>
+                            <span class="text-[10px] font-semibold tracking-wider uppercase px-2.5 py-0.5 rounded-full bg-white/10 text-purple-200">5 Hari Kerja</span>
                         </div>
                         <h3 class="text-xl font-bold text-white mb-1">Company Profile</h3>
                         <p class="text-xs text-purple-300 font-semibold mb-3">Kredibilitas Bisnis & Jasa</p>
                         <p class="text-xs text-purple-200/80 leading-relaxed mb-6">
                             Membangun reputasi terpercaya untuk CV, PT, kantor konsultan, klinik, dan jasa profesional. Lengkap dengan portofolio dan legalitas.
                         </p>
-                        <ul class="space-y-2 text-xs text-purple-100 mb-6">
-                            <li class="flex items-center gap-2"><span class="text-[#C8F169] font-bold">✓</span> Hingga 5-10 halaman eksklusif</li>
-                            <li class="flex items-center gap-2"><span class="text-[#C8F169] font-bold">✓</span> Google Maps & Form Kontak</li>
-                            <li class="flex items-center gap-2"><span class="text-[#C8F169] font-bold">✓</span> Optimasi SEO Google Organik</li>
+                        <ul class="space-y-2.5 text-xs text-purple-100 mb-6">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#C8F169]"></span> Hingga 5-10 halaman eksklusif</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#C8F169]"></span> Google Maps & Form Kontak</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#C8F169]"></span> Optimasi SEO Google Organik</li>
                         </ul>
                     </div>
                     <a href="#paket" class="lime-pill px-4 py-2.5 rounded-xl text-center text-xs font-bold flex items-center justify-center gap-2">
@@ -316,21 +312,22 @@
                     </a>
                 </div>
 
-                <!-- Service 3: Toko Online Otomatis -->
-                <div class="studio-glass studio-glass-hover p-7 rounded-3xl flex flex-col justify-between">
+                <!-- Service 3: Toko Online Otomatis (NO ICON) -->
+                <div class="studio-glass studio-glass-hover p-8 rounded-3xl flex flex-col justify-between">
                     <div>
-                        <div class="w-12 h-12 rounded-2xl bg-[#C8F169]/15 border border-[#C8F169]/30 text-[#C8F169] flex items-center justify-center text-2xl mb-6">
-                            🛍️
+                        <div class="flex items-center justify-between pb-4 mb-5 border-b border-purple-500/20">
+                            <span class="text-xs font-mono font-bold tracking-widest text-[#C8F169]">03</span>
+                            <span class="text-[10px] font-semibold tracking-wider uppercase px-2.5 py-0.5 rounded-full bg-white/10 text-purple-200">8 Hari Kerja</span>
                         </div>
                         <h3 class="text-xl font-bold text-white mb-1">Toko Online Otomatis</h3>
                         <p class="text-xs text-[#C8F169] font-semibold mb-3">E-Commerce Lengkap</p>
                         <p class="text-xs text-purple-200/80 leading-relaxed mb-6">
                             Terima pesanan 24 jam nonstop dengan sistem pembayaran otomatis (QRIS instan, Transfer VA) dan cek ongkir ekspedisi se-Indonesia.
                         </p>
-                        <ul class="space-y-2 text-xs text-purple-100 mb-6">
-                            <li class="flex items-center gap-2"><span class="text-[#C8F169] font-bold">✓</span> Payment Gateway QRIS & VA</li>
-                            <li class="flex items-center gap-2"><span class="text-[#C8F169] font-bold">✓</span> Hitung ongkir JNE/J&T/SiCepat</li>
-                            <li class="flex items-center gap-2"><span class="text-[#C8F169] font-bold">✓</span> Manajemen stok & order</li>
+                        <ul class="space-y-2.5 text-xs text-purple-100 mb-6">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#C8F169]"></span> Payment Gateway QRIS & VA</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#C8F169]"></span> Hitung ongkir JNE/J&T/SiCepat</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#C8F169]"></span> Manajemen stok & order</li>
                         </ul>
                     </div>
                     <a href="#paket" class="lime-pill px-4 py-2.5 rounded-xl text-center text-xs font-bold flex items-center justify-center gap-2">
@@ -338,21 +335,22 @@
                     </a>
                 </div>
 
-                <!-- Service 4: Custom Web App -->
-                <div class="studio-glass studio-glass-hover p-7 rounded-3xl flex flex-col justify-between">
+                <!-- Service 4: Custom Web App (NO ICON) -->
+                <div class="studio-glass studio-glass-hover p-8 rounded-3xl flex flex-col justify-between">
                     <div>
-                        <div class="w-12 h-12 rounded-2xl bg-purple-400/20 border border-purple-400/30 text-purple-200 flex items-center justify-center text-2xl mb-6">
-                            ⚙️
+                        <div class="flex items-center justify-between pb-4 mb-5 border-b border-purple-500/20">
+                            <span class="text-xs font-mono font-bold tracking-widest text-white">04</span>
+                            <span class="text-[10px] font-semibold tracking-wider uppercase px-2.5 py-0.5 rounded-full bg-white/10 text-purple-200">Arsitektur Kustom</span>
                         </div>
                         <h3 class="text-xl font-bold text-white mb-1">Custom Web App</h3>
                         <p class="text-xs text-purple-300 font-semibold mb-3">Laravel 11 Architecture</p>
                         <p class="text-xs text-purple-200/80 leading-relaxed mb-6">
                             Solusi sistem manajemen khusus seperti portal membership, booking janji klinik, sistem inventaris gudang, atau CRM bisnis kustom.
                         </p>
-                        <ul class="space-y-2 text-xs text-purple-100 mb-6">
-                            <li class="flex items-center gap-2"><span class="text-[#C8F169] font-bold">✓</span> Database MySQL Scalable</li>
-                            <li class="flex items-center gap-2"><span class="text-[#C8F169] font-bold">✓</span> Role admin, staf, & user</li>
-                            <li class="flex items-center gap-2"><span class="text-[#C8F169] font-bold">✓</span> REST API & Webhook ready</li>
+                        <ul class="space-y-2.5 text-xs text-purple-100 mb-6">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#C8F169]"></span> Database MySQL Scalable</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#C8F169]"></span> Role admin, staf, & user</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#C8F169]"></span> REST API & Webhook ready</li>
                         </ul>
                     </div>
                     <a href="#kalkulator" class="lime-pill px-4 py-2.5 rounded-xl text-center text-xs font-bold flex items-center justify-center gap-2">
@@ -511,17 +509,17 @@
                         </p>
 
                         <ul class="space-y-3 py-6 text-xs text-purple-100">
-                            <li class="flex items-center gap-2.5"><span class="text-[#C8F169] font-bold">✓</span> 1 Halaman High-Converting Design</li>
-                            <li class="flex items-center gap-2.5"><span class="text-[#C8F169] font-bold">✓</span> Pengerjaan Cepat (3-4 Hari Kerja)</li>
-                            <li class="flex items-center gap-2.5"><span class="text-[#C8F169] font-bold">✓</span> 100% Responsif Smartphone & Desktop</li>
-                            <li class="flex items-center gap-2.5"><span class="text-[#C8F169] font-bold">✓</span> Integrasi Tombol WhatsApp Direct</li>
-                            <li class="flex items-center gap-2.5"><span class="text-[#C8F169] font-bold">✓</span> Domain & Cloud Hosting 1 Tahun</li>
-                            <li class="flex items-center gap-2.5"><span class="text-[#C8F169] font-bold">✓</span> Garansi Perbaikan 14 Hari</li>
+                            <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-[#C8F169]"></span> 1 Halaman High-Converting Design</li>
+                            <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-[#C8F169]"></span> Pengerjaan Cepat (3-4 Hari Kerja)</li>
+                            <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-[#C8F169]"></span> 100% Responsif Smartphone & Desktop</li>
+                            <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-[#C8F169]"></span> Integrasi Tombol WhatsApp Direct</li>
+                            <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-[#C8F169]"></span> Domain & Cloud Hosting 1 Tahun</li>
+                            <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-[#C8F169]"></span> Garansi Perbaikan 14 Hari</li>
                         </ul>
                     </div>
 
                     <a href="https://wa.me/6281234567890?text=Halo%20Webkita,%20saya%20tertarik%20dengan%20Paket%20Starter%20Landing%20Page%20(Rp%20499rb).%20Bisa%20konsultasi%20dulu?" 
-                       target="_blank"
+                       target="_blank" 
                        class="glass-pill w-full py-3.5 px-4 rounded-xl text-center text-xs font-bold text-white hover:text-[#C8F169] transition-all">
                         Pesan Paket Kilat via WA
                     </a>
@@ -533,7 +531,7 @@
                         <div>
                             <div class="flex justify-between items-center mb-4">
                                 <span class="text-sm font-bold text-[#C8F169] uppercase tracking-wider">Webkita Bisnis</span>
-                                <span class="text-xs px-3 py-1 rounded-full bg-[#C8F169] text-[#1E0A38] font-black">⭐ Paling Populer</span>
+                                <span class="text-xs px-3 py-1 rounded-full bg-[#C8F169] text-[#1E0A38] font-black">Paling Populer</span>
                             </div>
                             <div class="mb-4">
                                 <span class="text-3xl sm:text-4xl font-black text-white">Rp 1.499.000</span>
@@ -545,19 +543,19 @@
                             </p>
 
                             <ul class="space-y-3 py-6 text-xs text-white">
-                                <li class="flex items-center gap-2.5"><span class="text-[#C8F169] font-bold">✓</span> <strong>Hingga 5 Halaman Utama</strong> (Home, Tentang, Layanan, Portofolio, Kontak)</li>
-                                <li class="flex items-center gap-2.5"><span class="text-[#C8F169] font-bold">✓</span> Pengerjaan 5-7 Hari Kerja</li>
-                                <li class="flex items-center gap-2.5"><span class="text-[#C8F169] font-bold">✓</span> <strong>Dashboard CMS</strong> (Kelola konten & artikel mandiri)</li>
-                                <li class="flex items-center gap-2.5"><span class="text-[#C8F169] font-bold">✓</span> Terhubung Google Maps & Form Kontak</li>
-                                <li class="flex items-center gap-2.5"><span class="text-[#C8F169] font-bold">✓</span> <strong>Dasar Optimasi SEO Google</strong> (Cepat terindeks)</li>
-                                <li class="flex items-center gap-2.5"><span class="text-[#C8F169] font-bold">✓</span> Domain Resmi .com/.id + Cloud Hosting 1 Tahun</li>
-                                <li class="flex items-center gap-2.5"><span class="text-[#C8F169] font-bold">✓</span> 3 Akun Email Bisnis (nama@domain.com)</li>
-                                <li class="flex items-center gap-2.5"><span class="text-[#C8F169] font-bold">✓</span> Garansi Perbaikan & Pendampingan 30 Hari</li>
+                                <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-[#C8F169]"></span> <strong>Hingga 5 Halaman Utama</strong> (Home, Tentang, Layanan, Portofolio, Kontak)</li>
+                                <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-[#C8F169]"></span> Pengerjaan 5-7 Hari Kerja</li>
+                                <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-[#C8F169]"></span> <strong>Dashboard CMS</strong> (Kelola konten & artikel mandiri)</li>
+                                <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-[#C8F169]"></span> Terhubung Google Maps & Form Kontak</li>
+                                <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-[#C8F169]"></span> <strong>Dasar Optimasi SEO Google</strong> (Cepat terindeks)</li>
+                                <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-[#C8F169]"></span> Domain Resmi .com/.id + Cloud Hosting 1 Tahun</li>
+                                <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-[#C8F169]"></span> 3 Akun Email Bisnis (nama@domain.com)</li>
+                                <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-[#C8F169]"></span> Garansi Perbaikan & Pendampingan 30 Hari</li>
                             </ul>
                         </div>
 
                         <a href="https://wa.me/6281234567890?text=Halo%20Webkita,%20saya%20ingin%20membuat%20Website%20Paket%20Bisnis%20Company%20Profile%20(Rp%201.499rb).%20Mohon%20infonya." 
-                           target="_blank"
+                           target="_blank" 
                            class="lime-pill w-full py-4 px-4 rounded-xl text-center text-xs font-black shadow-lg shadow-[#C8F169]/30 hover:scale-[1.02] transition-all">
                             Pilih Paket Bisnis Sekarang
                         </a>
@@ -581,18 +579,18 @@
                         </p>
 
                         <ul class="space-y-3 py-6 text-xs text-purple-100">
-                            <li class="flex items-center gap-2.5"><span class="text-[#C8F169] font-bold">✓</span> Arsitektur Laravel 11 / E-Commerce</li>
-                            <li class="flex items-center gap-2.5"><span class="text-[#C8F169] font-bold">✓</span> Keranjang Belanja & Manajemen Stok</li>
-                            <li class="flex items-center gap-2.5"><span class="text-[#C8F169] font-bold">✓</span> <strong>Pembayaran Otomatis Midtrans</strong> (QRIS & VA)</li>
-                            <li class="flex items-center gap-2.5"><span class="text-[#C8F169] font-bold">✓</span> <strong>Hitung Ongkir Ekspedisi Otomatis</strong></li>
-                            <li class="flex items-center gap-2.5"><span class="text-[#C8F169] font-bold">✓</span> Dashboard Penjualan & Laporan Finansial</li>
-                            <li class="flex items-center gap-2.5"><span class="text-[#C8F169] font-bold">✓</span> Notifikasi WhatsApp Invoice Otomatis</li>
-                            <li class="flex items-center gap-2.5"><span class="text-[#C8F169] font-bold">✓</span> Garansi & Pendampingan Prioritas 60 Hari</li>
+                            <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-[#C8F169]"></span> Arsitektur Laravel 11 / E-Commerce</li>
+                            <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-[#C8F169]"></span> Keranjang Belanja & Manajemen Stok</li>
+                            <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-[#C8F169]"></span> <strong>Pembayaran Otomatis Midtrans</strong> (QRIS & VA)</li>
+                            <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-[#C8F169]"></span> <strong>Hitung Ongkir Ekspedisi Otomatis</strong></li>
+                            <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-[#C8F169]"></span> Dashboard Penjualan & Laporan Finansial</li>
+                            <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-[#C8F169]"></span> Notifikasi WhatsApp Invoice Otomatis</li>
+                            <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-[#C8F169]"></span> Garansi & Pendampingan Prioritas 60 Hari</li>
                         </ul>
                     </div>
 
                     <a href="https://wa.me/6281234567890?text=Halo%20Webkita,%20saya%20ingin%20membuat%20Toko%20Online%20dengan%20fitur%20pembayaran%20otomatis%20(Rp%203.5jt).%20Mohon%20infonya." 
-                       target="_blank"
+                       target="_blank" 
                        class="glass-pill w-full py-3.5 px-4 rounded-xl text-center text-xs font-bold text-white hover:text-[#C8F169] transition-all">
                         Pesan Paket Toko via WA
                     </a>
@@ -680,7 +678,7 @@
                                         @click="baseTier = 1499000; baseName = 'Paket Webkita Bisnis (5 Hal)'"
                                         :class="baseTier === 1499000 ? 'border-[#C8F169] bg-[#C8F169]/10 text-white' : 'border-purple-500/20 bg-[#1D083A] text-purple-300 hover:border-purple-400'"
                                         class="p-3.5 rounded-2xl border text-left transition-all">
-                                    <div class="text-xs font-bold">Bisnis ⭐</div>
+                                    <div class="text-xs font-bold">Bisnis</div>
                                     <div class="text-[11px] text-[#C8F169] font-bold mt-1">Rp 1.499.000</div>
                                     <div class="text-[10px] text-purple-300 mt-0.5">Hingga 5 Hal</div>
                                 </button>
@@ -752,7 +750,7 @@
                             <label class="flex items-center justify-between p-3 rounded-xl bg-[#1D083A] border border-purple-500/20 hover:border-[#C8F169]/40 cursor-pointer text-xs">
                                 <div class="flex items-center gap-2.5">
                                     <input type="checkbox" x-model="hasExpress48h" class="w-4 h-4 rounded text-[#C8F169] accent-[#C8F169]">
-                                    <span class="text-[#C8F169] font-medium">⚡ Prioritas Pengerjaan Kilat (Selesai 48 Jam)</span>
+                                    <span class="text-[#C8F169] font-medium">Prioritas Pengerjaan Kilat (Selesai 48 Jam)</span>
                                 </div>
                                 <span class="text-[#C8F169] font-mono">+Rp 450.000</span>
                             </label>
@@ -818,7 +816,7 @@
         </div>
     </section>
 
-    <!-- SECTION: TESTIMONI KLIEN -->
+    <!-- SECTION: TESTIMONI KLIEN (NO ICONS) -->
     <section class="py-24 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
@@ -837,7 +835,7 @@
                 <!-- Testimonial 1 -->
                 <div class="studio-card-dark p-8 rounded-3xl border border-purple-500/20 flex flex-col justify-between">
                     <div class="space-y-4">
-                        <div class="flex text-[#C8F169] gap-1 text-sm">★★★★★</div>
+                        <div class="text-[11px] font-mono uppercase tracking-wider text-[#C8F169]">Rating 5.0 / 5.0 — Klien Terverifikasi</div>
                         <p class="text-sm text-purple-100 leading-relaxed italic">
                             "Sebelumnya saya hanya jualan lewat medsos dan sering kewalahan balas chat. Sejak dibuatkan website oleh Webkita, pembeli langsung bayar mandiri lewat QRIS. Omset naik 3x lipat!"
                         </p>
@@ -856,7 +854,7 @@
                 <!-- Testimonial 2 -->
                 <div class="studio-card-dark p-8 rounded-3xl border border-purple-500/20 flex flex-col justify-between">
                     <div class="space-y-4">
-                        <div class="flex text-[#C8F169] gap-1 text-sm">★★★★★</div>
+                        <div class="text-[11px] font-mono uppercase tracking-wider text-[#C8F169]">Rating 5.0 / 5.0 — Klien Terverifikasi</div>
                         <p class="text-sm text-purple-100 leading-relaxed italic">
                             "Pengerjaan tepat waktu, tim komunikatif dan sangat paham kebutuhan B2B. Company profile yang dibuat Webkita berhasil meyakinkan klien korporat besar untuk deal tender logistik kami."
                         </p>
@@ -875,7 +873,7 @@
                 <!-- Testimonial 3 -->
                 <div class="studio-card-dark p-8 rounded-3xl border border-purple-500/20 flex flex-col justify-between">
                     <div class="space-y-4">
-                        <div class="flex text-[#C8F169] gap-1 text-sm">★★★★★</div>
+                        <div class="text-[11px] font-mono uppercase tracking-wider text-[#C8F169]">Rating 5.0 / 5.0 — Klien Terverifikasi</div>
                         <p class="text-sm text-purple-100 leading-relaxed italic">
                             "Paket Kilat-nya beneran kilat! Dalam 3 hari landing page kami sudah siap pakai untuk pasang iklan Meta Ads. Hasilnya luar biasa, biaya iklan jadi jauh lebih efisien karena websitenya ngebut."
                         </p>
@@ -997,15 +995,15 @@
 
                     <div class="space-y-4 pt-4 text-xs text-purple-100">
                         <div class="flex items-center gap-3">
-                            <div class="w-8 h-8 rounded-xl bg-[#C8F169] text-[#1E0A38] flex items-center justify-center font-bold">✓</div>
+                            <span class="w-2 h-2 rounded-full bg-[#C8F169] shrink-0"></span>
                             <span>Respon cepat dalam hitungan menit via WhatsApp resmi</span>
                         </div>
                         <div class="flex items-center gap-3">
-                            <div class="w-8 h-8 rounded-xl bg-purple-400/20 text-[#C8F169] flex items-center justify-center font-bold">✓</div>
+                            <span class="w-2 h-2 rounded-full bg-[#C8F169] shrink-0"></span>
                             <span>Gratis konsultasi konsep, pemilihan domain, dan arsitektur</span>
                         </div>
                         <div class="flex items-center gap-3">
-                            <div class="w-8 h-8 rounded-xl bg-[#C8F169] text-[#1E0A38] flex items-center justify-center font-bold">✓</div>
+                            <span class="w-2 h-2 rounded-full bg-[#C8F169] shrink-0"></span>
                             <span>Invoice resmi & garansi purna jual berbadan hukum</span>
                         </div>
                     </div>
@@ -1051,7 +1049,7 @@
                             <label class="block text-xs font-semibold text-purple-200 mb-1">Paket yang Diminati</label>
                             <select x-model="paketPilihan" class="w-full px-3.5 py-2.5 rounded-xl bg-[#230B48] border border-purple-500/30 text-xs text-white focus:outline-none focus:border-[#C8F169]">
                                 <option value="Paket Webkita Kilat (Rp 499rb)">Paket Webkita Kilat (Rp 499.000)</option>
-                                <option value="Paket Webkita Bisnis (Rp 1.499rb)">Paket Webkita Bisnis (Rp 1.499.000) ⭐ Paling Populer</option>
+                                <option value="Paket Webkita Bisnis (Rp 1.499rb)">Paket Webkita Bisnis (Rp 1.499.000) (Paling Populer)</option>
                                 <option value="Paket Toko Online / Custom App (Rp 3.5jt+)">Paket Toko Online / Custom App (Rp 3.500.000+)</option>
                                 <option value="Belum Tahu, Butuh Saran Konsultan">Belum Tahu, Butuh Saran Konsultan</option>
                             </select>

@@ -41,7 +41,7 @@
         <!-- Chat Body -->
         <div class="p-4 bg-[#1C063D]/80 space-y-3">
             <div class="bg-[#2E115B] border border-purple-500/20 rounded-2xl rounded-tl-sm p-3.5 text-xs text-purple-100 leading-relaxed shadow-sm">
-                👋 Halo! Selamat datang di <strong class="text-[#C8F169]">Webkita</strong>. Butuh rekomendasi website bisnis yang cepat jadi & menghasilkan? Pilih opsi konsultasi di bawah:
+                Halo! Selamat datang di <strong class="text-[#C8F169]">Webkita</strong>. Butuh rekomendasi website bisnis yang cepat jadi & menghasilkan? Pilih opsi konsultasi di bawah:
             </div>
 
             <!-- Quick Template Actions -->
@@ -49,28 +49,28 @@
                 <a href="https://wa.me/6281234567890?text=Halo%20Webkita,%20saya%20tertarik%20dengan%20Paket%20Starter%20Landing%20Page.%20Bisa%20konsultasi%20dulu?" 
                    target="_blank" 
                    class="block w-full text-left px-3.5 py-2.5 rounded-2xl bg-[#290E54] hover:bg-[#3B1774] border border-purple-500/20 hover:border-[#C8F169]/50 text-xs text-purple-100 transition-all flex items-center justify-between group">
-                    <span>🚀 Tanya Paket Landing Page Kilat</span>
+                    <span>Tanya Paket Landing Page Kilat</span>
                     <span class="text-[#C8F169] group-hover:translate-x-1 transition-transform">→</span>
                 </a>
 
                 <a href="https://wa.me/6281234567890?text=Halo%20Webkita,%20saya%20ingin%20membuat%20Website%20Company%20Profile%20untuk%20perusahaan/bisnis%20saya.%20Mohon%20infonya." 
                    target="_blank" 
                    class="block w-full text-left px-3.5 py-2.5 rounded-2xl bg-[#290E54] hover:bg-[#3B1774] border border-purple-500/20 hover:border-[#C8F169]/50 text-xs text-purple-100 transition-all flex items-center justify-between group">
-                    <span>⭐ Konsultasi Company Profile Bisnis</span>
+                    <span>Konsultasi Company Profile Bisnis</span>
                     <span class="text-[#C8F169] group-hover:translate-x-1 transition-transform">→</span>
                 </a>
 
                 <a href="https://wa.me/6281234567890?text=Halo%20Webkita,%20saya%20ingin%20membuat%20Toko%20Online%20dengan%20fitur%20pembayaran%20otomatis%20QRIS%20dan%20ongkir.%20Mohon%20infonya." 
                    target="_blank" 
                    class="block w-full text-left px-3.5 py-2.5 rounded-2xl bg-[#290E54] hover:bg-[#3B1774] border border-purple-500/20 hover:border-[#C8F169]/50 text-xs text-purple-100 transition-all flex items-center justify-between group">
-                    <span>🛍️ Toko Online + Payment Gateway</span>
+                    <span>Toko Online + Payment Gateway</span>
                     <span class="text-[#C8F169] group-hover:translate-x-1 transition-transform">→</span>
                 </a>
 
                 <a href="https://wa.me/6281234567890?text=Halo%20Webkita,%20saya%20membutuhkan%20Custom%20Web%20Application%20berbasis%20Laravel%20untuk%20kebutuhan%20sistem%20khusus." 
                    target="_blank" 
                    class="block w-full text-left px-3.5 py-2.5 rounded-2xl bg-[#290E54] hover:bg-[#3B1774] border border-purple-500/20 hover:border-[#C8F169]/50 text-xs text-purple-100 transition-all flex items-center justify-between group">
-                    <span>⚙️ Custom Web App (Laravel)</span>
+                    <span>Custom Web App (Laravel)</span>
                     <span class="text-[#C8F169] group-hover:translate-x-1 transition-transform">→</span>
                 </a>
             </div>

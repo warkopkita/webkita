@@ -3,11 +3,11 @@
         visible: false,
         currentIndex: 0,
         notifications: [
-            { name: 'Ahmad S.', city: 'Surabaya', action: 'Baru saja memesan Paket Webkita Bisnis', time: '3 menit lalu', icon: '⭐' },
-            { name: 'CV Pratama Logistik', city: 'Jakarta Selatan', action: 'Website Company Profile siap tayang', time: '12 menit lalu', icon: '🏢' },
-            { name: 'Maya Bakery & Coffee', city: 'Bandung', action: 'Mengaktifkan Toko Online + Payment Gateway', time: '18 menit lalu', icon: '🛍️' },
-            { name: 'Klinik Medika Sehat', city: 'Semarang', action: 'Pemesanan Landing Page Kilat terkonfirmasi', time: '29 menit lalu', icon: '🚀' },
-            { name: 'PT Solusi Mandiri', city: 'Tangerang', action: 'Mengajukan estimasi Custom Web App Laravel', time: '41 menit lalu', icon: '⚙️' }
+            { name: 'Ahmad S.', city: 'Surabaya', action: 'Baru saja memesan Paket Webkita Bisnis', time: '3 menit lalu', tag: 'AS' },
+            { name: 'CV Pratama Logistik', city: 'Jakarta Selatan', action: 'Website Company Profile siap tayang', time: '12 menit lalu', tag: 'PL' },
+            { name: 'Maya Bakery & Coffee', city: 'Bandung', action: 'Mengaktifkan Toko Online + Payment Gateway', time: '18 menit lalu', tag: 'MB' },
+            { name: 'Klinik Medika Sehat', city: 'Semarang', action: 'Pemesanan Landing Page Kilat terkonfirmasi', time: '29 menit lalu', tag: 'KM' },
+            { name: 'PT Solusi Mandiri', city: 'Tangerang', action: 'Mengajukan estimasi Custom Web App Laravel', time: '41 menit lalu', tag: 'SM' }
         ],
         init() {
             setTimeout(() => { this.showNext(); }, 4000);
@@ -30,8 +30,8 @@
      class="fixed bottom-6 left-6 z-40 max-w-sm w-auto hidden sm:block">
     
     <div class="studio-glass p-3.5 rounded-3xl shadow-2xl border border-purple-400/25 flex items-center gap-3.5 bg-[#260C4E]/90 backdrop-blur-xl">
-        <div class="w-10 h-10 rounded-2xl bg-[#C8F169]/15 border border-[#C8F169]/40 flex items-center justify-center text-lg shrink-0"
-             x-text="notifications[currentIndex].icon">
+        <div class="w-10 h-10 rounded-2xl bg-[#C8F169] text-[#1E0A38] font-black flex items-center justify-center text-xs shrink-0"
+             x-text="notifications[currentIndex].tag">
         </div>
         <div class="text-xs">
             <div class="font-semibold text-white flex items-center gap-1.5">

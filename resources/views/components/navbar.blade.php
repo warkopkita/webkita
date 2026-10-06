@@ -40,8 +40,8 @@
                 <a href="#paket" class="glass-pill px-4 py-2 rounded-full text-xs font-semibold hover:text-[#C8F169] transition-all">
                     Paket Harga
                 </a>
-                <a href="#kalkulator" class="glass-pill px-4 py-2 rounded-full text-xs font-semibold text-[#C8F169] hover:bg-[#C8F169]/10 transition-all flex items-center gap-1.5">
-                    <span>🧮</span> Cek Biaya
+                <a href="#kalkulator" class="glass-pill px-4 py-2 rounded-full text-xs font-semibold text-[#C8F169] hover:bg-[#C8F169]/10 transition-all">
+                    Cek Biaya
                 </a>
                 <a href="#kontak" class="glass-pill px-4 py-2 rounded-full text-xs font-semibold hover:text-[#C8F169] transition-all">
                     Contact Us
@@ -52,8 +52,7 @@
             <div class="hidden md:flex items-center gap-3">
                 <a href="https://wa.me/6281234567890?text=Halo%20Webkita,%20saya%20ingin%20konsultasi%20pembuatan%20website%20bisnis." 
                    target="_blank" 
-                   class="glass-pill px-4 py-2.5 rounded-full text-xs font-semibold text-white hover:text-[#C8F169] flex items-center gap-2">
-                    <span class="w-2 h-2 rounded-full bg-[#C8F169] animate-ping"></span>
+                   class="glass-pill px-4 py-2.5 rounded-full text-xs font-semibold text-white hover:text-[#C8F169]">
                     Konsultasi WA
                 </a>
 
@@ -92,7 +91,7 @@
         <a @click="mobileOpen = false" href="#layanan" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-white hover:bg-white/10">Layanan Kami</a>
         <a @click="mobileOpen = false" href="#portofolio" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-white hover:bg-white/10">Portofolio</a>
         <a @click="mobileOpen = false" href="#paket" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-white hover:bg-white/10">Paket Harga</a>
-        <a @click="mobileOpen = false" href="#kalkulator" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-[#C8F169] hover:bg-[#C8F169]/10">🧮 Cek Biaya (Kalkulator)</a>
+        <a @click="mobileOpen = false" href="#kalkulator" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-[#C8F169] hover:bg-[#C8F169]/10">Cek Biaya (Kalkulator)</a>
         <a @click="mobileOpen = false" href="#kontak" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-white hover:bg-white/10">Contact Us</a>
         <div class="pt-4 border-t border-purple-500/20 flex flex-col gap-2.5">
             <a href="https://wa.me/6281234567890?text=Halo%20Webkita,%20saya%20ingin%20konsultasi%20website." 
