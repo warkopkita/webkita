@@ -518,11 +518,17 @@
                         </ul>
                     </div>
 
-                    <a href="https://wa.me/6281234567890?text=Halo%20Webkita,%20saya%20tertarik%20dengan%20Paket%20Starter%20Landing%20Page%20(Rp%20499rb).%20Bisa%20konsultasi%20dulu?" 
-                       target="_blank" 
-                       class="glass-pill w-full py-3.5 px-4 rounded-xl text-center text-xs font-bold text-white hover:text-[#C8F169] transition-all">
-                        Pesan Paket Kilat via WA
-                    </a>
+                    <div class="space-y-2 pt-2">
+                        <a href="{{ route('checkout.show', 'paket-kilat') }}" 
+                           class="lime-pill w-full py-3.5 px-4 rounded-xl text-center text-xs font-black shadow-lg shadow-[#C8F169]/20 hover:scale-[1.02] transition-all block">
+                            Pesan Paket Kilat Online →
+                        </a>
+                        <a href="https://wa.me/6281234567890?text=Halo%20Webkita,%20saya%20tertarik%20dengan%20Paket%20Starter%20Landing%20Page%20(Rp%20499rb).%20Bisa%20konsultasi%20dulu?" 
+                           target="_blank" 
+                           class="glass-pill w-full py-2.5 px-4 rounded-xl text-center text-xs font-bold text-purple-200 hover:text-white transition-all block">
+                            Konsultasi via WA
+                        </a>
+                    </div>
                 </div>
 
                 <!-- Paket 2: Webkita Bisnis (PALING POPULER & HIGHLIGHTED) -->
@@ -554,11 +560,17 @@
                             </ul>
                         </div>
 
-                        <a href="https://wa.me/6281234567890?text=Halo%20Webkita,%20saya%20ingin%20membuat%20Website%20Paket%20Bisnis%20Company%20Profile%20(Rp%201.499rb).%20Mohon%20infonya." 
-                           target="_blank" 
-                           class="lime-pill w-full py-4 px-4 rounded-xl text-center text-xs font-black shadow-lg shadow-[#C8F169]/30 hover:scale-[1.02] transition-all">
-                            Pilih Paket Bisnis Sekarang
-                        </a>
+                        <div class="space-y-2 pt-2">
+                            <a href="{{ route('checkout.show', 'paket-bisnis') }}" 
+                               class="lime-pill w-full py-4 px-4 rounded-xl text-center text-xs font-black shadow-lg shadow-[#C8F169]/30 hover:scale-[1.02] transition-all block">
+                                Pilih Paket Bisnis Online →
+                            </a>
+                            <a href="https://wa.me/6281234567890?text=Halo%20Webkita,%20saya%20ingin%20membuat%20Website%20Paket%20Bisnis%20Company%20Profile%20(Rp%201.499rb).%20Mohon%20infonya." 
+                               target="_blank" 
+                               class="glass-pill w-full py-2.5 px-4 rounded-xl text-center text-xs font-bold text-purple-200 hover:text-white transition-all block">
+                                Konsultasi via WA
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -589,11 +601,17 @@
                         </ul>
                     </div>
 
-                    <a href="https://wa.me/6281234567890?text=Halo%20Webkita,%20saya%20ingin%20membuat%20Toko%20Online%20dengan%20fitur%20pembayaran%20otomatis%20(Rp%203.5jt).%20Mohon%20infonya." 
-                       target="_blank" 
-                       class="glass-pill w-full py-3.5 px-4 rounded-xl text-center text-xs font-bold text-white hover:text-[#C8F169] transition-all">
-                        Pesan Paket Toko via WA
-                    </a>
+                    <div class="space-y-2 pt-2">
+                        <a href="{{ route('checkout.show', 'paket-toko') }}" 
+                           class="lime-pill w-full py-3.5 px-4 rounded-xl text-center text-xs font-black shadow-lg shadow-[#C8F169]/20 hover:scale-[1.02] transition-all block">
+                            Pesan Paket Toko Online →
+                        </a>
+                        <a href="https://wa.me/6281234567890?text=Halo%20Webkita,%20saya%20ingin%20membuat%20Toko%20Online%20dengan%20fitur%20pembayaran%20otomatis%20(Rp%203.5jt).%20Mohon%20infonya." 
+                           target="_blank" 
+                           class="glass-pill w-full py-2.5 px-4 rounded-xl text-center text-xs font-bold text-purple-200 hover:text-white transition-all block">
+                            Konsultasi via WA
+                        </a>
+                    </div>
                 </div>
 
             </div>

@@ -9,12 +9,7 @@
             <a href="{{ url('/') }}" class="flex items-center gap-3 group focus:outline-none">
                 <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#C8F169] to-emerald-400 p-0.5 shadow-lg shadow-[#C8F169]/25 group-hover:shadow-[#C8F169]/40 transition-all duration-300">
                     <div class="w-full h-full bg-[#270D52] rounded-[10px] flex items-center justify-center">
-                        <!-- Custom Icon <W/> -->
-                        <svg class="w-6 h-6 text-[#C8F169] group-hover:scale-110 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="16 18 22 12 16 6"></polyline>
-                            <polyline points="8 6 2 12 8 18"></polyline>
-                            <path d="m9 15 3-7 3 7"></path>
-                        </svg>
+                        <span class="font-mono font-black text-[#C8F169] text-base group-hover:scale-110 transition-transform">&lt;W/&gt;</span>
                     </div>
                 </div>
                 <div class="flex flex-col">
@@ -28,39 +23,63 @@
 
             <!-- Desktop Nav Pills (Styled like Reference Image) -->
             <div class="hidden lg:flex items-center gap-2">
-                <a href="#vision" class="glass-pill px-4 py-2 rounded-full text-xs font-semibold hover:text-[#C8F169] transition-all">
+                <a href="{{ url('/#vision') }}" class="glass-pill px-3.5 py-2 rounded-full text-xs font-semibold hover:text-[#C8F169] transition-all">
                     Vision & Mission
                 </a>
-                <a href="#layanan" class="glass-pill px-4 py-2 rounded-full text-xs font-semibold hover:text-[#C8F169] transition-all">
+                <a href="{{ url('/#layanan') }}" class="glass-pill px-3.5 py-2 rounded-full text-xs font-semibold hover:text-[#C8F169] transition-all">
                     Layanan
                 </a>
-                <a href="#portofolio" class="glass-pill px-4 py-2 rounded-full text-xs font-semibold hover:text-[#C8F169] transition-all">
+                <a href="{{ url('/#portofolio') }}" class="glass-pill px-3.5 py-2 rounded-full text-xs font-semibold hover:text-[#C8F169] transition-all">
                     Portofolio
                 </a>
-                <a href="#paket" class="glass-pill px-4 py-2 rounded-full text-xs font-semibold hover:text-[#C8F169] transition-all">
+                <a href="{{ url('/#paket') }}" class="glass-pill px-3.5 py-2 rounded-full text-xs font-semibold hover:text-[#C8F169] transition-all">
                     Paket Harga
                 </a>
-                <a href="#kalkulator" class="glass-pill px-4 py-2 rounded-full text-xs font-semibold text-[#C8F169] hover:bg-[#C8F169]/10 transition-all">
+                <a href="{{ url('/#kalkulator') }}" class="glass-pill px-3.5 py-2 rounded-full text-xs font-semibold text-[#C8F169] hover:bg-[#C8F169]/10 transition-all">
                     Cek Biaya
                 </a>
-                <a href="#kontak" class="glass-pill px-4 py-2 rounded-full text-xs font-semibold hover:text-[#C8F169] transition-all">
+                <a href="{{ route('blog.index') }}" class="glass-pill px-3.5 py-2 rounded-full text-xs font-semibold hover:text-[#C8F169] transition-all">
+                    Wawasan
+                </a>
+                <a href="{{ url('/#kontak') }}" class="glass-pill px-3.5 py-2 rounded-full text-xs font-semibold hover:text-[#C8F169] transition-all">
                     Contact Us
                 </a>
             </div>
 
-            <!-- Action Pill "Get Started" (Vibrant Lime Green Pill from Reference) -->
+            <!-- Action Pills (Auth Aware) -->
             <div class="hidden md:flex items-center gap-3">
-                <a href="https://wa.me/6281234567890?text=Halo%20Webkita,%20saya%20ingin%20konsultasi%20pembuatan%20website%20bisnis." 
-                   target="_blank" 
-                   class="glass-pill px-4 py-2.5 rounded-full text-xs font-semibold text-white hover:text-[#C8F169]">
-                    Konsultasi WA
-                </a>
+                @auth
+                    @if (auth()->user()->isAdmin())
+                        <a href="{{ route('admin.dashboard') }}" 
+                           class="glass-pill px-4 py-2.5 rounded-full text-xs font-bold text-[#C8F169] border border-[#C8F169]/40 hover:bg-[#C8F169]/10 transition-all">
+                            Admin Panel
+                        </a>
+                    @else
+                        <a href="{{ route('portal.dashboard') }}" 
+                           class="glass-pill px-4 py-2.5 rounded-full text-xs font-bold text-[#C8F169] border border-[#C8F169]/40 hover:bg-[#C8F169]/10 transition-all">
+                            Portal Klien ({{ Str::limit(auth()->user()->name, 12) }})
+                        </a>
+                    @endif
 
-                <a href="#paket" 
-                   class="lime-pill px-6 py-2.5 rounded-full text-xs font-extrabold shadow-lg shadow-[#C8F169]/30 flex items-center gap-2 group">
-                    <span>Get Started</span>
-                    <span class="w-4 h-4 rounded-full bg-[#1E0A38] text-[#C8F169] flex items-center justify-center text-[10px] group-hover:translate-x-0.5 transition-transform">→</span>
-                </a>
+                    <form action="{{ route('logout') }}" method="POST" class="inline">
+                        @csrf
+                        <button type="submit" 
+                                class="px-3.5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-xs font-semibold text-purple-200 transition-all border border-white/15">
+                            Keluar
+                        </button>
+                    </form>
+                @else
+                    <a href="{{ route('login') }}" 
+                       class="glass-pill px-4 py-2.5 rounded-full text-xs font-semibold text-white hover:text-[#C8F169] transition-all">
+                        Masuk
+                    </a>
+
+                    <a href="{{ url('/#paket') }}" 
+                       class="lime-pill px-5 py-2.5 rounded-full text-xs font-extrabold shadow-lg shadow-[#C8F169]/30 flex items-center gap-1.5 group">
+                        <span>Get Started</span>
+                        <span class="w-4 h-4 rounded-full bg-[#1E0A38] text-[#C8F169] flex items-center justify-center text-[10px] group-hover:translate-x-0.5 transition-transform">→</span>
+                    </a>
+                @endauth
             </div>
 
             <!-- Mobile Hamburger Toggle -->
@@ -69,8 +88,8 @@
                         type="button" 
                         class="p-2.5 rounded-full bg-white/10 text-white hover:text-[#C8F169] hover:bg-white/20 focus:outline-none"
                         aria-label="Toggle navigation">
-                    <svg x-show="!mobileOpen" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-                    <svg x-show="mobileOpen" x-cloak class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                    <span x-show="!mobileOpen" class="font-bold text-xs tracking-wider">MENU</span>
+                    <span x-show="mobileOpen" x-cloak class="font-bold text-xs tracking-wider">TUTUP</span>
                 </button>
             </div>
         </div>
@@ -86,24 +105,40 @@
          x-transition:leave-end="opacity-0 -translate-y-4"
          x-cloak
          class="lg:hidden bg-[#240B4D]/95 backdrop-blur-2xl border-b border-purple-500/30 px-5 pt-4 pb-8 space-y-3">
-        <a @click="mobileOpen = false" href="#beranda" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-white hover:bg-white/10">Beranda</a>
-        <a @click="mobileOpen = false" href="#vision" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-white hover:bg-white/10">Vision & Mission</a>
-        <a @click="mobileOpen = false" href="#layanan" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-white hover:bg-white/10">Layanan Kami</a>
-        <a @click="mobileOpen = false" href="#portofolio" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-white hover:bg-white/10">Portofolio</a>
-        <a @click="mobileOpen = false" href="#paket" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-white hover:bg-white/10">Paket Harga</a>
-        <a @click="mobileOpen = false" href="#kalkulator" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-[#C8F169] hover:bg-[#C8F169]/10">Cek Biaya (Kalkulator)</a>
-        <a @click="mobileOpen = false" href="#kontak" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-white hover:bg-white/10">Contact Us</a>
+        <a @click="mobileOpen = false" href="{{ url('/#beranda') }}" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-white hover:bg-white/10">Beranda</a>
+        <a @click="mobileOpen = false" href="{{ url('/#vision') }}" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-white hover:bg-white/10">Vision & Mission</a>
+        <a @click="mobileOpen = false" href="{{ url('/#layanan') }}" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-white hover:bg-white/10">Layanan Kami</a>
+        <a @click="mobileOpen = false" href="{{ url('/#portofolio') }}" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-white hover:bg-white/10">Portofolio</a>
+        <a @click="mobileOpen = false" href="{{ url('/#paket') }}" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-white hover:bg-white/10">Paket Harga</a>
+        <a @click="mobileOpen = false" href="{{ url('/#kalkulator') }}" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-[#C8F169] hover:bg-[#C8F169]/10">Cek Biaya (Kalkulator)</a>
+        <a @click="mobileOpen = false" href="{{ route('blog.index') }}" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-white hover:bg-white/10">Wawasan & Blog</a>
+        <a @click="mobileOpen = false" href="{{ url('/#kontak') }}" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-white hover:bg-white/10">Contact Us</a>
+        
         <div class="pt-4 border-t border-purple-500/20 flex flex-col gap-2.5">
-            <a href="https://wa.me/6281234567890?text=Halo%20Webkita,%20saya%20ingin%20konsultasi%20website." 
-               target="_blank" 
-               class="w-full text-center py-3 rounded-full border border-white/20 text-xs font-bold text-white hover:bg-white/10">
-                Konsultasi WhatsApp Gratis
-            </a>
-            <a href="#paket" 
-               @click="mobileOpen = false"
-               class="lime-pill w-full text-center py-3 rounded-full text-xs font-extrabold shadow-lg shadow-[#C8F169]/20">
-                Get Started — Pesan Sekarang
-            </a>
+            @auth
+                @if (auth()->user()->isAdmin())
+                    <a href="{{ route('admin.dashboard') }}" class="lime-pill w-full text-center py-3 rounded-full text-xs font-extrabold">
+                        Buka Admin Panel
+                    </a>
+                @else
+                    <a href="{{ route('portal.dashboard') }}" class="lime-pill w-full text-center py-3 rounded-full text-xs font-extrabold">
+                        Buka Portal Klien ({{ auth()->user()->name }})
+                    </a>
+                @endif
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit" class="w-full text-center py-2.5 rounded-full border border-white/20 text-xs font-bold text-purple-200 hover:bg-white/10">
+                        Keluar Akun
+                    </button>
+                </form>
+            @else
+                <a href="{{ route('login') }}" class="w-full text-center py-3 rounded-full border border-white/20 text-xs font-bold text-white hover:bg-white/10">
+                    Masuk ke Akun
+                </a>
+                <a href="{{ url('/#paket') }}" @click="mobileOpen = false" class="lime-pill w-full text-center py-3 rounded-full text-xs font-extrabold shadow-lg shadow-[#C8F169]/20">
+                    Get Started — Pesan Sekarang
+                </a>
+            @endauth
         </div>
     </div>
 </nav>
