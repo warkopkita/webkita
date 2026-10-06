@@ -1,28 +1,75 @@
+# ==========================================
+# Webkita - Render.com Blueprint Specification
+# ==========================================
+# Panduan Deploy 1-Klik:
+# 1. Push repositori ini ke GitHub
+# 2. Buka https://dashboard.render.com/blueprints
+# 3. Klik "New Blueprint Instance" dan pilih repositori ini
+# 4. Render akan otomatis membuat Web Service & Database PostgreSQL Gratis
+
 services:
+  # ==========================================
+  # 1. Web Service (Laravel 11 + Nginx + PHP 8.3)
+  # ==========================================
   - type: web
-    name: webkita
+    name: webkita-app
     runtime: docker
-    dockerfilePath: ./Dockerfile
     plan: free
     region: singapore
+    dockerfilePath: ./Dockerfile.render
+    dockerContext: .
+    healthCheckPath: /
+    autoDeploy: true
     envVars:
       - key: APP_NAME
-        value: Webkita
+        value: "Webkita"
       - key: APP_ENV
         value: production
+      - key: APP_DEBUG
+        value: "false"
       - key: APP_KEY
         generateValue: true
-      - key: APP_DEBUG
-        value: false
-      - key: APP_URL
-        value: https://webkita.onrender.com
+      - key: LOG_CHANNEL
+        value: stderr
+      - key: LOG_LEVEL
+        value: error
+
+      # Basis Data PostgreSQL Render Otomatis
       - key: DB_CONNECTION
-        value: sqlite
-      - key: DB_DATABASE
-        value: /var/www/html/database/database.sqlite
+        value: pgsql
+      - key: DATABASE_URL
+        fromDatabase:
+          name: webkita-db
+          property: connectionString
+
+      # Drivers mandiri untuk Tier Gratis (Tanpa Redis)
       - key: SESSION_DRIVER
-        value: file
+        value: cookie
       - key: CACHE_STORE
-        value: file
+        value: database
       - key: QUEUE_CONNECTION
-        value: sync
+        value: database
+      - key: RUN_SEEDER
+        value: "true"
+
+      # Midtrans Sandbox Credentials (Opsional, sesuaikan di dashboard jika live)
+      - key: MIDTRANS_IS_PRODUCTION
+        value: "false"
+      - key: MIDTRANS_IS_SANITIZED
+        value: "true"
+      - key: MIDTRANS_IS_3DS
+        value: "true"
+
+      # WhatsApp Hotline
+      - key: WHATSAPP_ADMIN_NUMBER
+        value: "6281234567890"
+
+# ==========================================
+# 2. Managed Database (PostgreSQL 16 Free Tier)
+# ==========================================
+databases:
+  - name: webkita-db
+    databaseName: webkita_db
+    user: webkita_user
+    plan: free
+    region: singapore

@@ -1,0 +1,63 @@
+# ==========================================
+# STAGE 1: Frontend Asset Builder (Node.js 20)
+# ==========================================
+FROM node:20-alpine AS frontend-builder
+WORKDIR /app
+
+COPY package*.json vite.config.js ./
+RUN npm ci || npm install
+
+COPY resources/ ./resources/
+COPY public/ ./public/
+RUN npm run build
+
+# ==========================================
+# STAGE 2: PHP 8.3 FPM + Nginx All-In-One (Render.com)
+# ==========================================
+FROM php:8.3-fpm-alpine AS production
+
+# System tools, Nginx web server, and utilities
+RUN apk update && apk add --no-cache \
+    curl \
+    git \
+    zip \
+    unzip \
+    nginx \
+    netcat-openbsd
+
+# Fast pre-compiled PHP extension installer
+COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
+RUN install-php-extensions pdo_mysql pdo_pgsql bcmath gd zip redis opcache
+
+# Composer official binary
+COPY --from=composer:2.7 /usr/bin/composer /usr/bin/composer
+
+WORKDIR /var/www/html
+
+# Copy application codebase
+COPY . .
+
+# Copy compiled frontend assets from Stage 1
+COPY --from=frontend-builder /app/public/build ./public/build
+
+# Copy PHP and OPcache configuration
+COPY docker/php/php.ini /usr/local/etc/php/conf.d/99-webkita.ini
+COPY docker/php/opcache.ini /usr/local/etc/php/conf.d/99-opcache.ini
+
+# Copy Nginx template and entrypoint
+COPY docker/render/nginx.conf.template /etc/nginx/templates/default.conf.template
+COPY docker/render/entrypoint.sh /usr/local/bin/render-entrypoint.sh
+RUN chmod +x /usr/local/bin/render-entrypoint.sh
+
+# Install production PHP dependencies
+ENV COMPOSER_ALLOW_SUPERUSER=1
+RUN composer install --no-dev --optimize-autoloader --no-interaction --prefer-dist
+
+# Permissions
+RUN chown -R www-data:www-data storage bootstrap/cache \
+    && chmod -R 775 storage bootstrap/cache
+
+# Render default port
+EXPOSE 10000
+
+ENTRYPOINT ["/usr/local/bin/render-entrypoint.sh"]
