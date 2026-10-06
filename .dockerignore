@@ -1,0 +1,12 @@
+.git
+.github
+.claude
+node_modules
+tests
+storage/*.key
+.phpunit.result.cache
+*.log
+.env
+.env.backup
+.DS_Store
+Thumbs.db

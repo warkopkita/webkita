@@ -1,0 +1,138 @@
+services:
+  # ==========================================
+  # 1. PHP-FPM Application Service
+  # ==========================================
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: webkita-app:latest
+    container_name: webkita_app
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      - APP_ENV=${APP_ENV:-production}
+      - APP_DEBUG=${APP_DEBUG:-false}
+      - DB_CONNECTION=${DB_CONNECTION:-mysql}
+      - DB_HOST=${DB_HOST:-db}
+      - DB_PORT=${DB_PORT:-3306}
+      - DB_DATABASE=${DB_DATABASE:-webkita_db}
+      - DB_USERNAME=${DB_USERNAME:-webkita_user}
+      - DB_PASSWORD=${DB_PASSWORD:-Secret2026Webkita!}
+      - REDIS_HOST=${REDIS_HOST:-redis}
+      - REDIS_PORT=${REDIS_PORT:-6379}
+    volumes:
+      - storage_data:/var/www/html/storage
+      - ./database:/var/www/html/database
+    networks:
+      - webkita-net
+    depends_on:
+      - db
+      - redis
+
+  # ==========================================
+  # 2. Nginx Web Server Service
+  # ==========================================
+  web:
+    image: nginx:1.25-alpine
+    container_name: webkita_web
+    restart: unless-stopped
+    ports:
+      - "${HTTP_PORT:-80}:80"
+      - "${HTTPS_PORT:-443}:443"
+    volumes:
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./public:/var/www/html/public:ro
+      - storage_data:/var/www/html/storage:ro
+    networks:
+      - webkita-net
+    depends_on:
+      - app
+
+  # ==========================================
+  # 3. MySQL 8 Database Service
+  # ==========================================
+  db:
+    image: mysql:8.0
+    container_name: webkita_db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE:-webkita_db}
+      MYSQL_USER: ${DB_USERNAME:-webkita_user}
+      MYSQL_PASSWORD: ${DB_PASSWORD:-Secret2026Webkita!}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-RootSecret2026!}
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - webkita-net
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ==========================================
+  # 4. Redis Cache & Queue Broker
+  # ==========================================
+  redis:
+    image: redis:7-alpine
+    container_name: webkita_redis
+    restart: unless-stopped
+    volumes:
+      - redis_data:/data
+    networks:
+      - webkita-net
+
+  # ==========================================
+  # 5. Background Queue Worker Service
+  # ==========================================
+  queue:
+    image: webkita-app:latest
+    container_name: webkita_queue
+    restart: unless-stopped
+    entrypoint: []
+    command: ["php", "artisan", "queue:work", "--tries=3", "--timeout=90", "--verbose"]
+    env_file:
+      - .env
+    volumes:
+      - storage_data:/var/www/html/storage
+    networks:
+      - webkita-net
+    depends_on:
+      - app
+      - redis
+      - db
+
+  # ==========================================
+  # 6. Task Scheduler (Cron Runner)
+  # ==========================================
+  scheduler:
+    image: webkita-app:latest
+    container_name: webkita_scheduler
+    restart: unless-stopped
+    entrypoint: []
+    command: ["sh", "-c", "while true; do php /var/www/html/artisan schedule:run --verbose --no-interaction; sleep 60; done"]
+    env_file:
+      - .env
+    volumes:
+      - storage_data:/var/www/html/storage
+    networks:
+      - webkita-net
+    depends_on:
+      - app
+
+# ==========================================
+# Volumes & Networks
+# ==========================================
+volumes:
+  mysql_data:
+    driver: local
+  redis_data:
+    driver: local
+  storage_data:
+    driver: local
+
+networks:
+  webkita-net:
+    driver: bridge
