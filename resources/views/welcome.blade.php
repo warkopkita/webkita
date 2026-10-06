@@ -1016,23 +1016,54 @@
                          whatsapp: '',
                          paketPilihan: 'Paket Webkita Bisnis',
                          pesan: '',
-                         kirimKeWhatsApp() {
+                         submitting: false,
+                         submitted: false,
+                         async kirimKeWhatsApp() {
                              if(!this.nama || !this.whatsapp) {
                                  alert('Mohon isi nama dan nomor WhatsApp Anda terlebih dahulu.');
                                  return;
                              }
-                             let t = 'Halo Webkita, saya ingin konsultasi pembuatan website:%0A';
-                             t += '- Nama: ' + this.nama + '%0A';
-                             t += '- No WhatsApp: ' + this.whatsapp + '%0A';
-                             t += '- Minat Paket: ' + this.paketPilihan + '%0A';
-                             if(this.pesan) t += '- Keterangan: ' + this.pesan + '%0A';
-                             t += '%0AMohon informasi lebih lanjut.';
-                             window.open('https://wa.me/6281234567890?text=' + t, '_blank');
+                             this.submitting = true;
+                             try {
+                                 let response = await fetch('{{ route('leads.store') }}', {
+                                     method: 'POST',
+                                     headers: {
+                                         'Content-Type': 'application/json',
+                                         'X-CSRF-TOKEN': document.querySelector('meta[name=\'csrf-token\']').getAttribute('content'),
+                                         'Accept': 'application/json'
+                                     },
+                                     body: JSON.stringify({
+                                         nama: this.nama,
+                                         whatsapp: this.whatsapp,
+                                         paketPilihan: this.paketPilihan,
+                                         pesan: this.pesan
+                                     })
+                                 });
+                                 let data = await response.json();
+                                 this.submitted = true;
+                                 if(data.whatsapp_url) {
+                                     window.open(data.whatsapp_url, '_blank');
+                                 }
+                             } catch(e) {
+                                 let t = 'Halo Webkita, saya ingin konsultasi pembuatan website:%0A';
+                                 t += '- Nama: ' + encodeURIComponent(this.nama) + '%0A';
+                                 t += '- No WhatsApp: ' + encodeURIComponent(this.whatsapp) + '%0A';
+                                 t += '- Minat Paket: ' + encodeURIComponent(this.paketPilihan) + '%0A';
+                                 if(this.pesan) t += '- Keterangan: ' + encodeURIComponent(this.pesan) + '%0A';
+                                 t += '%0AMohon informasi lebih lanjut.';
+                                 window.open('https://wa.me/6281234567890?text=' + t, '_blank');
+                             } finally {
+                                 this.submitting = false;
+                             }
                          }
                      }">
                     <h3 class="text-base font-bold text-white mb-4">Kirim Brief Singkat</h3>
                     
                     <form @submit.prevent="kirimKeWhatsApp" class="space-y-4">
+                        <div x-show="submitted" x-cloak class="p-3 rounded-xl bg-[#C8F169]/15 border border-[#C8F169]/40 text-xs text-[#C8F169] font-semibold">
+                            Data brief Anda telah tersimpan di sistem Webkita dan dialihkan ke WhatsApp konsultan kami!
+                        </div>
+
                         <div>
                             <label class="block text-xs font-semibold text-purple-200 mb-1">Nama Lengkap / Nama Bisnis *</label>
                             <input type="text" x-model="nama" required placeholder="Contoh: Budi Santoso (KopiKita)" 
@@ -1062,8 +1093,9 @@
                         </div>
 
                         <button type="submit" 
-                                class="lime-pill w-full py-3.5 rounded-xl font-black text-xs shadow-lg shadow-[#C8F169]/20 transition-all flex items-center justify-center gap-2">
-                            <span>Hubungi Konsultan Sekarang via WhatsApp</span>
+                                :disabled="submitting"
+                                class="lime-pill w-full py-3.5 rounded-xl font-black text-xs shadow-lg shadow-[#C8F169]/20 transition-all flex items-center justify-center gap-2 disabled:opacity-50">
+                            <span x-text="submitting ? 'Menyimpan & Menghubungkan...' : 'Hubungi Konsultan Sekarang via WhatsApp'"></span>
                             <span>→</span>
                         </button>
                         

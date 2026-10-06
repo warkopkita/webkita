@@ -86,9 +86,9 @@
                 &copy; {{ date('Y') }} <span class="text-white font-medium">Webkita</span>. Seluruh Hak Cipta Dilindungi. Solusi Website Bisnis Indonesia.
             </div>
             <div class="flex items-center gap-6 text-purple-200/70">
-                <a href="#kontak" class="hover:text-white transition-colors">Kebijakan Privasi</a>
-                <a href="#kontak" class="hover:text-white transition-colors">Syarat & Ketentuan</a>
-                <a href="#faq" class="hover:text-white transition-colors">SLA & Garansi</a>
+                <a href="{{ route('legal.privacy') }}" class="hover:text-white transition-colors">Kebijakan Privasi</a>
+                <a href="{{ route('legal.terms') }}" class="hover:text-white transition-colors">Syarat & Ketentuan</a>
+                <a href="{{ url('/#faq') }}" class="hover:text-white transition-colors">SLA & Garansi</a>
                 <span class="text-purple-600">|</span>
                 <span>Ditenagai oleh <span class="text-[#C8F169] font-bold">Laravel 11</span></span>
             </div>
