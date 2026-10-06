@@ -48,7 +48,12 @@ class LeadController extends Controller
         }
         $waText .= "\nMohon informasi ketersediaan jadwal pengerjaan.";
 
-        $waUrl = "https://wa.me/6281234567890?text=" . urlencode($waText);
+        // Auto-notify admin via WhatsApp Gateway
+        try {
+            app(\App\Services\WhatsAppService::class)->sendAdminNewLeadNotification($lead);
+        } catch (\Throwable $e) {
+            \Illuminate\Support\Facades\Log::warning('Gagal kirim notifikasi WA admin: ' . $e->getMessage());
+        }
 
         return response()->json([
             'success' => true,

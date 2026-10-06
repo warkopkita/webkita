@@ -311,6 +311,65 @@ class WebkitaPlatformTest extends TestCase
         $this->assertEquals('client', $user->role);
         $this->assertStringContainsString('google', $user->email);
     }
+
+    /**
+     * Test diagnostic health check API endpoint.
+     */
+    public function test_system_health_check_endpoint(): void
+    {
+        $response = $this->get('/api/health');
+        $response->assertStatus(200);
+        $response->assertJson([
+            'status' => 'healthy',
+            'service' => 'Webkita Studio Platform',
+            'checks' => [
+                'database' => 'connected',
+                'cache' => 'operational',
+                'storage' => 'writable',
+            ],
+        ]);
+    }
+
+    /**
+     * Test multi-language switcher route.
+     */
+    public function test_multi_language_switcher_flow(): void
+    {
+        $responseEn = $this->get('/lang/en');
+        $responseEn->assertRedirect();
+        $responseEn->assertSessionHas('locale', 'en');
+
+        $responseId = $this->get('/lang/id');
+        $responseId->assertRedirect();
+        $responseId->assertSessionHas('locale', 'id');
+    }
+
+    /**
+     * Test WhatsApp Gateway service integration.
+     */
+    public function test_whatsapp_gateway_service(): void
+    {
+        $wa = new \App\Services\WhatsAppService();
+        $result = $wa->sendMessage('08123456789', 'Uji coba pesan sistem');
+
+        $this->assertTrue($result['success']);
+        $this->assertEquals('log', $result['provider']);
+        $this->assertEquals('628123456789', $result['target']);
+    }
+
+    /**
+     * Test lightweight A/B testing framework variation assignment.
+     */
+    public function test_ab_testing_service_variation(): void
+    {
+        $experiment = \App\Services\AbTestingService::getExperiment('test_headline', [
+            'A' => 'Headline Versi A',
+            'B' => 'Headline Versi B',
+        ]);
+
+        $this->assertContains($experiment['key'], ['A', 'B']);
+        $this->assertNotEmpty($experiment['value']);
+    }
 }
 
 

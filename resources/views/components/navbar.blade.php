@@ -48,6 +48,18 @@
 
             <!-- Action Pills (Auth Aware) -->
             <div class="hidden md:flex items-center gap-3">
+                <!-- Language Switcher Pill -->
+                <div class="inline-flex items-center rounded-full bg-white/5 border border-white/10 p-0.5 text-[10px] font-mono tracking-wider">
+                    <a href="{{ route('lang.switch', 'id') }}" 
+                       class="px-2 py-1 rounded-full transition-all {{ app()->getLocale() === 'id' ? 'bg-[#C8F169] text-[#1E0A38] font-bold shadow' : 'text-purple-300 hover:text-white' }}">
+                        ID
+                    </a>
+                    <a href="{{ route('lang.switch', 'en') }}" 
+                       class="px-2 py-1 rounded-full transition-all {{ app()->getLocale() === 'en' ? 'bg-[#C8F169] text-[#1E0A38] font-bold shadow' : 'text-purple-300 hover:text-white' }}">
+                        EN
+                    </a>
+                </div>
+
                 @auth
                     @if (auth()->user()->isAdmin())
                         <a href="{{ route('admin.dashboard') }}" 
@@ -114,6 +126,21 @@
         <a @click="mobileOpen = false" href="{{ route('blog.index') }}" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-white hover:bg-white/10">Wawasan & Blog</a>
         <a @click="mobileOpen = false" href="{{ url('/#kontak') }}" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-white hover:bg-white/10">Contact Us</a>
         
+        <!-- Mobile Language Switcher -->
+        <div class="px-4 py-2 flex items-center justify-between bg-white/5 rounded-xl">
+            <span class="text-xs text-purple-300 font-mono">BAHASA / LANGUAGE:</span>
+            <div class="inline-flex items-center rounded-full bg-white/10 border border-white/10 p-0.5 text-xs font-mono">
+                <a href="{{ route('lang.switch', 'id') }}" 
+                   class="px-3 py-1 rounded-full transition-all {{ app()->getLocale() === 'id' ? 'bg-[#C8F169] text-[#1E0A38] font-bold' : 'text-purple-300 hover:text-white' }}">
+                    ID
+                </a>
+                <a href="{{ route('lang.switch', 'en') }}" 
+                   class="px-3 py-1 rounded-full transition-all {{ app()->getLocale() === 'en' ? 'bg-[#C8F169] text-[#1E0A38] font-bold' : 'text-purple-300 hover:text-white' }}">
+                    EN
+                </a>
+            </div>
+        </div>
+
         <div class="pt-4 border-t border-purple-500/20 flex flex-col gap-2.5">
             @auth
                 @if (auth()->user()->isAdmin())

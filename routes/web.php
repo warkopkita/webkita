@@ -43,6 +43,9 @@ Route::post('/checkout/payment/{order:order_code}/simulate', [CheckoutController
 // Midtrans Payment Webhook Notification
 Route::post('/api/payment/notification', [CheckoutController::class, 'webhookNotification'])->name('payment.webhook');
 
+// Diagnostic Health Monitoring Endpoint (UptimeRobot / Docker / Status)
+Route::get('/api/health', [\App\Http\Controllers\HealthController::class, 'check'])->name('api.health');
+
 // Lead Capture (Contact Brief Form with Rate Limiter)
 Route::post('/leads', [LeadController::class, 'store'])->middleware('throttle:6,1')->name('leads.store');
 
@@ -52,6 +55,14 @@ Route::post('/newsletter', [\App\Http\Controllers\NewsletterController::class, '
 // Legal & Compliance Pages (UU PDP & SLA)
 Route::get('/kebijakan-privasi', [LegalController::class, 'privacyPolicy'])->name('legal.privacy');
 Route::get('/syarat-ketentuan', [LegalController::class, 'termsOfService'])->name('legal.terms');
+
+// Multi-Language Switcher (ID / EN)
+Route::get('/lang/{locale}', function (string $locale) {
+    if (in_array($locale, ['id', 'en'])) {
+        session(['locale' => $locale]);
+    }
+    return back();
+})->name('lang.switch');
 
 // Authentication Routes (Guest Only)
 Route::middleware('guest')->group(function () {

@@ -81,11 +81,20 @@
                         </h1>
                     </div>
 
-                    <!-- Translucent Subtitle Pill Container (From Reference) -->
+                    @php
+                        $heroExperiment = \App\Services\AbTestingService::getExperiment('hero_subtitle', [
+                            'A' => 'Designing Seamless Digital Journeys: User-Centered & Problem Solving Design',
+                            'B' => 'Solusi Website Bisnis Cepat & Andal: Arsitektur Kokoh Berkinerja Tinggi',
+                        ]);
+                    @endphp
+
+                    <!-- Translucent Subtitle Pill Container (A/B Tested Variant) -->
                     <div class="pt-2">
                         <div class="inline-block p-4 sm:p-5 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm sm:text-base font-semibold leading-relaxed shadow-lg max-w-xl">
-                            Designing Seamless Digital Journeys Fokus:<br>
-                            <span class="text-purple-100 font-normal">User-Centered & Problem Solving Design</span>
+                            <span>{{ $heroExperiment['value'] }}</span>
+                            <span class="block text-[10px] text-[#C8F169]/80 font-mono mt-1">
+                                [A/B TEST ACTIVE: VARIAN-{{ $heroExperiment['key'] }}]
+                            </span>
                         </div>
                     </div>
 
@@ -471,6 +480,101 @@
                 </div>
 
             </div>
+
+            <!-- Video Testimonial & Project Walkthrough Showcase (Sprint 5 Task 5.8) -->
+            <div x-data="{ videoModalOpen: false }" class="mt-16 pt-12 border-t border-purple-500/20">
+                <div class="relative rounded-3xl bg-gradient-to-r from-[#2B1053] via-[#1E093B] to-[#3B1569] border border-white/15 p-8 sm:p-12 shadow-2xl overflow-hidden">
+                    <div class="frame-corner frame-corner-tl"></div>
+                    <div class="frame-corner frame-corner-tr"></div>
+                    <div class="frame-corner frame-corner-bl"></div>
+                    <div class="frame-corner frame-corner-br"></div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+                        <div class="lg:col-span-7 space-y-4">
+                            <div class="flex items-center gap-3">
+                                <span class="px-3 py-1 rounded-full text-[10px] font-mono font-bold tracking-widest bg-[#C8F169] text-[#1E0A38] uppercase">
+                                    [STUDI KASUS VIDEO]
+                                </span>
+                                <span class="text-xs font-mono text-purple-300">DURASI: 03:45 MIN</span>
+                            </div>
+                            <h3 class="text-2xl sm:text-3xl font-extrabold text-white leading-tight">
+                                Transformasi Digital: Dari Desain Figma ke Arsitektur Produksi Laravel
+                            </h3>
+                            <p class="text-sm text-purple-200/80 leading-relaxed">
+                                Simak rekaman komparasi sebelum dan sesudah refaktor sistem untuk PT Sentosa Nusantara. Bagaimana waktu muat dipercepat dari 4.2 detik menjadi 0.8 detik, dan tingkat konversi formulir penawaran meningkat 210%.
+                            </p>
+                            
+                            <div class="pt-2 flex flex-wrap items-center gap-6 text-xs font-mono text-purple-200">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-[#C8F169]"></span>
+                                    <span>Skor Lighthouse: 98/100</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-[#C8F169]"></span>
+                                    <span>Zero Layout Shift</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-[#C8F169]"></span>
+                                    <span>Midtrans Auto-Reconcile</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="lg:col-span-5 flex flex-col items-center justify-center">
+                            <div class="w-full aspect-video rounded-2xl bg-black/50 border border-white/20 p-4 flex flex-col items-center justify-center text-center relative group hover:border-[#C8F169]/60 transition-all cursor-pointer"
+                                 @click="videoModalOpen = true">
+                                <div class="w-16 h-16 rounded-full bg-[#C8F169] text-[#1E0A38] font-mono font-black text-xs flex items-center justify-center shadow-xl shadow-[#C8F169]/30 group-hover:scale-110 transition-transform mb-3">
+                                    PLAY
+                                </div>
+                                <span class="text-xs font-bold text-white tracking-wider">[PUTAR VIDEO DEMO 4K]</span>
+                                <span class="text-[10px] text-purple-300 mt-1">Interaktif Walkthrough Sistem</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Video Player Modal -->
+                    <div x-show="videoModalOpen" 
+                         x-cloak
+                         x-transition:enter="transition ease-out duration-300"
+                         x-transition:enter-start="opacity-0"
+                         x-transition:enter-end="opacity-100"
+                         x-transition:leave="transition ease-in duration-200"
+                         x-transition:leave-start="opacity-100"
+                         x-transition:leave-end="opacity-0"
+                         class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
+                        <div @click.away="videoModalOpen = false" 
+                             class="w-full max-w-4xl bg-[#1D083A] border border-white/20 rounded-3xl p-6 sm:p-8 shadow-2xl relative">
+                            <div class="flex justify-between items-center pb-4 mb-4 border-b border-white/10">
+                                <div>
+                                    <span class="text-[10px] font-mono text-[#C8F169] uppercase tracking-wider">[WEBSITE WALKTHROUGH DEMO]</span>
+                                    <h4 class="text-base font-bold text-white">Studi Kasus Arsitektur Webkita Studio</h4>
+                                </div>
+                                <button @click="videoModalOpen = false" 
+                                        type="button" 
+                                        class="px-4 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-xs font-mono font-bold text-white transition-all">
+                                    [TUTUP]
+                                </button>
+                            </div>
+
+                            <div class="w-full aspect-video rounded-2xl bg-black border border-white/10 overflow-hidden flex items-center justify-center relative">
+                                <iframe class="w-full h-full"
+                                        src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?autoplay=0" 
+                                        title="Webkita Case Study Walkthrough"
+                                        frameborder="0" 
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                        allowfullscreen>
+                                </iframe>
+                            </div>
+
+                            <div class="mt-4 pt-3 flex flex-wrap justify-between items-center text-xs text-purple-200/80 font-mono">
+                                <span>Klien: PT Sentosa Nusantara Logistik</span>
+                                <span>Stack: Laravel 11 + Alpine.js + Tailwind CSS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 

@@ -157,5 +157,12 @@ class PaymentService
         } catch (\Throwable $e) {
             Log::warning('Gagal kirim email pembayaran: ' . $e->getMessage());
         }
+
+        // Send WhatsApp Payment Confirmation
+        try {
+            app(\App\Services\WhatsAppService::class)->sendPaymentSuccess($order);
+        } catch (\Throwable $e) {
+            Log::warning('Gagal kirim notifikasi WhatsApp pembayaran: ' . $e->getMessage());
+        }
     }
 }

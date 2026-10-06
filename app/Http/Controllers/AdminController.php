@@ -48,7 +48,33 @@ class AdminController extends Controller
 
         $order->update(['status' => $validated['status']]);
 
-        return back()->with('success', 'Status pesanan ' . $order->order_code . ' berhasil diperbarui.');
+        // Send In-App Notification to Client
+        if ($order->user) {
+            $statusLabels = [
+                'in_progress' => 'Sedang Dikerjakan',
+                'review' => 'Siap Direview',
+                'completed' => 'Proyek Selesai & Go-Live',
+                'cancelled' => 'Dibatalkan',
+                'paid' => 'Lunas',
+            ];
+            $label = $statusLabels[$validated['status']] ?? ucfirst($validated['status']);
+            $order->user->notifications()->create([
+                'type' => 'order_update',
+                'title' => 'Update Status Proyek: ' . $order->order_code,
+                'message' => 'Status proyek Anda kini: ' . $label . '. Silakan cek detail di portal.',
+                'action_url' => route('portal.dashboard'),
+                'is_read' => false,
+            ]);
+        }
+
+        // Send WhatsApp Notification to Client
+        try {
+            app(\App\Services\WhatsAppService::class)->sendOrderStatusUpdate($order, $validated['status']);
+        } catch (\Throwable $e) {
+            \Illuminate\Support\Facades\Log::warning('Gagal kirim WhatsApp update order: ' . $e->getMessage());
+        }
+
+        return back()->with('success', 'Status pesanan ' . $order->order_code . ' berhasil diperbarui dan notifikasi terkirim.');
     }
 
     /**
