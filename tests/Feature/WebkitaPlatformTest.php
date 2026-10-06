@@ -158,4 +158,103 @@ class WebkitaPlatformTest extends TestCase
             $this->assertStringContainsString('text/csv', $csvResponse->headers->get('Content-Type'));
         }
     }
+
+    /**
+     * Test public services index and show pages.
+     */
+    public function test_services_catalog_and_detail_load(): void
+    {
+        $response = $this->get('/layanan');
+        $response->assertStatus(200);
+        $response->assertSee('Layanan Rekayasa Website');
+
+        $singleResponse = $this->get('/layanan/landing-page');
+        $singleResponse->assertStatus(200);
+        $singleResponse->assertSee('Landing Page Iklan');
+    }
+
+    /**
+     * Test HTTP security headers are enforced globally.
+     */
+    public function test_security_headers_enforced(): void
+    {
+        $response = $this->get('/');
+        $response->assertStatus(200);
+        $this->assertEquals('nosniff', $response->headers->get('X-Content-Type-Options'));
+        $this->assertEquals('SAMEORIGIN', $response->headers->get('X-Frame-Options'));
+    }
+
+    /**
+     * Test admin blog CMS lifecycle (create, edit, delete) and legal page management.
+     */
+    public function test_admin_cms_blog_and_legal_management(): void
+    {
+        $admin = User::where('role', 'admin')->first();
+        $this->assertNotNull($admin);
+
+        $category = \App\Models\BlogCategory::first();
+        $this->assertNotNull($category);
+
+        // 1. Create blog post
+        $createResponse = $this->actingAs($admin)->get('/admin/blog/create');
+        $createResponse->assertStatus(200);
+        $createResponse->assertSee('Tulis Artikel Blog Baru');
+
+        $postData = [
+            'title' => 'Panduan Baru Test Admin Webkita ' . time(),
+            'category_id' => $category->id,
+            'excerpt' => 'Ini adalah ringkasan artikel baru untuk pengujian otomatis.',
+            'content' => '<p>Konten lengkap artikel pengujian fitur CMS Webkita.</p>',
+            'author' => 'Admin QA',
+            'reading_time_minutes' => 5,
+            'is_published' => '1',
+        ];
+
+        $storeResponse = $this->actingAs($admin)->post('/admin/blog', $postData);
+        $storeResponse->assertRedirect(route('admin.dashboard'));
+
+        $newPost = BlogPost::where('title', $postData['title'])->first();
+        $this->assertNotNull($newPost);
+
+        // 2. Edit blog post
+        $editResponse = $this->actingAs($admin)->get('/admin/blog/' . $newPost->id . '/edit');
+        $editResponse->assertStatus(200);
+
+        $updateResponse = $this->actingAs($admin)->put('/admin/blog/' . $newPost->id, array_merge($postData, [
+            'title' => 'Panduan Baru Terupdate',
+        ]));
+        $updateResponse->assertRedirect(route('admin.dashboard'));
+
+        $newPost->refresh();
+        $this->assertEquals('Panduan Baru Terupdate', $newPost->title);
+
+        // 3. Delete blog post
+        $deleteResponse = $this->actingAs($admin)->delete('/admin/blog/' . $newPost->id);
+        $deleteResponse->assertRedirect(route('admin.dashboard'));
+        $this->assertNull(BlogPost::find($newPost->id));
+
+        // 4. Edit legal page
+        $legalPage = \App\Models\PageLegal::first();
+        $this->assertNotNull($legalPage);
+
+        $legalEditResponse = $this->actingAs($admin)->get('/admin/legal/' . $legalPage->id . '/edit');
+        $legalEditResponse->assertStatus(200);
+
+        $legalUpdateResponse = $this->actingAs($admin)->put('/admin/legal/' . $legalPage->id, [
+            'title' => $legalPage->title . ' (Terverifikasi)',
+            'content' => $legalPage->content . "\n\nKlausul tambahan.",
+        ]);
+        $legalUpdateResponse->assertRedirect(route('admin.dashboard'));
+
+        // 5. Toggle package active status
+        $package = Package::first();
+        $this->assertNotNull($package);
+        $initialStatus = $package->is_active;
+
+        $toggleResponse = $this->actingAs($admin)->patch('/admin/packages/' . $package->id . '/toggle');
+        $toggleResponse->assertRedirect();
+        $package->refresh();
+        $this->assertNotEquals($initialStatus, $package->is_active);
+    }
 }
+

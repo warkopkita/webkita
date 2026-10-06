@@ -249,14 +249,19 @@
 
         <!-- Section 3: Blog Posts & Content Management -->
         <div class="studio-card-dark p-6 sm:p-8 rounded-3xl border border-purple-400/20 shadow-xl space-y-4">
-            <div class="flex items-center justify-between pb-3 border-b border-purple-500/20">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-purple-500/20">
                 <div>
-                    <span class="text-xs font-mono font-bold text-[#C8F169] uppercase">EDUKASI & ARTIKEL SEO</span>
+                    <span class="text-xs font-mono font-bold text-[#C8F169] uppercase">EDUKASI &amp; ARTIKEL SEO</span>
                     <h3 class="text-lg font-bold text-white mt-0.5">Daftar Artikel Pengetahuan Digital Webkita</h3>
                 </div>
-                <a href="{{ route('blog.index') }}" class="glass-pill px-4 py-2 rounded-full text-xs font-semibold hover:text-[#C8F169]">
-                    Lihat Blog Publik →
-                </a>
+                <div class="flex items-center gap-2">
+                    <a href="{{ route('admin.blog.create') }}" class="lime-pill px-4 py-2 rounded-full text-xs font-bold">
+                        + Tulis Artikel Baru
+                    </a>
+                    <a href="{{ route('blog.index') }}" class="glass-pill px-4 py-2 rounded-full text-xs font-semibold hover:text-[#C8F169]">
+                        Lihat Blog Publik &rarr;
+                    </a>
+                </div>
             </div>
 
             <div class="overflow-x-auto">
@@ -268,21 +273,134 @@
                             <th class="pb-3 pr-4">Penulis</th>
                             <th class="pb-3 pr-4">Waktu Baca</th>
                             <th class="pb-3 pr-4">Dibaca</th>
-                            <th class="pb-3 text-right">Tautan</th>
+                            <th class="pb-3 text-right">Tindakan</th>
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-purple-500/10">
                         @foreach ($recentPosts as $post)
                             <tr>
-                                <td class="py-3.5 pr-4 font-bold text-white max-w-sm">{{ $post->title }}</td>
+                                <td class="py-3.5 pr-4 font-bold text-white max-w-sm">
+                                    {{ $post->title }}
+                                    @if (!$post->is_published)
+                                        <span class="ml-2 px-2 py-0.5 rounded text-[9px] font-mono bg-amber-500/20 text-amber-300 uppercase">Draft</span>
+                                    @endif
+                                </td>
                                 <td class="py-3.5 pr-4 font-mono text-[11px] text-[#C8F169]">{{ $post->category ? $post->category->name : '-' }}</td>
                                 <td class="py-3.5 pr-4 text-purple-300">{{ $post->author }}</td>
                                 <td class="py-3.5 pr-4">{{ $post->reading_time_minutes }} Menit</td>
                                 <td class="py-3.5 pr-4 font-mono">{{ $post->views_count }} views</td>
-                                <td class="py-3.5 text-right">
-                                    <a href="{{ route('blog.show', $post->slug) }}" target="_blank" class="text-[#C8F169] hover:underline font-bold text-[11px]">
-                                        Buka Artikel ↗
+                                <td class="py-3.5 text-right space-x-2">
+                                    <a href="{{ route('blog.show', $post->slug) }}" target="_blank" class="text-purple-300 hover:text-white font-bold text-[11px]">
+                                        Lihat
                                     </a>
+                                    <a href="{{ route('admin.blog.edit', $post) }}" class="text-[#C8F169] hover:underline font-bold text-[11px]">
+                                        Edit
+                                    </a>
+                                    <form action="{{ route('admin.blog.destroy', $post) }}" method="POST" class="inline" onsubmit="return confirm('Hapus artikel ini?')">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="text-red-400 hover:text-red-300 font-bold text-[11px]">
+                                            Hapus
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Section 4: Legal Compliance Pages Management -->
+        <div class="studio-card-dark p-6 sm:p-8 rounded-3xl border border-purple-400/20 shadow-xl space-y-4">
+            <div class="flex items-center justify-between pb-3 border-b border-purple-500/20">
+                <div>
+                    <span class="text-xs font-mono font-bold text-[#C8F169] uppercase">KEPATUHAN REGULASI &amp; HUKUM</span>
+                    <h3 class="text-lg font-bold text-white mt-0.5">Kelola Halaman Legal (UU PDP &amp; SLA Layanan)</h3>
+                </div>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-xs text-purple-100">
+                    <thead>
+                        <tr class="border-b border-purple-500/20 text-purple-300 font-mono text-[11px]">
+                            <th class="pb-3 pr-4">Nama Dokumen</th>
+                            <th class="pb-3 pr-4">URL Publik</th>
+                            <th class="pb-3 pr-4">Terakhir Diperbarui</th>
+                            <th class="pb-3 text-right">Tindakan</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-purple-500/10">
+                        @foreach ($legalPages as $page)
+                            <tr>
+                                <td class="py-3.5 pr-4 font-bold text-white">{{ $page->title }}</td>
+                                <td class="py-3.5 pr-4 font-mono text-[11px] text-purple-300">
+                                    /{{ $page->slug === 'privacy-policy' ? 'kebijakan-privasi' : 'syarat-ketentuan' }}
+                                </td>
+                                <td class="py-3.5 pr-4 text-purple-300">{{ $page->updated_at ? $page->updated_at->format('d/m/Y H:i') : '-' }}</td>
+                                <td class="py-3.5 text-right space-x-2">
+                                    <a href="{{ $page->slug === 'privacy-policy' ? route('legal.privacy') : route('legal.terms') }}" target="_blank" class="text-purple-300 hover:text-white font-bold text-[11px]">
+                                        Buka Publik
+                                    </a>
+                                    <a href="{{ route('admin.legal.edit', $page) }}" class="lime-pill px-3 py-1 rounded-lg text-[10px] font-bold">
+                                        Edit Isi Dokumen
+                                    </a>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Section 5: Packages Catalog & Status Management -->
+        <div class="studio-card-dark p-6 sm:p-8 rounded-3xl border border-purple-400/20 shadow-xl space-y-4">
+            <div class="flex items-center justify-between pb-3 border-b border-purple-500/20">
+                <div>
+                    <span class="text-xs font-mono font-bold text-[#C8F169] uppercase">ETALASE &amp; PRICING</span>
+                    <h3 class="text-lg font-bold text-white mt-0.5">Status Paket Layanan Webkita</h3>
+                </div>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-xs text-purple-100">
+                    <thead>
+                        <tr class="border-b border-purple-500/20 text-purple-300 font-mono text-[11px]">
+                            <th class="pb-3 pr-4">Nama Paket</th>
+                            <th class="pb-3 pr-4">Layanan Induk</th>
+                            <th class="pb-3 pr-4">Harga Investasi</th>
+                            <th class="pb-3 pr-4">Pengerjaan</th>
+                            <th class="pb-3 pr-4">Status</th>
+                            <th class="pb-3 text-right">Tindakan</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-purple-500/10">
+                        @foreach ($allPackages as $pkg)
+                            <tr>
+                                <td class="py-3.5 pr-4 font-bold text-white">
+                                    {{ $pkg->name }}
+                                    @if ($pkg->is_popular)
+                                        <span class="ml-1.5 px-2 py-0.5 rounded text-[9px] font-mono bg-[#C8F169]/20 text-[#C8F169] uppercase font-bold">Terpopuler</span>
+                                    @endif
+                                </td>
+                                <td class="py-3.5 pr-4 text-purple-300">{{ $pkg->service ? $pkg->service->name : '-' }}</td>
+                                <td class="py-3.5 pr-4 font-mono font-bold text-[#C8F169]">
+                                    Rp {{ number_format($pkg->price, 0, ',', '.') }}
+                                </td>
+                                <td class="py-3.5 pr-4 text-purple-300">{{ $pkg->duration_days }} Hari</td>
+                                <td class="py-3.5 pr-4">
+                                    <span class="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase {{ $pkg->is_active ? 'bg-emerald-500/20 text-emerald-300' : 'bg-red-500/20 text-red-300' }}">
+                                        {{ $pkg->is_active ? 'Aktif' : 'Nonaktif' }}
+                                    </span>
+                                </td>
+                                <td class="py-3.5 text-right">
+                                    <form action="{{ route('admin.packages.toggle', $pkg) }}" method="POST" class="inline">
+                                        @csrf
+                                        @method('PATCH')
+                                        <button type="submit" class="px-3 py-1 rounded-lg text-[10px] font-bold border border-white/20 hover:bg-white/10 text-white">
+                                            {{ $pkg->is_active ? 'Nonaktifkan' : 'Aktifkan' }}
+                                        </button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach

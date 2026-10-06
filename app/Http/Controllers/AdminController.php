@@ -30,9 +30,11 @@ class AdminController extends Controller
 
         $recentOrders = Order::with(['package', 'user', 'brief'])->latest()->take(10)->get();
         $recentLeads = Lead::latest()->take(10)->get();
-        $recentPosts = BlogPost::with('category')->latest()->take(5)->get();
+        $recentPosts = BlogPost::with('category')->latest()->take(10)->get();
+        $legalPages = \App\Models\PageLegal::all();
+        $allPackages = Package::with('service')->orderBy('sort_order')->get();
 
-        return view('admin.dashboard', compact('stats', 'recentOrders', 'recentLeads', 'recentPosts'));
+        return view('admin.dashboard', compact('stats', 'recentOrders', 'recentLeads', 'recentPosts', 'legalPages', 'allPackages'));
     }
 
     /**
@@ -98,4 +100,132 @@ class AdminController extends Controller
 
         return response()->stream($callback, 200, $headers);
     }
+
+    /**
+     * Show form to create a new blog article.
+     */
+    public function createBlog(): View
+    {
+        $categories = \App\Models\BlogCategory::all();
+        return view('admin.blog.create', compact('categories'));
+    }
+
+    /**
+     * Store a newly created blog article.
+     */
+    public function storeBlog(Request $request): RedirectResponse
+    {
+        $validated = $request->validate([
+            'title' => 'required|string|max:255',
+            'category_id' => 'required|exists:blog_categories,id',
+            'excerpt' => 'required|string|max:500',
+            'content' => 'required|string',
+            'author' => 'required|string|max:100',
+            'reading_time_minutes' => 'required|integer|min:1|max:60',
+            'is_published' => 'nullable|boolean',
+        ]);
+
+        $slug = \Illuminate\Support\Str::slug($validated['title']);
+        $originalSlug = $slug;
+        $counter = 1;
+        while (BlogPost::where('slug', $slug)->exists()) {
+            $slug = $originalSlug . '-' . $counter;
+            $counter++;
+        }
+
+        BlogPost::create([
+            'title' => $validated['title'],
+            'slug' => $slug,
+            'category_id' => $validated['category_id'],
+            'excerpt' => $validated['excerpt'],
+            'content' => $validated['content'],
+            'author' => $validated['author'],
+            'reading_time_minutes' => $validated['reading_time_minutes'],
+            'is_published' => $request->has('is_published'),
+            'views_count' => 0,
+            'published_at' => now(),
+        ]);
+
+        return redirect()->route('admin.dashboard')->with('success', 'Artikel blog berhasil diterbitkan.');
+    }
+
+    /**
+     * Show form to edit a blog article.
+     */
+    public function editBlog(BlogPost $post): View
+    {
+        $categories = \App\Models\BlogCategory::all();
+        return view('admin.blog.edit', compact('post', 'categories'));
+    }
+
+    /**
+     * Update an existing blog article.
+     */
+    public function updateBlog(Request $request, BlogPost $post): RedirectResponse
+    {
+        $validated = $request->validate([
+            'title' => 'required|string|max:255',
+            'category_id' => 'required|exists:blog_categories,id',
+            'excerpt' => 'required|string|max:500',
+            'content' => 'required|string',
+            'author' => 'required|string|max:100',
+            'reading_time_minutes' => 'required|integer|min:1|max:60',
+            'is_published' => 'nullable|boolean',
+        ]);
+
+        $post->update([
+            'title' => $validated['title'],
+            'category_id' => $validated['category_id'],
+            'excerpt' => $validated['excerpt'],
+            'content' => $validated['content'],
+            'author' => $validated['author'],
+            'reading_time_minutes' => $validated['reading_time_minutes'],
+            'is_published' => $request->has('is_published'),
+        ]);
+
+        return redirect()->route('admin.dashboard')->with('success', 'Artikel blog berhasil diperbarui.');
+    }
+
+    /**
+     * Delete a blog article.
+     */
+    public function destroyBlog(BlogPost $post): RedirectResponse
+    {
+        $post->delete();
+        return redirect()->route('admin.dashboard')->with('success', 'Artikel blog berhasil dihapus.');
+    }
+
+    /**
+     * Show form to edit legal page content.
+     */
+    public function editLegal(\App\Models\PageLegal $pageLegal): View
+    {
+        return view('admin.legal.edit', compact('pageLegal'));
+    }
+
+    /**
+     * Update legal page content.
+     */
+    public function updateLegal(Request $request, \App\Models\PageLegal $pageLegal): RedirectResponse
+    {
+        $validated = $request->validate([
+            'title' => 'required|string|max:255',
+            'content' => 'required|string',
+        ]);
+
+        $pageLegal->update($validated);
+
+        return redirect()->route('admin.dashboard')->with('success', 'Halaman legal ' . $pageLegal->title . ' berhasil diperbarui.');
+    }
+
+    /**
+     * Toggle package active status.
+     */
+    public function togglePackage(Package $package): RedirectResponse
+    {
+        $package->update(['is_active' => !$package->is_active]);
+
+        return back()->with('success', 'Status paket ' . $package->name . ' diperbarui.');
+    }
 }
+

@@ -8,6 +8,7 @@ use App\Http\Controllers\LeadController;
 use App\Http\Controllers\LegalController;
 use App\Http\Controllers\PortalController;
 use App\Http\Controllers\SeoController;
+use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,6 +25,10 @@ Route::get('/robots.txt', [SeoController::class, 'robots'])->name('seo.robots');
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
+
+// Services Catalog & Deep-dive Details
+Route::get('/layanan', [ServiceController::class, 'index'])->name('services.index');
+Route::get('/layanan/{slug}', [ServiceController::class, 'show'])->name('services.show');
 
 // Blog & Educational Insights Engine
 Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
@@ -70,5 +75,20 @@ Route::middleware('auth')->group(function () {
         Route::patch('/orders/{order}/status', [AdminController::class, 'updateOrderStatus'])->name('orders.status');
         Route::patch('/leads/{lead}/status', [AdminController::class, 'updateLeadStatus'])->name('leads.status');
         Route::get('/payments/export-csv', [AdminController::class, 'exportPaymentsCsv'])->name('payments.export');
+
+        // Blog Article CMS
+        Route::get('/blog/create', [AdminController::class, 'createBlog'])->name('blog.create');
+        Route::post('/blog', [AdminController::class, 'storeBlog'])->name('blog.store');
+        Route::get('/blog/{post}/edit', [AdminController::class, 'editBlog'])->name('blog.edit');
+        Route::put('/blog/{post}', [AdminController::class, 'updateBlog'])->name('blog.update');
+        Route::delete('/blog/{post}', [AdminController::class, 'destroyBlog'])->name('blog.destroy');
+
+        // Legal Compliance Pages CMS
+        Route::get('/legal/{pageLegal}/edit', [AdminController::class, 'editLegal'])->name('legal.edit');
+        Route::put('/legal/{pageLegal}', [AdminController::class, 'updateLegal'])->name('legal.update');
+
+        // Package Management
+        Route::patch('/packages/{package}/toggle', [AdminController::class, 'togglePackage'])->name('packages.toggle');
     });
 });
+
