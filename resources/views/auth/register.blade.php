@@ -77,14 +77,23 @@
 
                 <div class="pt-2">
                     <button type="submit" class="lime-pill w-full py-3.5 rounded-xl font-black text-xs shadow-lg shadow-[#C8F169]/25 flex items-center justify-center gap-2">
-                        <span>Daftar & Masuk ke Portal</span>
+                        <span>Daftar &amp; Masuk ke Portal</span>
                         <span>→</span>
                     </button>
                 </div>
             </form>
 
+            <!-- Google OAuth Instant Access -->
+            <div class="mt-5 pt-5 border-t border-purple-500/20 text-center">
+                <span class="text-[10px] font-mono text-purple-400 block mb-2.5 uppercase tracking-wider">ATAU DAFTAR INSTAN:</span>
+                <a href="{{ route('auth.google') }}" class="glass-pill w-full py-3 rounded-xl font-bold text-xs text-white hover:text-[#C8F169] border border-white/20 hover:border-[#C8F169]/40 flex items-center justify-center gap-2 transition-all">
+                    <span class="font-mono text-[#C8F169] font-black">[G]</span>
+                    <span>Daftar Cepat dengan Akun Google</span>
+                </a>
+            </div>
+
             <!-- Bottom Login Link -->
-            <div class="mt-8 pt-6 border-t border-purple-500/20 text-center text-xs text-purple-300">
+            <div class="mt-6 pt-4 border-t border-purple-500/20 text-center text-xs text-purple-300">
                 Sudah memiliki akun? 
                 <a href="{{ route('login') }}" class="text-[#C8F169] font-bold hover:underline ml-1">
                     Masuk di Sini

@@ -74,8 +74,17 @@
                 </div>
             </form>
 
+            <!-- Google OAuth Instant Access -->
+            <div class="mt-5 pt-5 border-t border-purple-500/20 text-center">
+                <span class="text-[10px] font-mono text-purple-400 block mb-2.5 uppercase tracking-wider">ATAU MASUK INSTAN:</span>
+                <a href="{{ route('auth.google') }}" class="glass-pill w-full py-3 rounded-xl font-bold text-xs text-white hover:text-[#C8F169] border border-white/20 hover:border-[#C8F169]/40 flex items-center justify-center gap-2 transition-all">
+                    <span class="font-mono text-[#C8F169] font-black">[G]</span>
+                    <span>Masuk dengan Akun Google</span>
+                </a>
+            </div>
+
             <!-- Bottom Register Link -->
-            <div class="mt-8 pt-6 border-t border-purple-500/20 text-center text-xs text-purple-300">
+            <div class="mt-6 pt-4 border-t border-purple-500/20 text-center text-xs text-purple-300">
                 Belum memiliki akun? 
                 <a href="{{ route('register') }}" class="text-[#C8F169] font-bold hover:underline ml-1">
                     Daftar Klien Baru

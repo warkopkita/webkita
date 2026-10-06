@@ -7,6 +7,7 @@ use App\Models\Order;
 use App\Models\Package;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Tests\TestCase;
 
@@ -296,6 +297,21 @@ class WebkitaPlatformTest extends TestCase
         $notification->refresh();
         $this->assertTrue($notification->is_read);
     }
+
+    /**
+     * Test Google authentication route and demo login flow.
+     */
+    public function test_google_oauth_flow(): void
+    {
+        $response = $this->get('/auth/google');
+        $response->assertRedirect(route('portal.dashboard'));
+        $this->assertAuthenticated();
+
+        $user = Auth::user();
+        $this->assertEquals('client', $user->role);
+        $this->assertStringContainsString('google', $user->email);
+    }
 }
+
 
 
