@@ -29,19 +29,19 @@
      x-cloak
      class="fixed bottom-6 left-6 z-40 max-w-sm w-auto hidden sm:block">
     
-    <div class="glass-panel p-3.5 rounded-2xl shadow-xl border border-slate-800 flex items-center gap-3.5 bg-slate-950/90 backdrop-blur-xl">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500/20 to-cyan-500/20 border border-emerald-500/30 flex items-center justify-center text-lg shrink-0"
+    <div class="studio-glass p-3.5 rounded-3xl shadow-2xl border border-purple-400/25 flex items-center gap-3.5 bg-[#260C4E]/90 backdrop-blur-xl">
+        <div class="w-10 h-10 rounded-2xl bg-[#C8F169]/15 border border-[#C8F169]/40 flex items-center justify-center text-lg shrink-0"
              x-text="notifications[currentIndex].icon">
         </div>
         <div class="text-xs">
-            <div class="font-semibold text-slate-200 flex items-center gap-1.5">
+            <div class="font-semibold text-white flex items-center gap-1.5">
                 <span x-text="notifications[currentIndex].name"></span>
-                <span class="text-[10px] text-slate-400 font-normal" x-text="'(' + notifications[currentIndex].city + ')'"></span>
+                <span class="text-[10px] text-purple-300 font-normal" x-text="'(' + notifications[currentIndex].city + ')'"></span>
             </div>
-            <div class="text-emerald-400 font-medium text-[11px]" x-text="notifications[currentIndex].action"></div>
-            <div class="text-[10px] text-slate-500 mt-0.5" x-text="notifications[currentIndex].time"></div>
+            <div class="text-[#C8F169] font-semibold text-[11px]" x-text="notifications[currentIndex].action"></div>
+            <div class="text-[10px] text-purple-300/70 mt-0.5" x-text="notifications[currentIndex].time"></div>
         </div>
-        <button @click="visible = false" class="text-slate-500 hover:text-slate-300 p-1 -mr-1">
+        <button @click="visible = false" class="text-purple-400 hover:text-white p-1 -mr-1">
             <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
         </button>
     </div>

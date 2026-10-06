@@ -31,7 +31,7 @@
 
     @stack('styles')
 </head>
-<body class="bg-[#0B1120] text-slate-100 font-sans antialiased selection:bg-emerald-500 selection:text-slate-950">
+<body class="bg-[#381867] text-white font-sans antialiased selection:bg-[#C8F169] selection:text-[#1E0A38]">
 
     <!-- Navbar -->
     @include('components.navbar')

@@ -1,410 +1,493 @@
 @extends('layouts.app')
 
-@section('title', 'Webkita — Bikin Website Bisnis Profesional, Cepat & Menghasilkan')
+@section('title', 'Webkita — UI/UX & Web Development Studio Profesional')
+@section('meta_description', 'Studio UI/UX and Web Development profesional berbasis Laravel. Menghadirkan desain seamless, user-centered, dan problem solving untuk pertumbuhan bisnis Anda.')
 
 @section('content')
-<div class="relative overflow-hidden">
+<div class="relative overflow-hidden bg-[#381867] text-white">
 
-    <!-- HERO SECTION -->
-    <section id="beranda" class="relative pt-32 pb-20 md:pt-40 md:pb-28 gradient-bg-radial">
-        <!-- Ambient Glow Circles -->
-        <div class="absolute top-20 left-1/2 -translate-x-1/2 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute top-48 right-10 w-72 h-72 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+    <!-- HERO PRESENTATION FRAME SECTION (Mirroring Reference UI/UX) -->
+    <section id="beranda" class="relative pt-24 pb-16 md:pt-28 md:pb-24 px-3 sm:px-6 lg:px-8">
+        
+        <!-- Presentation Slide Container with Camera Frame Corners -->
+        <div class="max-w-7xl mx-auto relative rounded-3xl sm:rounded-[36px] bg-gradient-to-br from-[#451C7E] via-[#351563] to-[#240B4D] border border-white/15 p-6 sm:p-10 lg:p-14 shadow-2xl overflow-hidden">
+            
+            <!-- White Corner Brackets (Reference Presentation Frame) -->
+            <div class="frame-corner frame-corner-tl"></div>
+            <div class="frame-corner frame-corner-tr"></div>
+            <div class="frame-corner frame-corner-bl"></div>
+            <div class="frame-corner frame-corner-br"></div>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center max-w-4xl mx-auto">
-                <!-- Top Trust Pill -->
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/80 border border-slate-700/60 text-xs font-semibold text-slate-300 mb-8 backdrop-blur-md shadow-lg shadow-black/20">
-                    <span class="flex h-2 w-2 relative">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                    </span>
-                    <span>Dipercaya berbagai UMKM & Brand Lokal — Pengerjaan mulai 3 Hari Kerja</span>
+            <!-- Ambient Glow Backgrounds -->
+            <div class="absolute -top-24 -left-24 w-96 h-96 bg-[#C8F169]/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl pointer-events-none"></div>
+
+            <!-- Top Header Inside Slide (Dot Matrix & Nav Pills from Reference) -->
+            <div class="flex flex-wrap items-center justify-between gap-4 pb-8 mb-4 border-b border-white/10 relative z-10">
+                <!-- Dot Grid Matrix (Top-Left Decor from Reference) -->
+                <div class="flex items-center gap-4">
+                    <div class="grid grid-cols-4 gap-1.5 opacity-60">
+                        <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+                    </div>
+                    <span class="text-xs font-semibold tracking-wider text-purple-200/70 hidden sm:inline-block">WEBKITA STUDIO PRESENTATION</span>
                 </div>
 
-                <!-- Main Headline -->
-                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.1] mb-6">
-                    Bikin Website Bisnis yang <span class="gradient-text">Profesional</span> & Menghasilkan Penjualan.
-                </h1>
+                <!-- Slide Navigation Pills (Exactly as Reference: "Pilih teks", "Vision & Mission", "Contact Us", "Get Started") -->
+                <div class="flex flex-wrap items-center gap-2.5">
+                    <!-- Search/Select Pill "Pilih teks" -->
+                    <div class="px-4 py-2 rounded-full bg-white text-[#230B48] font-bold text-xs shadow-md flex items-center gap-2">
+                        <span>Pilih teks</span>
+                        <svg class="w-3.5 h-3.5 text-purple-900" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+                    </div>
 
-                <!-- Subheadline -->
-                <p class="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-2xl mx-auto mb-10">
-                    Webkita hadir membantu UMKM, brand, dan profesional memiliki website cepat, responsif di semua perangkat, serta siap terima pembayaran online otomatis tanpa ribet.
-                </p>
-
-                <!-- Dual CTA Buttons -->
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-                    <a href="#paket" 
-                       class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-slate-950 bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 hover:opacity-95 shadow-xl shadow-emerald-500/25 hover:shadow-emerald-500/40 hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2.5 text-base">
-                        <span>Lihat Pilihan Paket</span>
-                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    <!-- Vision & Mission Pill -->
+                    <a href="#vision" class="glass-pill px-4 py-2 rounded-full text-xs font-semibold hover:text-[#C8F169]">
+                        Vision & Mission
                     </a>
+
+                    <!-- Contact Us Pill -->
+                    <a href="#kontak" class="glass-pill px-4 py-2 rounded-full text-xs font-semibold hover:text-[#C8F169]">
+                        Contact Us
+                    </a>
+
+                    <!-- Get Started Pill (Electric Lime Pill) -->
+                    <a href="#paket" class="lime-pill px-5 py-2 rounded-full text-xs font-black shadow-md flex items-center gap-1.5">
+                        <span>Get Started</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Slide Body Grid: Left Content & Right Bespoke Illustration -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center relative z-10">
+                
+                <!-- Left Column: Typography, Badges & Mosaic Graphics -->
+                <div class="lg:col-span-6 space-y-6 text-left">
                     
-                    <a href="https://wa.me/6281234567890?text=Halo%20Webkita,%20saya%20ingin%20konsultasi%20pembuatan%20website%20bisnis." 
-                       target="_blank"
-                       class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-slate-200 bg-slate-900/80 hover:bg-slate-800 border border-slate-700/80 hover:border-slate-600 transition-all duration-300 flex items-center justify-center gap-2.5 text-base shadow-lg">
-                        <svg class="w-5 h-5 fill-emerald-400" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.174.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.086s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
-                        <span>Konsultasi WhatsApp Gratis</span>
-                    </a>
+                    <!-- Giant Display Headline (Electric Lime typography matching reference) -->
+                    <div class="relative">
+                        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black text-[#C8F169] tracking-tight leading-[1.05]">
+                            UI/UX Portfolio<br>
+                            <span class="text-white drop-shadow-sm">Presentation</span>
+                        </h1>
+                    </div>
+
+                    <!-- Translucent Subtitle Pill Container (From Reference) -->
+                    <div class="pt-2">
+                        <div class="inline-block p-4 sm:p-5 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm sm:text-base font-semibold leading-relaxed shadow-lg max-w-xl">
+                            Designing Seamless Digital Journeys Fokus:<br>
+                            <span class="text-purple-100 font-normal">User-Centered & Problem Solving Design</span>
+                        </div>
+                    </div>
+
+                    <!-- Action Capsule Pill Button: "PRESENTATION — 2026 ( → )" -->
+                    <div class="pt-2 flex flex-wrap items-center gap-4">
+                        <a href="#paket" class="inline-flex items-center gap-3 px-6 py-3.5 rounded-full bg-[#1A0630] border border-white/20 text-white font-bold text-xs uppercase tracking-wider hover:border-[#C8F169] transition-all shadow-xl group">
+                            <span>PRESENTATION — 2026</span>
+                            <span class="w-6 h-6 rounded-full bg-[#C8F169] text-[#1A0630] flex items-center justify-center font-black text-sm group-hover:translate-x-1 transition-transform">→</span>
+                        </a>
+
+                        <a href="https://wa.me/6281234567890?text=Halo%20Webkita,%20saya%20tertarik%20dengan%20layanan%20pembuatan%20website%20dan%20UI/UX." 
+                           target="_blank" 
+                           class="glass-pill px-5 py-3.5 rounded-full text-xs font-bold text-white hover:text-[#C8F169] flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-[#C8F169] animate-ping"></span>
+                            Konsultasi WhatsApp
+                        </a>
+                    </div>
+
+                    <!-- Lower-Left Graphic Decor: Overlapping Dual Circles & Mosaic Square Tiles (From Reference) -->
+                    <div class="pt-8 flex items-end gap-6">
+                        <!-- Overlapping Dual Circles -->
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full bg-[#9366E3] opacity-80 backdrop-blur-md border border-white/20 shadow-md"></div>
+                            <div class="w-12 h-12 rounded-full bg-[#E6E8F0] -ml-5 shadow-lg border border-white/40"></div>
+                        </div>
+
+                        <!-- Stepped Mosaic Geometric Tiles (Purple, Lime, White) -->
+                        <div class="grid grid-cols-2 gap-1.5 pb-1">
+                            <div class="w-8 h-8 rounded-md bg-[#240B4D] border border-white/10"></div>
+                            <div class="w-8 h-8 rounded-md bg-white shadow-md"></div>
+                            <div class="w-8 h-8 rounded-md bg-[#C8F169] shadow-sm"></div>
+                            <div class="w-8 h-8 rounded-md bg-[#5A249D]"></div>
+                        </div>
+
+                        <!-- Mini Credibility Note -->
+                        <div class="text-[11px] text-purple-200/70 pb-1 hidden sm:block">
+                            <span class="text-[#C8F169] font-bold">120+</span> Proyek Web Selesai & Beroperasi
+                        </div>
+                    </div>
+
                 </div>
 
-                <!-- 4 Value Props Badges -->
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto pt-4 text-left">
-                    <div class="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-sm flex items-center gap-3">
-                        <div class="w-9 h-9 rounded-lg bg-emerald-500/15 text-emerald-400 flex items-center justify-center shrink-0">
-                            ⚡
+                <!-- Right Column: Bespoke Workspace Visual & Floating Decor -->
+                <div class="lg:col-span-6 relative">
+                    
+                    <!-- Floating Dot Matrix Decor (Middle-Right from reference) -->
+                    <div class="absolute -top-6 right-6 grid grid-cols-4 gap-1.5 opacity-60 z-20">
+                        <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+                    </div>
+
+                    <!-- Main Workspace Artwork Container -->
+                    <div class="relative rounded-2xl sm:rounded-3xl overflow-hidden border border-white/20 shadow-2xl bg-[#280C4F]/90 group">
+                        
+                        <!-- Hero Workspace Artwork (Generated matching reference) -->
+                        <img src="{{ asset('images/webkita_hero_workspace.jpg') }}" 
+                             alt="UI/UX Workspace Presentation Webkita" 
+                             class="w-full h-auto object-cover transform group-hover:scale-[1.02] transition-transform duration-500">
+
+                        <!-- Interactive Floating Badges -->
+                        <div class="absolute top-4 left-4 glass-pill px-3 py-1.5 rounded-xl text-[11px] font-bold text-white flex items-center gap-2 shadow-lg">
+                            <span class="w-2 h-2 rounded-full bg-[#C8F169] animate-pulse"></span>
+                            <span>Live Wireframe Studio</span>
                         </div>
-                        <div>
-                            <div class="text-xs font-bold text-slate-100">Cepat & Tepat</div>
-                            <div class="text-[11px] text-slate-400">Mulai 3 hari kerja</div>
+
+                        <div class="absolute bottom-4 right-4 bg-[#1A0630]/90 backdrop-blur-md border border-white/20 px-4 py-2 rounded-xl text-[11px] font-semibold text-purple-200 flex items-center gap-2 shadow-xl">
+                            <span>⚡ Powered by</span>
+                            <span class="text-[#C8F169] font-extrabold">Laravel 11.x</span>
                         </div>
                     </div>
 
-                    <div class="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-sm flex items-center gap-3">
-                        <div class="w-9 h-9 rounded-lg bg-cyan-500/15 text-cyan-400 flex items-center justify-center shrink-0">
-                            📱
-                        </div>
-                        <div>
-                            <div class="text-xs font-bold text-slate-100">100% Responsif</div>
-                            <div class="text-[11px] text-slate-400">Mobile, tablet & PC</div>
-                        </div>
+                    <!-- Bottom Accent Pill Bar -->
+                    <div class="mt-4 flex items-center justify-between text-xs text-purple-200/80 px-2">
+                        <span class="flex items-center gap-1.5"><span class="text-[#C8F169]">✓</span> Desain Responsif & Modern</span>
+                        <span class="flex items-center gap-1.5"><span class="text-[#C8F169]">✓</span> Integrasi QRIS & Otomatisasi</span>
+                        <span class="flex items-center gap-1.5"><span class="text-[#C8F169]">✓</span> Pengerjaan Cepat Mulai 3 Hari</span>
                     </div>
 
-                    <div class="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-sm flex items-center gap-3">
-                        <div class="w-9 h-9 rounded-lg bg-emerald-500/15 text-emerald-400 flex items-center justify-center shrink-0">
-                            💳
-                        </div>
-                        <div>
-                            <div class="text-xs font-bold text-slate-100">Siap Pembayaran</div>
-                            <div class="text-[11px] text-slate-400">QRIS & VA Otomatis</div>
-                        </div>
-                    </div>
-
-                    <div class="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-sm flex items-center gap-3">
-                        <div class="w-9 h-9 rounded-lg bg-cyan-500/15 text-cyan-400 flex items-center justify-center shrink-0">
-                            🛡️
-                        </div>
-                        <div>
-                            <div class="text-xs font-bold text-slate-100">Garansi Maintenance</div>
-                            <div class="text-[11px] text-slate-400">Hingga 60 hari resmi</div>
-                        </div>
-                    </div>
                 </div>
+
             </div>
 
-            <!-- Interactive Hero Showcase Mockup -->
-            <div class="mt-16 relative max-w-5xl mx-auto">
-                <div class="relative rounded-2xl p-1 bg-gradient-to-b from-slate-700/40 via-slate-800/20 to-transparent shadow-2xl">
-                    <div class="bg-slate-950 rounded-[14px] overflow-hidden border border-slate-800">
-                        <!-- Browser Header Bar -->
-                        <div class="px-4 py-3 bg-slate-900 border-b border-slate-800 flex items-center justify-between">
-                            <div class="flex items-center gap-2">
-                                <span class="w-3 h-3 rounded-full bg-rose-500/80 inline-block"></span>
-                                <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
-                                <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
-                            </div>
-                            <div class="px-6 py-1 rounded-md bg-slate-950 border border-slate-800 text-[11px] text-slate-400 font-mono flex items-center gap-2">
-                                <span class="text-emerald-400">🔒 https://</span>webkita.id/preview/klien-sukses
-                            </div>
-                            <div class="text-xs text-slate-500 font-mono">
-                                Laravel 11.x
-                            </div>
-                        </div>
+        </div>
 
-                        <!-- Mockup Content Grid -->
-                        <div class="p-6 md:p-8 bg-gradient-to-b from-slate-900/60 to-slate-950 grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
-                            <div class="md:col-span-7 space-y-4 text-left">
-                                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
-                                    Live Demonstration Preview
-                                </span>
-                                <h3 class="text-2xl sm:text-3xl font-bold text-white">
-                                    Desain Bersih, Elegan, dan Teroptimasi untuk Konversi Penjualan
-                                </h3>
-                                <p class="text-sm text-slate-300 leading-relaxed">
-                                    Setiap piksel dirancang dengan cermat untuk memastikan calon pelanggan Anda merasa nyaman, percaya, dan segera menekan tombol WhatsApp atau checkout produk Anda.
-                                </p>
-                                <div class="pt-2 flex flex-wrap items-center gap-4 text-xs font-medium text-slate-300">
-                                    <span class="flex items-center gap-1.5"><span class="text-emerald-400">✓</span> PageSpeed Score 95+</span>
-                                    <span class="flex items-center gap-1.5"><span class="text-emerald-400">✓</span> SEO Google Friendly</span>
-                                    <span class="flex items-center gap-1.5"><span class="text-emerald-400">✓</span> WhatsApp CRM Ready</span>
+    </section>
+
+    <!-- SECTION: VISION & MISSION (Inspired by Reference Pill) -->
+    <section id="vision" class="py-20 relative bg-[#270D52]/60 border-y border-purple-500/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold uppercase tracking-widest text-[#C8F169] bg-[#C8F169]/10 px-4 py-1.5 rounded-full border border-[#C8F169]/30 inline-block mb-3">
+                    Fondasi & Nilai Kami
+                </span>
+                <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight mb-4">
+                    Vision & Mission <span class="text-[#C8F169]">Webkita</span>
+                </h2>
+                <p class="text-base text-purple-200/80 leading-relaxed">
+                    Kami tidak hanya membangun baris kode, tapi merancang solusi digital yang berpusat pada pengguna (user-centered) untuk memecahkan hambatan penjualan bisnis Anda.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+                <!-- Vision Card -->
+                <div class="studio-card-dark p-8 sm:p-10 rounded-3xl border border-purple-400/20 flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute -top-10 -right-10 w-40 h-40 bg-[#C8F169]/10 rounded-full blur-2xl pointer-events-none"></div>
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-[#C8F169]/15 border border-[#C8F169]/30 text-[#C8F169] flex items-center justify-center text-2xl mb-6">
+                            👁️
+                        </div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-[#C8F169]">Visi Strategis</span>
+                        <h3 class="text-2xl font-bold text-white mt-1 mb-4">Mendemokratisasi Desain & Teknologi Web Berkelas Dunia</h3>
+                        <p class="text-sm text-purple-200/80 leading-relaxed">
+                            Menjadi studio digital nomor satu di Indonesia yang memungkinkan setiap UMKM, profesional, dan brand lokal memiliki website berstandar internasional, berkecepatan tinggi, dan terbukti menghasilkan closing tanpa biaya agensi yang memberatkan.
+                        </p>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-purple-500/20 flex items-center gap-3 text-xs text-[#C8F169] font-semibold">
+                        <span>✦ Aksesibel</span>
+                        <span>✦ Kredibel</span>
+                        <span>✦ Berorientasi Hasil</span>
+                    </div>
+                </div>
+
+                <!-- Mission Card -->
+                <div class="studio-card-dark p-8 sm:p-10 rounded-3xl border border-purple-400/20 flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-purple-500/20 rounded-full blur-2xl pointer-events-none"></div>
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-purple-400/15 border border-purple-400/30 text-purple-200 flex items-center justify-center text-2xl mb-6">
+                            🎯
+                        </div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-[#C8F169]">Misi Nyata</span>
+                        <h3 class="text-2xl font-bold text-white mt-1 mb-4">3 Pilar Utama Dalam Setiap Proyek</h3>
+                        
+                        <div class="space-y-3.5 text-xs text-purple-100">
+                            <div class="flex items-start gap-3">
+                                <span class="w-5 h-5 rounded-full bg-[#C8F169] text-[#1E0A38] font-bold flex items-center justify-center shrink-0 mt-0.5">1</span>
+                                <div>
+                                    <strong class="text-white">User-Centered & Problem Solving Design:</strong> Setiap tata letak, tombol, dan alur dirancang agar pengunjung mudah memahami penawaran dan segera menghubungi Anda.
                                 </div>
                             </div>
-                            
-                            <div class="md:col-span-5 bg-slate-900 border border-slate-800 rounded-xl p-5 shadow-xl space-y-4">
-                                <div class="flex items-center justify-between pb-3 border-b border-slate-800">
-                                    <span class="text-xs font-bold text-slate-200">Statistik Website Klien</span>
-                                    <span class="text-[10px] text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded-full border border-emerald-800/40">30 Hari Pertama</span>
+                            <div class="flex items-start gap-3">
+                                <span class="w-5 h-5 rounded-full bg-[#C8F169] text-[#1E0A38] font-bold flex items-center justify-center shrink-0 mt-0.5">2</span>
+                                <div>
+                                    <strong class="text-white">High-Performance Engineering:</strong> Dibangun dengan performa kilat Laravel 11, mobile-first, dan optimasi Core Web Vitals untuk ranking SEO Google terbaik.
                                 </div>
-                                <div class="grid grid-cols-2 gap-3">
-                                    <div class="p-3 rounded-lg bg-slate-950/70 border border-slate-800/80">
-                                        <div class="text-[11px] text-slate-400">Kunjungan Web</div>
-                                        <div class="text-xl font-bold text-white mt-1">14.280</div>
-                                        <div class="text-[10px] text-emerald-400 mt-0.5">↑ +142% vs medsos</div>
-                                    </div>
-                                    <div class="p-3 rounded-lg bg-slate-950/70 border border-slate-800/80">
-                                        <div class="text-[11px] text-slate-400">Klik WhatsApp</div>
-                                        <div class="text-xl font-bold text-emerald-400 mt-1">842 Lead</div>
-                                        <div class="text-[10px] text-emerald-400 mt-0.5">Tingkat konversi 5.9%</div>
-                                    </div>
-                                </div>
-                                <div class="p-3 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-xs text-slate-300 flex items-center justify-between">
-                                    <span>Estimasi Omset Baru</span>
-                                    <span class="font-bold text-emerald-400 text-sm">Rp 48.500.000+</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="w-5 h-5 rounded-full bg-[#C8F169] text-[#1E0A38] font-bold flex items-center justify-center shrink-0 mt-0.5">3</span>
+                                <div>
+                                    <strong class="text-white">Transparansi Penuh & Garansi Resmi:</strong> Tanpa biaya siluman. Gratis hosting dan domain tahun pertama, plus garansi pendampingan purna jual hingga 60 hari.
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-purple-500/20 flex items-center justify-between text-xs text-purple-200/70">
+                        <span>Pengerjaan Mulai 3 Hari Kerja</span>
+                        <a href="#layanan" class="text-[#C8F169] font-bold hover:underline">Jelajahi Layanan →</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- LOGO CLOUD / SOCIAL PROOF -->
-    <section class="py-12 border-y border-slate-900 bg-slate-950/50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-8">
-                Telah Membantu Pertumbuhan Digital Berbagai Kategori Bisnis di Indonesia
-            </p>
-            <div class="flex flex-wrap items-center justify-center gap-8 md:gap-14 opacity-75">
-                <span class="text-sm font-bold tracking-widest text-slate-300 uppercase">🏢 SENTOSA LOGISTIK</span>
-                <span class="text-sm font-bold tracking-widest text-slate-300 uppercase">🥐 MAYA ARTISAN BAKERY</span>
-                <span class="text-sm font-bold tracking-widest text-slate-300 uppercase">☕ KOPIKITA ROASTERY</span>
-                <span class="text-sm font-bold tracking-widest text-slate-300 uppercase">🏥 MEDIKA CLINIC GROUP</span>
-                <span class="text-sm font-bold tracking-widest text-slate-300 uppercase">👗 LUMINA APPAREL</span>
-                <span class="text-sm font-bold tracking-widest text-slate-300 uppercase">⚖️ PRATAMA & CO LAW</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- LAYANAN UNGGULAN (SERVICES GRID) -->
+    <!-- SECTION: LAYANAN UNGGULAN (SERVICES GRID) -->
     <section id="layanan" class="py-24 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-xs font-bold uppercase tracking-widest text-emerald-400 bg-emerald-950/40 px-3.5 py-1.5 rounded-full border border-emerald-800/40 inline-block mb-3">
-                    Layanan Spesialis
+                <span class="text-xs font-bold uppercase tracking-widest text-[#C8F169] bg-[#C8F169]/10 px-4 py-1.5 rounded-full border border-[#C8F169]/30 inline-block mb-3">
+                    Solusi Spesialis
                 </span>
-                <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-4">
-                    Solusi Web Lengkap untuk Setiap Skala Bisnis
+                <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight mb-4">
+                    Layanan Web Development & <span class="text-[#C8F169]">UI/UX</span>
                 </h2>
-                <p class="text-base text-slate-400">
-                    Dari promosi produk tunggal hingga aplikasi web enterprise yang kompleks, kami bangun dengan arsitektur modern dan standar performa tinggi.
+                <p class="text-base text-purple-200/80">
+                    Dari landing page promosi produk cepat hingga aplikasi web kustom skala besar, kami siapkan dengan desain modern dan arsitektur kokoh.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Service 1: Landing Page -->
-                <div class="glass-panel glass-panel-hover p-7 rounded-2xl flex flex-col justify-between">
+                
+                <!-- Service 1: Landing Page Iklan -->
+                <div class="studio-glass studio-glass-hover p-7 rounded-3xl flex flex-col justify-between">
                     <div>
-                        <div class="w-12 h-12 rounded-xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 flex items-center justify-center text-2xl mb-6">
+                        <div class="w-12 h-12 rounded-2xl bg-[#C8F169]/15 border border-[#C8F169]/30 text-[#C8F169] flex items-center justify-center text-2xl mb-6">
                             🚀
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-2">Landing Page Iklan</h3>
-                        <p class="text-xs text-emerald-400 font-semibold mb-3">High-Converting Layout</p>
-                        <p class="text-sm text-slate-400 leading-relaxed mb-6">
-                            Dirancang khusus untuk kampanye iklan Google Ads, TikTok Ads, dan Meta Ads. Fokus 100% mengarahkan pengunjung menjadi prospek WhatsApp.
+                        <h3 class="text-xl font-bold text-white mb-1">Landing Page Iklan</h3>
+                        <p class="text-xs text-[#C8F169] font-semibold mb-3">High-Converting Layout</p>
+                        <p class="text-xs text-purple-200/80 leading-relaxed mb-6">
+                            Dirancang khusus untuk kampanye iklan Google Ads, TikTok Ads, dan Meta Ads. Fokus 100% mengonversi pengunjung menjadi pesan WhatsApp.
                         </p>
-                        <ul class="space-y-2 text-xs text-slate-300 mb-6">
-                            <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Copywriting berorientasi aksi</li>
-                            <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Loading di bawah 2 detik</li>
-                            <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Tombol WhatsApp interaktif</li>
+                        <ul class="space-y-2 text-xs text-purple-100 mb-6">
+                            <li class="flex items-center gap-2"><span class="text-[#C8F169] font-bold">✓</span> Copywriting berorientasi aksi</li>
+                            <li class="flex items-center gap-2"><span class="text-[#C8F169] font-bold">✓</span> Loading di bawah 2 detik</li>
+                            <li class="flex items-center gap-2"><span class="text-[#C8F169] font-bold">✓</span> Direct WhatsApp CTA</li>
                         </ul>
                     </div>
-                    <a href="#paket" class="text-xs font-bold text-emerald-400 hover:text-emerald-300 flex items-center gap-1.5 pt-4 border-t border-slate-800">
+                    <a href="#paket" class="lime-pill px-4 py-2.5 rounded-xl text-center text-xs font-bold flex items-center justify-center gap-2">
                         <span>Pilih Paket Kilat</span> <span>→</span>
                     </a>
                 </div>
 
                 <!-- Service 2: Company Profile -->
-                <div class="glass-panel glass-panel-hover p-7 rounded-2xl flex flex-col justify-between">
+                <div class="studio-glass studio-glass-hover p-7 rounded-3xl flex flex-col justify-between">
                     <div>
-                        <div class="w-12 h-12 rounded-xl bg-cyan-500/15 border border-cyan-500/30 text-cyan-400 flex items-center justify-center text-2xl mb-6">
+                        <div class="w-12 h-12 rounded-2xl bg-purple-400/20 border border-purple-400/30 text-purple-200 flex items-center justify-center text-2xl mb-6">
                             🏢
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-2">Company Profile</h3>
-                        <p class="text-xs text-cyan-400 font-semibold mb-3">Kredibilitas Bisnis & Jasa</p>
-                        <p class="text-sm text-slate-400 leading-relaxed mb-6">
-                            Membangun reputasi terpercaya untuk CV, PT, kantor hukum, konsultan, dan penyedia jasa. Dilengkapi katalog portofolio dan legalitas.
+                        <h3 class="text-xl font-bold text-white mb-1">Company Profile</h3>
+                        <p class="text-xs text-purple-300 font-semibold mb-3">Kredibilitas Bisnis & Jasa</p>
+                        <p class="text-xs text-purple-200/80 leading-relaxed mb-6">
+                            Membangun reputasi terpercaya untuk CV, PT, kantor konsultan, klinik, dan jasa profesional. Lengkap dengan portofolio dan legalitas.
                         </p>
-                        <ul class="space-y-2 text-xs text-slate-300 mb-6">
-                            <li class="flex items-center gap-2"><span class="text-cyan-400">✓</span> Hingga 5-10 halaman eksklusif</li>
-                            <li class="flex items-center gap-2"><span class="text-cyan-400">✓</span> Terhubung Google Maps & Kontak</li>
-                            <li class="flex items-center gap-2"><span class="text-cyan-400">✓</span> Optimasi SEO Google Organik</li>
+                        <ul class="space-y-2 text-xs text-purple-100 mb-6">
+                            <li class="flex items-center gap-2"><span class="text-[#C8F169] font-bold">✓</span> Hingga 5-10 halaman eksklusif</li>
+                            <li class="flex items-center gap-2"><span class="text-[#C8F169] font-bold">✓</span> Google Maps & Form Kontak</li>
+                            <li class="flex items-center gap-2"><span class="text-[#C8F169] font-bold">✓</span> Optimasi SEO Google Organik</li>
                         </ul>
                     </div>
-                    <a href="#paket" class="text-xs font-bold text-cyan-400 hover:text-cyan-300 flex items-center gap-1.5 pt-4 border-t border-slate-800">
+                    <a href="#paket" class="lime-pill px-4 py-2.5 rounded-xl text-center text-xs font-bold flex items-center justify-center gap-2">
                         <span>Pilih Paket Bisnis</span> <span>→</span>
                     </a>
                 </div>
 
-                <!-- Service 3: Toko Online -->
-                <div class="glass-panel glass-panel-hover p-7 rounded-2xl flex flex-col justify-between">
+                <!-- Service 3: Toko Online Otomatis -->
+                <div class="studio-glass studio-glass-hover p-7 rounded-3xl flex flex-col justify-between">
                     <div>
-                        <div class="w-12 h-12 rounded-xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 flex items-center justify-center text-2xl mb-6">
+                        <div class="w-12 h-12 rounded-2xl bg-[#C8F169]/15 border border-[#C8F169]/30 text-[#C8F169] flex items-center justify-center text-2xl mb-6">
                             🛍️
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-2">Toko Online Otomatis</h3>
-                        <p class="text-xs text-emerald-400 font-semibold mb-3">E-Commerce Lengkap</p>
-                        <p class="text-sm text-slate-400 leading-relaxed mb-6">
-                            Terima pesanan 24 jam nonstop dengan sistem pembayaran otomatis (QRIS, VA Bank) dan kalkulasi ongkos kirim ekspedisi nasional secara akurat.
+                        <h3 class="text-xl font-bold text-white mb-1">Toko Online Otomatis</h3>
+                        <p class="text-xs text-[#C8F169] font-semibold mb-3">E-Commerce Lengkap</p>
+                        <p class="text-xs text-purple-200/80 leading-relaxed mb-6">
+                            Terima pesanan 24 jam nonstop dengan sistem pembayaran otomatis (QRIS instan, Transfer VA) dan cek ongkir ekspedisi se-Indonesia.
                         </p>
-                        <ul class="space-y-2 text-xs text-slate-300 mb-6">
-                            <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Payment Gateway QRIS & VA</li>
-                            <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Ongkir JNE, J&T, SiCepat</li>
-                            <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Manajemen stok & laporan order</li>
+                        <ul class="space-y-2 text-xs text-purple-100 mb-6">
+                            <li class="flex items-center gap-2"><span class="text-[#C8F169] font-bold">✓</span> Payment Gateway QRIS & VA</li>
+                            <li class="flex items-center gap-2"><span class="text-[#C8F169] font-bold">✓</span> Hitung ongkir JNE/J&T/SiCepat</li>
+                            <li class="flex items-center gap-2"><span class="text-[#C8F169] font-bold">✓</span> Manajemen stok & order</li>
                         </ul>
                     </div>
-                    <a href="#paket" class="text-xs font-bold text-emerald-400 hover:text-emerald-300 flex items-center gap-1.5 pt-4 border-t border-slate-800">
+                    <a href="#paket" class="lime-pill px-4 py-2.5 rounded-xl text-center text-xs font-bold flex items-center justify-center gap-2">
                         <span>Pilih Paket Toko</span> <span>→</span>
                     </a>
                 </div>
 
-                <!-- Service 4: Custom Laravel App -->
-                <div class="glass-panel glass-panel-hover p-7 rounded-2xl flex flex-col justify-between">
+                <!-- Service 4: Custom Web App -->
+                <div class="studio-glass studio-glass-hover p-7 rounded-3xl flex flex-col justify-between">
                     <div>
-                        <div class="w-12 h-12 rounded-xl bg-cyan-500/15 border border-cyan-500/30 text-cyan-400 flex items-center justify-center text-2xl mb-6">
+                        <div class="w-12 h-12 rounded-2xl bg-purple-400/20 border border-purple-400/30 text-purple-200 flex items-center justify-center text-2xl mb-6">
                             ⚙️
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-2">Custom Web App</h3>
-                        <p class="text-xs text-cyan-400 font-semibold mb-3">Laravel 11 Architecture</p>
-                        <p class="text-sm text-slate-400 leading-relaxed mb-6">
-                            Solusi sistem manajemen khusus seperti portal member, sistem booking janji, inventaris gudang, atau CRM bisnis berbasis framework Laravel.
+                        <h3 class="text-xl font-bold text-white mb-1">Custom Web App</h3>
+                        <p class="text-xs text-purple-300 font-semibold mb-3">Laravel 11 Architecture</p>
+                        <p class="text-xs text-purple-200/80 leading-relaxed mb-6">
+                            Solusi sistem manajemen khusus seperti portal membership, booking janji klinik, sistem inventaris gudang, atau CRM bisnis kustom.
                         </p>
-                        <ul class="space-y-2 text-xs text-slate-300 mb-6">
-                            <li class="flex items-center gap-2"><span class="text-cyan-400">✓</span> Database MySQL 8 Scalable</li>
-                            <li class="flex items-center gap-2"><span class="text-cyan-400">✓</span> Role admin, staf, & klien</li>
-                            <li class="flex items-center gap-2"><span class="text-cyan-400">✓</span> REST API & Webhook siap pakai</li>
+                        <ul class="space-y-2 text-xs text-purple-100 mb-6">
+                            <li class="flex items-center gap-2"><span class="text-[#C8F169] font-bold">✓</span> Database MySQL Scalable</li>
+                            <li class="flex items-center gap-2"><span class="text-[#C8F169] font-bold">✓</span> Role admin, staf, & user</li>
+                            <li class="flex items-center gap-2"><span class="text-[#C8F169] font-bold">✓</span> REST API & Webhook ready</li>
                         </ul>
                     </div>
-                    <a href="#kalkulator" class="text-xs font-bold text-cyan-400 hover:text-cyan-300 flex items-center gap-1.5 pt-4 border-t border-slate-800">
+                    <a href="#kalkulator" class="lime-pill px-4 py-2.5 rounded-xl text-center text-xs font-bold flex items-center justify-center gap-2">
                         <span>Hitung Estimasi Biaya</span> <span>→</span>
                     </a>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- SHOWCASE PORTOFOLIO INTERAKTIF -->
-    <section id="portofolio" class="py-24 bg-slate-950/70 border-y border-slate-900" x-data="{ activeFilter: 'all' }">
+    <!-- SECTION: PORTOFOLIO INTERAKTIF DENGAN FILTER -->
+    <section id="portofolio" class="py-24 bg-[#230B48]/70 border-y border-purple-500/20" x-data="{ activeFilter: 'all' }">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
                 <div>
-                    <span class="text-xs font-bold uppercase tracking-widest text-cyan-400 bg-cyan-950/40 px-3.5 py-1.5 rounded-full border border-cyan-800/40 inline-block mb-3">
+                    <span class="text-xs font-bold uppercase tracking-widest text-[#C8F169] bg-[#C8F169]/10 px-4 py-1.5 rounded-full border border-[#C8F169]/30 inline-block mb-3">
                         Portofolio Unggulan
                     </span>
-                    <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
-                        Karya yang Menghasilkan Dampak
+                    <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight">
+                        Karya yang Menghasilkan <span class="text-[#C8F169]">Dampak Nyata</span>
                     </h2>
                 </div>
 
                 <!-- Filter Tabs -->
-                <div class="flex flex-wrap items-center gap-2 bg-slate-900 p-1.5 rounded-xl border border-slate-800">
+                <div class="flex flex-wrap items-center gap-2 bg-[#1A0630] p-1.5 rounded-2xl border border-purple-500/20">
                     <button @click="activeFilter = 'all'" 
-                            :class="activeFilter === 'all' ? 'bg-emerald-500 text-slate-950 font-bold shadow-md' : 'text-slate-400 hover:text-white'"
-                            class="px-3.5 py-1.5 rounded-lg text-xs transition-all">Semua</button>
+                            :class="activeFilter === 'all' ? 'lime-pill' : 'text-purple-200 hover:text-white'"
+                            class="px-4 py-2 rounded-xl text-xs font-bold transition-all">Semua</button>
                     <button @click="activeFilter = 'landing'" 
-                            :class="activeFilter === 'landing' ? 'bg-emerald-500 text-slate-950 font-bold shadow-md' : 'text-slate-400 hover:text-white'"
-                            class="px-3.5 py-1.5 rounded-lg text-xs transition-all">Landing Page</button>
+                            :class="activeFilter === 'landing' ? 'lime-pill' : 'text-purple-200 hover:text-white'"
+                            class="px-4 py-2 rounded-xl text-xs font-bold transition-all">Landing Page</button>
                     <button @click="activeFilter = 'company'" 
-                            :class="activeFilter === 'company' ? 'bg-emerald-500 text-slate-950 font-bold shadow-md' : 'text-slate-400 hover:text-white'"
-                            class="px-3.5 py-1.5 rounded-lg text-xs transition-all">Company Profile</button>
+                            :class="activeFilter === 'company' ? 'lime-pill' : 'text-purple-200 hover:text-white'"
+                            class="px-4 py-2 rounded-xl text-xs font-bold transition-all">Company Profile</button>
                     <button @click="activeFilter = 'toko'" 
-                            :class="activeFilter === 'toko' ? 'bg-emerald-500 text-slate-950 font-bold shadow-md' : 'text-slate-400 hover:text-white'"
-                            class="px-3.5 py-1.5 rounded-lg text-xs transition-all">Toko Online</button>
+                            :class="activeFilter === 'toko' ? 'lime-pill' : 'text-purple-200 hover:text-white'"
+                            class="px-4 py-2 rounded-xl text-xs font-bold transition-all">Toko Online</button>
                 </div>
             </div>
 
             <!-- Portfolio Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Item 1 -->
+                
+                <!-- Item 1: Maya Bakery -->
                 <div x-show="activeFilter === 'all' || activeFilter === 'landing'" 
-                     x-transition class="glass-panel rounded-2xl overflow-hidden border border-slate-800 group">
-                    <div class="h-52 bg-gradient-to-tr from-slate-900 to-emerald-950/60 p-6 flex flex-col justify-between relative overflow-hidden">
+                     x-transition class="studio-card-dark rounded-3xl overflow-hidden border border-purple-400/20 group hover:border-[#C8F169]/40 transition-all">
+                    <div class="h-56 bg-gradient-to-tr from-[#1E0A38] via-[#3B1566] to-[#551E8E] p-6 flex flex-col justify-between relative overflow-hidden">
                         <div class="flex justify-between items-start">
-                            <span class="px-2.5 py-1 rounded-md text-[10px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">Landing Page Iklan</span>
-                            <span class="text-xs text-slate-400">Pengerjaan 3 Hari</span>
+                            <span class="px-3 py-1 rounded-full text-[10px] font-bold bg-[#C8F169] text-[#1E0A38]">Landing Page Iklan</span>
+                            <span class="text-xs text-purple-200/80">3 Hari Kerja</span>
                         </div>
                         <div>
-                            <div class="text-xs text-emerald-400 font-semibold">Hasil Klien:</div>
+                            <div class="text-xs text-[#C8F169] font-bold">Hasil Klien:</div>
                             <div class="text-xl font-bold text-white">Maya Artisan Bakery</div>
-                            <div class="text-xs text-slate-300 mt-1">Konversi Iklan Naik +185%</div>
+                            <div class="text-xs text-purple-200 mt-1">Konversi Iklan Naik +185%</div>
                         </div>
                     </div>
                     <div class="p-6">
-                        <p class="text-xs text-slate-400 leading-relaxed mb-4">
-                            Landing page produk hampers lebaran dengan tombol pemesanan WhatsApp otomatis dan integrasi katalog digital.
+                        <p class="text-xs text-purple-200/80 leading-relaxed mb-4">
+                            Landing page seasonal hampers lebaran dengan tombol direct WhatsApp otomatis dan katalog produk interaktif.
                         </p>
-                        <div class="flex items-center justify-between text-xs pt-3 border-t border-slate-800/80">
-                            <span class="text-slate-500">Kategori: F&B / UMKM</span>
-                            <a href="https://wa.me/6281234567890?text=Halo%20Webkita,%20saya%20tertarik%20dengan%20studi%20kasus%20Maya%20Bakery." target="_blank" class="text-emerald-400 font-semibold hover:underline">Konsultasi Serupa →</a>
+                        <div class="flex items-center justify-between text-xs pt-3 border-t border-purple-500/20">
+                            <span class="text-purple-300">F&B / Kuliner UMKM</span>
+                            <a href="https://wa.me/6281234567890?text=Halo%20Webkita,%20saya%20tertarik%20dengan%20studi%20kasus%20Maya%20Bakery." target="_blank" class="text-[#C8F169] font-bold hover:underline">Konsultasi Serupa →</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Item 2 -->
+                <!-- Item 2: Sentosa Logistik -->
                 <div x-show="activeFilter === 'all' || activeFilter === 'company'" 
-                     x-transition class="glass-panel rounded-2xl overflow-hidden border border-slate-800 group">
-                    <div class="h-52 bg-gradient-to-tr from-slate-900 to-cyan-950/60 p-6 flex flex-col justify-between relative overflow-hidden">
+                     x-transition class="studio-card-dark rounded-3xl overflow-hidden border border-purple-400/20 group hover:border-[#C8F169]/40 transition-all">
+                    <div class="h-56 bg-gradient-to-tr from-[#1E0A38] via-[#2D1654] to-[#4A1E82] p-6 flex flex-col justify-between relative overflow-hidden">
                         <div class="flex justify-between items-start">
-                            <span class="px-2.5 py-1 rounded-md text-[10px] font-bold bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">Company Profile</span>
-                            <span class="text-xs text-slate-400">Pengerjaan 5 Hari</span>
+                            <span class="px-3 py-1 rounded-full text-[10px] font-bold bg-white text-[#1E0A38]">Company Profile</span>
+                            <span class="text-xs text-purple-200/80">5 Hari Kerja</span>
                         </div>
                         <div>
-                            <div class="text-xs text-cyan-400 font-semibold">Hasil Klien:</div>
+                            <div class="text-xs text-[#C8F169] font-bold">Hasil Klien:</div>
                             <div class="text-xl font-bold text-white">Sentosa Logistik Nusantara</div>
-                            <div class="text-xs text-slate-300 mt-1">Closing Tender Perusahaan B2B</div>
+                            <div class="text-xs text-purple-200 mt-1">Closing Tender Perusahaan B2B</div>
                         </div>
                     </div>
                     <div class="p-6">
-                        <p class="text-xs text-slate-400 leading-relaxed mb-4">
-                            Website profil resmi perusahaan dengan 6 halaman, fitur pelacakan armada terintegrasi, dan legalitas perusahaan lengkap.
+                        <p class="text-xs text-purple-200/80 leading-relaxed mb-4">
+                            Website profil resmi korporasi logistik dengan 6 halaman, fitur pelacakan armada terintegrasi, dan legalitas resmi.
                         </p>
-                        <div class="flex items-center justify-between text-xs pt-3 border-t border-slate-800/80">
-                            <span class="text-slate-500">Kategori: Logistik & Cargo</span>
-                            <a href="https://wa.me/6281234567890?text=Halo%20Webkita,%20saya%20tertarik%20dengan%20studi%20kasus%20Sentosa%20Logistik." target="_blank" class="text-cyan-400 font-semibold hover:underline">Konsultasi Serupa →</a>
+                        <div class="flex items-center justify-between text-xs pt-3 border-t border-purple-500/20">
+                            <span class="text-purple-300">Logistik & Cargo</span>
+                            <a href="https://wa.me/6281234567890?text=Halo%20Webkita,%20saya%20tertarik%20dengan%20studi%20kasus%20Sentosa%20Logistik." target="_blank" class="text-[#C8F169] font-bold hover:underline">Konsultasi Serupa →</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Item 3 -->
+                <!-- Item 3: Lumina Store -->
                 <div x-show="activeFilter === 'all' || activeFilter === 'toko'" 
-                     x-transition class="glass-panel rounded-2xl overflow-hidden border border-slate-800 group">
-                    <div class="h-52 bg-gradient-to-tr from-slate-900 to-teal-950/60 p-6 flex flex-col justify-between relative overflow-hidden">
+                     x-transition class="studio-card-dark rounded-3xl overflow-hidden border border-purple-400/20 group hover:border-[#C8F169]/40 transition-all">
+                    <div class="h-56 bg-gradient-to-tr from-[#1E0A38] via-[#3B1566] to-[#551E8E] p-6 flex flex-col justify-between relative overflow-hidden">
                         <div class="flex justify-between items-start">
-                            <span class="px-2.5 py-1 rounded-md text-[10px] font-bold bg-teal-500/20 text-teal-300 border border-teal-500/30">Toko Online Otomatis</span>
-                            <span class="text-xs text-slate-400">Pengerjaan 8 Hari</span>
+                            <span class="px-3 py-1 rounded-full text-[10px] font-bold bg-[#C8F169] text-[#1E0A38]">Toko Online Otomatis</span>
+                            <span class="text-xs text-purple-200/80">8 Hari Kerja</span>
                         </div>
                         <div>
-                            <div class="text-xs text-teal-400 font-semibold">Hasil Klien:</div>
+                            <div class="text-xs text-[#C8F169] font-bold">Hasil Klien:</div>
                             <div class="text-xl font-bold text-white">Lumina Fashion Store</div>
-                            <div class="text-xs text-slate-300 mt-1">2.400+ Transaksi Otomatis / Bln</div>
+                            <div class="text-xs text-purple-200 mt-1">2.400+ Order Otomatis / Bulan</div>
                         </div>
                     </div>
                     <div class="p-6">
-                        <p class="text-xs text-slate-400 leading-relaxed mb-4">
-                            Toko online fashion dengan QRIS instan, notifikasi WhatsApp otomatis saat pesanan masuk, dan cetak resi pengiriman kilat.
+                        <p class="text-xs text-purple-200/80 leading-relaxed mb-4">
+                            Toko online retail pakaian dengan QRIS instan, notifikasi WhatsApp invoice otomatis, dan pencetakan resi pengiriman.
                         </p>
-                        <div class="flex items-center justify-between text-xs pt-3 border-t border-slate-800/80">
-                            <span class="text-slate-500">Kategori: Retail & Fashion</span>
-                            <a href="https://wa.me/6281234567890?text=Halo%20Webkita,%20saya%20tertarik%20dengan%20studi%20kasus%20Lumina%20Store." target="_blank" class="text-emerald-400 font-semibold hover:underline">Konsultasi Serupa →</a>
+                        <div class="flex items-center justify-between text-xs pt-3 border-t border-purple-500/20">
+                            <span class="text-purple-300">Retail & E-Commerce</span>
+                            <a href="https://wa.me/6281234567890?text=Halo%20Webkita,%20saya%20tertarik%20dengan%20studi%20kasus%20Lumina%20Store." target="_blank" class="text-[#C8F169] font-bold hover:underline">Konsultasi Serupa →</a>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- TABEL PAKET HARGA TRANSPARAN -->
+    <!-- SECTION: PAKET HARGA TRANSPARAN -->
     <section id="paket" class="py-24 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-xs font-bold uppercase tracking-widest text-emerald-400 bg-emerald-950/40 px-3.5 py-1.5 rounded-full border border-emerald-800/40 inline-block mb-3">
+                <span class="text-xs font-bold uppercase tracking-widest text-[#C8F169] bg-[#C8F169]/10 px-4 py-1.5 rounded-full border border-[#C8F169]/30 inline-block mb-3">
                     Biaya Transparan Tanpa Biaya Tersembunyi
                 </span>
-                <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-4">
-                    Investasi Terbaik untuk Pertumbuhan Bisnis Anda
+                <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight mb-4">
+                    Investasi Terbaik untuk <span class="text-[#C8F169]">Pertumbuhan Bisnis</span>
                 </h2>
-                <p class="text-base text-slate-400">
-                    Pilih paket yang paling sesuai dengan fase bisnis Anda saat ini. Semua paket sudah termasuk hosting dan domain tahun pertama!
+                <p class="text-base text-purple-200/80">
+                    Pilih paket yang paling cocok untuk fase bisnis Anda saat ini. Semua paket sudah mencakup hosting dan domain tahun pertama!
                 </p>
             </div>
 
@@ -412,110 +495,105 @@
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
                 
                 <!-- Paket 1: Webkita Kilat -->
-                <div class="glass-panel p-8 rounded-3xl flex flex-col justify-between relative border border-slate-800 hover:border-slate-700 transition-all">
+                <div class="studio-card-dark p-8 rounded-3xl flex flex-col justify-between relative border border-purple-500/20 hover:border-purple-400/40 transition-all">
                     <div>
                         <div class="flex justify-between items-center mb-4">
-                            <span class="text-sm font-bold text-slate-300 uppercase tracking-wide">Webkita Kilat</span>
-                            <span class="text-xs px-3 py-1 rounded-full bg-slate-800 text-slate-300 font-medium">1 Halaman</span>
+                            <span class="text-sm font-bold text-white uppercase tracking-wider">Webkita Kilat</span>
+                            <span class="text-xs px-3 py-1 rounded-full bg-white/10 text-purple-200 font-semibold">1 Halaman</span>
                         </div>
                         <div class="mb-4">
-                            <span class="text-3xl sm:text-4xl font-extrabold text-white">Rp 499.000</span>
-                            <span class="text-xs text-slate-400 line-through ml-2">Rp 750.000</span>
-                            <p class="text-xs text-slate-400 mt-1">Pembayaran satu kali (One-time fee)</p>
+                            <span class="text-3xl sm:text-4xl font-black text-white">Rp 499.000</span>
+                            <span class="text-xs text-purple-300 line-through ml-2">Rp 750.000</span>
+                            <p class="text-xs text-purple-300 mt-1">Pembayaran satu kali (One-time fee)</p>
                         </div>
-                        <p class="text-xs text-slate-300 pb-6 border-b border-slate-800 leading-relaxed">
-                            Cocok untuk UMKM, promosi satu produk unggulan, event, seminar, atau portofolio personal.
+                        <p class="text-xs text-purple-200/80 pb-6 border-b border-purple-500/20 leading-relaxed">
+                            Cocok untuk UMKM, promosi produk tunggal, event, webinar, landing page iklan, atau portofolio personal.
                         </p>
 
-                        <!-- Feature List -->
-                        <ul class="space-y-3 py-6 text-xs text-slate-300">
-                            <li class="flex items-center gap-2.5"><span class="text-emerald-400 font-bold">✓</span> 1 Halaman Modern & High-Converting</li>
-                            <li class="flex items-center gap-2.5"><span class="text-emerald-400 font-bold">✓</span> Pengerjaan Cepat (3-4 Hari Kerja)</li>
-                            <li class="flex items-center gap-2.5"><span class="text-emerald-400 font-bold">✓</span> 100% Responsif Smartphone & Desktop</li>
-                            <li class="flex items-center gap-2.5"><span class="text-emerald-400 font-bold">✓</span> Integrasi Tombol Langsung ke WhatsApp</li>
-                            <li class="flex items-center gap-2.5"><span class="text-emerald-400 font-bold">✓</span> Gratis Domain (.my.id / .com promo) & Hosting 1 Thn</li>
-                            <li class="flex items-center gap-2.5"><span class="text-emerald-400 font-bold">✓</span> SSL Security (HTTPS) Aktif</li>
-                            <li class="flex items-center gap-2.5"><span class="text-emerald-400 font-bold">✓</span> Garansi Perbaikan 14 Hari</li>
+                        <ul class="space-y-3 py-6 text-xs text-purple-100">
+                            <li class="flex items-center gap-2.5"><span class="text-[#C8F169] font-bold">✓</span> 1 Halaman High-Converting Design</li>
+                            <li class="flex items-center gap-2.5"><span class="text-[#C8F169] font-bold">✓</span> Pengerjaan Cepat (3-4 Hari Kerja)</li>
+                            <li class="flex items-center gap-2.5"><span class="text-[#C8F169] font-bold">✓</span> 100% Responsif Smartphone & Desktop</li>
+                            <li class="flex items-center gap-2.5"><span class="text-[#C8F169] font-bold">✓</span> Integrasi Tombol WhatsApp Direct</li>
+                            <li class="flex items-center gap-2.5"><span class="text-[#C8F169] font-bold">✓</span> Domain & Cloud Hosting 1 Tahun</li>
+                            <li class="flex items-center gap-2.5"><span class="text-[#C8F169] font-bold">✓</span> Garansi Perbaikan 14 Hari</li>
                         </ul>
                     </div>
 
                     <a href="https://wa.me/6281234567890?text=Halo%20Webkita,%20saya%20tertarik%20dengan%20Paket%20Starter%20Landing%20Page%20(Rp%20499rb).%20Bisa%20konsultasi%20dulu?" 
                        target="_blank"
-                       class="w-full py-3.5 px-4 rounded-xl text-center text-xs font-bold text-slate-200 bg-slate-900 hover:bg-slate-800 border border-slate-700 hover:border-slate-600 transition-all shadow-md">
+                       class="glass-pill w-full py-3.5 px-4 rounded-xl text-center text-xs font-bold text-white hover:text-[#C8F169] transition-all">
                         Pesan Paket Kilat via WA
                     </a>
                 </div>
 
-                <!-- Paket 2: Webkita Bisnis (PALING POPULER) -->
-                <div class="relative rounded-3xl p-1 bg-gradient-to-b from-emerald-400 via-teal-500 to-cyan-500 shadow-2xl shadow-emerald-500/20 flex flex-col justify-between">
-                    <div class="bg-slate-950 p-8 rounded-[22px] h-full flex flex-col justify-between">
+                <!-- Paket 2: Webkita Bisnis (PALING POPULER & HIGHLIGHTED) -->
+                <div class="relative rounded-3xl p-1 bg-gradient-to-b from-[#C8F169] via-emerald-400 to-[#5B21B6] shadow-2xl shadow-[#C8F169]/20 flex flex-col justify-between">
+                    <div class="bg-[#240B4D] p-8 rounded-[22px] h-full flex flex-col justify-between">
                         <div>
-                            <!-- Popular Badge -->
                             <div class="flex justify-between items-center mb-4">
-                                <span class="text-sm font-bold text-emerald-400 uppercase tracking-wide">Webkita Bisnis</span>
-                                <span class="text-xs px-3 py-1 rounded-full bg-emerald-500 text-slate-950 font-extrabold shadow-sm">⭐ Paling Populer</span>
+                                <span class="text-sm font-bold text-[#C8F169] uppercase tracking-wider">Webkita Bisnis</span>
+                                <span class="text-xs px-3 py-1 rounded-full bg-[#C8F169] text-[#1E0A38] font-black">⭐ Paling Populer</span>
                             </div>
                             <div class="mb-4">
-                                <span class="text-3xl sm:text-4xl font-extrabold text-white">Rp 1.499.000</span>
-                                <span class="text-xs text-slate-400 line-through ml-2">Rp 2.499.000</span>
-                                <p class="text-xs text-emerald-400 font-medium mt-1">Paket Komplit Siap Pakai Bisnis Resmi</p>
+                                <span class="text-3xl sm:text-4xl font-black text-white">Rp 1.499.000</span>
+                                <span class="text-xs text-purple-300 line-through ml-2">Rp 2.499.000</span>
+                                <p class="text-xs text-[#C8F169] font-semibold mt-1">Paket Komplit Siap Pakai Bisnis Resmi</p>
                             </div>
-                            <p class="text-xs text-slate-300 pb-6 border-b border-slate-800 leading-relaxed">
+                            <p class="text-xs text-purple-200/90 pb-6 border-b border-purple-500/20 leading-relaxed">
                                 Standar emas untuk CV, PT, biro jasa, klinik, restoran, dan UMKM yang ingin tampil profesional dan kredibel di Google.
                             </p>
 
-                            <!-- Feature List -->
-                            <ul class="space-y-3 py-6 text-xs text-slate-200">
-                                <li class="flex items-center gap-2.5"><span class="text-emerald-400 font-bold">✓</span> <strong>Hingga 5 Halaman Utama</strong> (Home, Tentang, Layanan, Portofolio, Kontak)</li>
-                                <li class="flex items-center gap-2.5"><span class="text-emerald-400 font-bold">✓</span> Pengerjaan Kilat 5-7 Hari Kerja</li>
-                                <li class="flex items-center gap-2.5"><span class="text-emerald-400 font-bold">✓</span> <strong>Dashboard CMS</strong> (Kelola konten & artikel mandiri)</li>
-                                <li class="flex items-center gap-2.5"><span class="text-emerald-400 font-bold">✓</span> Terhubung Google Maps Lokasi & Form Kontak</li>
-                                <li class="flex items-center gap-2.5"><span class="text-emerald-400 font-bold">✓</span> <strong>Dasar Optimasi SEO Google</strong> (Cepat terindeks)</li>
-                                <li class="flex items-center gap-2.5"><span class="text-emerald-400 font-bold">✓</span> Domain .com / .id Resmi + Cloud VPS 1 Tahun</li>
-                                <li class="flex items-center gap-2.5"><span class="text-emerald-400 font-bold">✓</span> 3 Akun Email Bisnis (nama@domainanda.com)</li>
-                                <li class="flex items-center gap-2.5"><span class="text-emerald-400 font-bold">✓</span> Garansi Perbaikan & Pendampingan 30 Hari</li>
+                            <ul class="space-y-3 py-6 text-xs text-white">
+                                <li class="flex items-center gap-2.5"><span class="text-[#C8F169] font-bold">✓</span> <strong>Hingga 5 Halaman Utama</strong> (Home, Tentang, Layanan, Portofolio, Kontak)</li>
+                                <li class="flex items-center gap-2.5"><span class="text-[#C8F169] font-bold">✓</span> Pengerjaan 5-7 Hari Kerja</li>
+                                <li class="flex items-center gap-2.5"><span class="text-[#C8F169] font-bold">✓</span> <strong>Dashboard CMS</strong> (Kelola konten & artikel mandiri)</li>
+                                <li class="flex items-center gap-2.5"><span class="text-[#C8F169] font-bold">✓</span> Terhubung Google Maps & Form Kontak</li>
+                                <li class="flex items-center gap-2.5"><span class="text-[#C8F169] font-bold">✓</span> <strong>Dasar Optimasi SEO Google</strong> (Cepat terindeks)</li>
+                                <li class="flex items-center gap-2.5"><span class="text-[#C8F169] font-bold">✓</span> Domain Resmi .com/.id + Cloud Hosting 1 Tahun</li>
+                                <li class="flex items-center gap-2.5"><span class="text-[#C8F169] font-bold">✓</span> 3 Akun Email Bisnis (nama@domain.com)</li>
+                                <li class="flex items-center gap-2.5"><span class="text-[#C8F169] font-bold">✓</span> Garansi Perbaikan & Pendampingan 30 Hari</li>
                             </ul>
                         </div>
 
                         <a href="https://wa.me/6281234567890?text=Halo%20Webkita,%20saya%20ingin%20membuat%20Website%20Paket%20Bisnis%20Company%20Profile%20(Rp%201.499rb).%20Mohon%20infonya." 
                            target="_blank"
-                           class="w-full py-4 px-4 rounded-xl text-center text-xs font-extrabold text-slate-950 bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 hover:opacity-95 shadow-lg shadow-emerald-500/30 hover:scale-[1.02] transition-all">
+                           class="lime-pill w-full py-4 px-4 rounded-xl text-center text-xs font-black shadow-lg shadow-[#C8F169]/30 hover:scale-[1.02] transition-all">
                             Pilih Paket Bisnis Sekarang
                         </a>
                     </div>
                 </div>
 
                 <!-- Paket 3: Webkita Toko / Custom App -->
-                <div class="glass-panel p-8 rounded-3xl flex flex-col justify-between relative border border-slate-800 hover:border-slate-700 transition-all">
+                <div class="studio-card-dark p-8 rounded-3xl flex flex-col justify-between relative border border-purple-500/20 hover:border-purple-400/40 transition-all">
                     <div>
                         <div class="flex justify-between items-center mb-4">
-                            <span class="text-sm font-bold text-slate-300 uppercase tracking-wide">Webkita Toko / Custom</span>
-                            <span class="text-xs px-3 py-1 rounded-full bg-cyan-950 text-cyan-300 font-medium border border-cyan-800/40">Full Feature</span>
+                            <span class="text-sm font-bold text-white uppercase tracking-wider">Webkita Toko / Custom</span>
+                            <span class="text-xs px-3 py-1 rounded-full bg-white/10 text-[#C8F169] font-semibold">Full Feature</span>
                         </div>
                         <div class="mb-4">
-                            <span class="text-3xl sm:text-4xl font-extrabold text-white">Rp 3.500.000</span>
-                            <span class="text-xs text-slate-400 line-through ml-2">Rp 5.500.000</span>
-                            <p class="text-xs text-slate-400 mt-1">Sistem Otomatisasi Lengkap</p>
+                            <span class="text-3xl sm:text-4xl font-black text-white">Rp 3.500.000</span>
+                            <span class="text-xs text-purple-300 line-through ml-2">Rp 5.500.000</span>
+                            <p class="text-xs text-purple-300 mt-1">Sistem Otomatisasi Lengkap</p>
                         </div>
-                        <p class="text-xs text-slate-300 pb-6 border-b border-slate-800 leading-relaxed">
-                            Untuk brand retail banyak produk, toko online skala berkembang, atau sistem aplikasi web kustom berbasis Laravel.
+                        <p class="text-xs text-purple-200/80 pb-6 border-b border-purple-500/20 leading-relaxed">
+                            Untuk brand retail banyak produk, toko online dengan checkout otomatis, atau sistem aplikasi web kustom berbasis Laravel.
                         </p>
 
-                        <!-- Feature List -->
-                        <ul class="space-y-3 py-6 text-xs text-slate-300">
-                            <li class="flex items-center gap-2.5"><span class="text-cyan-400 font-bold">✓</span> Arsitektur Kustom Laravel 11 / E-Commerce</li>
-                            <li class="flex items-center gap-2.5"><span class="text-cyan-400 font-bold">✓</span> Sistem Keranjang Belanja & Manajemen Stok</li>
-                            <li class="flex items-center gap-2.5"><span class="text-cyan-400 font-bold">✓</span> <strong>Pembayaran Otomatis Midtrans</strong> (QRIS, VA Bank)</li>
-                            <li class="flex items-center gap-2.5"><span class="text-cyan-400 font-bold">✓</span> <strong>Hitung Ongkir Otomatis</strong> (JNE, J&T, SiCepat)</li>
-                            <li class="flex items-center gap-2.5"><span class="text-cyan-400 font-bold">✓</span> Dashboard Penjualan & Laporan Finansial</li>
-                            <li class="flex items-center gap-2.5"><span class="text-cyan-400 font-bold">✓</span> Integrasi Notifikasi WhatsApp (Fonnte/Wablas)</li>
-                            <li class="flex items-center gap-2.5"><span class="text-cyan-400 font-bold">✓</span> Garansi & Dukungan Teknis Prioritas 60 Hari</li>
+                        <ul class="space-y-3 py-6 text-xs text-purple-100">
+                            <li class="flex items-center gap-2.5"><span class="text-[#C8F169] font-bold">✓</span> Arsitektur Laravel 11 / E-Commerce</li>
+                            <li class="flex items-center gap-2.5"><span class="text-[#C8F169] font-bold">✓</span> Keranjang Belanja & Manajemen Stok</li>
+                            <li class="flex items-center gap-2.5"><span class="text-[#C8F169] font-bold">✓</span> <strong>Pembayaran Otomatis Midtrans</strong> (QRIS & VA)</li>
+                            <li class="flex items-center gap-2.5"><span class="text-[#C8F169] font-bold">✓</span> <strong>Hitung Ongkir Ekspedisi Otomatis</strong></li>
+                            <li class="flex items-center gap-2.5"><span class="text-[#C8F169] font-bold">✓</span> Dashboard Penjualan & Laporan Finansial</li>
+                            <li class="flex items-center gap-2.5"><span class="text-[#C8F169] font-bold">✓</span> Notifikasi WhatsApp Invoice Otomatis</li>
+                            <li class="flex items-center gap-2.5"><span class="text-[#C8F169] font-bold">✓</span> Garansi & Pendampingan Prioritas 60 Hari</li>
                         </ul>
                     </div>
 
                     <a href="https://wa.me/6281234567890?text=Halo%20Webkita,%20saya%20ingin%20membuat%20Toko%20Online%20dengan%20fitur%20pembayaran%20otomatis%20(Rp%203.5jt).%20Mohon%20infonya." 
                        target="_blank"
-                       class="w-full py-3.5 px-4 rounded-xl text-center text-xs font-bold text-slate-200 bg-slate-900 hover:bg-slate-800 border border-slate-700 hover:border-slate-600 transition-all shadow-md">
+                       class="glass-pill w-full py-3.5 px-4 rounded-xl text-center text-xs font-bold text-white hover:text-[#C8F169] transition-all">
                         Pesan Paket Toko via WA
                     </a>
                 </div>
@@ -524,18 +602,18 @@
         </div>
     </section>
 
-    <!-- KALKULATOR ESTIMASI BIAYA INTERAKTIF (WIDGET ALPINE.JS) -->
-    <section id="kalkulator" class="py-24 bg-slate-950/80 border-y border-slate-900 relative">
+    <!-- SECTION: KALKULATOR ESTIMASI BIAYA INTERAKTIF -->
+    <section id="kalkulator" class="py-24 bg-[#210944]/80 border-y border-purple-500/20 relative">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <span class="text-xs font-bold uppercase tracking-widest text-emerald-400 bg-emerald-950/40 px-3.5 py-1.5 rounded-full border border-emerald-800/40 inline-block mb-3">
-                    Interactive Calculator Widget
+                <span class="text-xs font-bold uppercase tracking-widest text-[#C8F169] bg-[#C8F169]/10 px-4 py-1.5 rounded-full border border-[#C8F169]/30 inline-block mb-3">
+                    Interactive Cost Calculator
                 </span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-3">
-                    Hitung Estimasi Biaya Pembuatan Website Anda
+                <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight mb-3">
+                    Hitung Estimasi Biaya <span class="text-[#C8F169]">Website Anda</span>
                 </h2>
-                <p class="text-sm text-slate-400">
-                    Pilih paket dasar dan sesuaikan fitur tambahan sesuai kebutuhan proyek Anda. Dapatkan estimasi biaya instan dan konsultasikan langsung!
+                <p class="text-sm text-purple-200/80">
+                    Pilih paket dasar dan sesuaikan fitur tambahan sesuai kebutuhan proyek Anda. Dapatkan perkiraan biaya instan secara transparan!
                 </p>
             </div>
 
@@ -570,14 +648,14 @@
                     text += '- ' + this.baseName + '%0A';
                     if (this.extraPages > 0) text += '- Tambahan Halaman: ' + this.extraPages + ' hal (' + this.formatRupiah(this.extraPagesCost) + ')%0A';
                     if (this.hasPaymentGateway) text += '- Payment Gateway QRIS/VA (Rp 350.000)%0A';
-                    if (this.hasMultiLang) text += '- Fitur Multi-Bahasa ID/EN (Rp 400.000)%0A';
-                    if (this.hasWhatsAppBot) text += '- WhatsApp CRM / Auto-Reply (Rp 250.000)%0A';
+                    if (this.hasMultiLang) text += '- Multi-Bahasa ID/EN (Rp 400.000)%0A';
+                    if (this.hasWhatsAppBot) text += '- WhatsApp CRM Auto-Reply (Rp 250.000)%0A';
                     if (this.hasCopywriting) text += '- Copywriting Profesional (Rp 300.000)%0A';
                     if (this.hasExpress48h) text += '- Prioritas Kilat 48 Jam (Rp 450.000)%0A';
-                    text += '%0A*Total Estimasi: ' + this.formatRupiah(this.grandTotal) + '*%0A%0AMohon konfirmasi jadwal pengerjaan.';
+                    text += '%0A*Total Estimasi: ' + this.formatRupiah(this.grandTotal) + '*%0A%0AMohon info jadwal pengerjaan.';
                     return 'https://wa.me/6281234567890?text=' + text;
                 }
-            }" class="glass-panel p-6 sm:p-10 rounded-3xl border border-slate-800 shadow-2xl">
+            }" class="studio-card-dark p-6 sm:p-10 rounded-3xl border border-purple-400/20 shadow-2xl">
 
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                     
@@ -585,153 +663,153 @@
                     <div class="lg:col-span-7 space-y-6">
                         <!-- Step 1: Base Tier -->
                         <div>
-                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-3">
+                            <label class="block text-xs font-bold uppercase tracking-wider text-purple-200 mb-3">
                                 1. Pilih Paket Dasar
                             </label>
                             <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                                 <button type="button" 
                                         @click="baseTier = 499000; baseName = 'Paket Webkita Kilat (1 Hal)'"
-                                        :class="baseTier === 499000 ? 'border-emerald-500 bg-emerald-950/40 text-white' : 'border-slate-800 bg-slate-900/60 text-slate-400 hover:border-slate-700'"
-                                        class="p-3.5 rounded-xl border text-left transition-all">
+                                        :class="baseTier === 499000 ? 'border-[#C8F169] bg-[#C8F169]/10 text-white' : 'border-purple-500/20 bg-[#1D083A] text-purple-300 hover:border-purple-400'"
+                                        class="p-3.5 rounded-2xl border text-left transition-all">
                                     <div class="text-xs font-bold">Kilat</div>
-                                    <div class="text-[11px] text-emerald-400 font-semibold mt-1">Rp 499.000</div>
-                                    <div class="text-[10px] text-slate-500 mt-0.5">1 Halaman</div>
+                                    <div class="text-[11px] text-[#C8F169] font-bold mt-1">Rp 499.000</div>
+                                    <div class="text-[10px] text-purple-300 mt-0.5">1 Halaman</div>
                                 </button>
 
                                 <button type="button" 
                                         @click="baseTier = 1499000; baseName = 'Paket Webkita Bisnis (5 Hal)'"
-                                        :class="baseTier === 1499000 ? 'border-emerald-500 bg-emerald-950/40 text-white' : 'border-slate-800 bg-slate-900/60 text-slate-400 hover:border-slate-700'"
-                                        class="p-3.5 rounded-xl border text-left transition-all">
+                                        :class="baseTier === 1499000 ? 'border-[#C8F169] bg-[#C8F169]/10 text-white' : 'border-purple-500/20 bg-[#1D083A] text-purple-300 hover:border-purple-400'"
+                                        class="p-3.5 rounded-2xl border text-left transition-all">
                                     <div class="text-xs font-bold">Bisnis ⭐</div>
-                                    <div class="text-[11px] text-emerald-400 font-semibold mt-1">Rp 1.499.000</div>
-                                    <div class="text-[10px] text-slate-500 mt-0.5">Hingga 5 Hal</div>
+                                    <div class="text-[11px] text-[#C8F169] font-bold mt-1">Rp 1.499.000</div>
+                                    <div class="text-[10px] text-purple-300 mt-0.5">Hingga 5 Hal</div>
                                 </button>
 
                                 <button type="button" 
                                         @click="baseTier = 3500000; baseName = 'Paket Toko / Custom App'"
-                                        :class="baseTier === 3500000 ? 'border-emerald-500 bg-emerald-950/40 text-white' : 'border-slate-800 bg-slate-900/60 text-slate-400 hover:border-slate-700'"
-                                        class="p-3.5 rounded-xl border text-left transition-all">
+                                        :class="baseTier === 3500000 ? 'border-[#C8F169] bg-[#C8F169]/10 text-white' : 'border-purple-500/20 bg-[#1D083A] text-purple-300 hover:border-purple-400'"
+                                        class="p-3.5 rounded-2xl border text-left transition-all">
                                     <div class="text-xs font-bold">Toko / Custom</div>
-                                    <div class="text-[11px] text-emerald-400 font-semibold mt-1">Rp 3.500.000</div>
-                                    <div class="text-[10px] text-slate-500 mt-0.5">E-Commerce</div>
+                                    <div class="text-[11px] text-[#C8F169] font-bold mt-1">Rp 3.500.000</div>
+                                    <div class="text-[10px] text-purple-300 mt-0.5">E-Commerce</div>
                                 </button>
                             </div>
                         </div>
 
-                        <!-- Step 2: Extra Pages Counter -->
+                        <!-- Step 2: Extra Pages Slider -->
                         <div class="pt-2">
                             <div class="flex items-center justify-between mb-2">
-                                <label class="text-xs font-bold uppercase tracking-wider text-slate-300">
-                                    2. Tambahan Halaman Khusus (+Rp 150rb/hal)
+                                <label class="text-xs font-bold uppercase tracking-wider text-purple-200">
+                                    2. Tambahan Halaman (+Rp 150rb/hal)
                                 </label>
-                                <span class="text-xs font-semibold text-emerald-400" x-text="extraPages + ' Halaman Tambahan'"></span>
+                                <span class="text-xs font-bold text-[#C8F169]" x-text="extraPages + ' Halaman Tambahan'"></span>
                             </div>
                             <div class="flex items-center gap-3">
-                                <button type="button" @click="if(extraPages > 0) extraPages--" class="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 text-lg font-bold hover:bg-slate-800">-</button>
-                                <input type="range" min="0" max="15" step="1" x-model.number="extraPages" class="w-full accent-emerald-500">
-                                <button type="button" @click="if(extraPages < 15) extraPages++" class="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 text-lg font-bold hover:bg-slate-800">+</button>
+                                <button type="button" @click="if(extraPages > 0) extraPages--" class="w-10 h-10 rounded-xl bg-[#1D083A] border border-purple-500/30 text-white text-lg font-bold hover:bg-white/10">-</button>
+                                <input type="range" min="0" max="15" step="1" x-model.number="extraPages" class="w-full accent-[#C8F169]">
+                                <button type="button" @click="if(extraPages < 15) extraPages++" class="w-10 h-10 rounded-xl bg-[#1D083A] border border-purple-500/30 text-white text-lg font-bold hover:bg-white/10">+</button>
                             </div>
                         </div>
 
                         <!-- Step 3: Additional Features Checkboxes -->
                         <div class="pt-2 space-y-2.5">
-                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
-                                3. Fitur Opsional Tambahan
+                            <label class="block text-xs font-bold uppercase tracking-wider text-purple-200 mb-2">
+                                3. Fitur Tambahan Pilihan
                             </label>
 
-                            <label class="flex items-center justify-between p-3 rounded-xl bg-slate-900/60 border border-slate-800/80 hover:border-slate-700 cursor-pointer text-xs">
+                            <label class="flex items-center justify-between p-3 rounded-xl bg-[#1D083A] border border-purple-500/20 hover:border-[#C8F169]/40 cursor-pointer text-xs">
                                 <div class="flex items-center gap-2.5">
-                                    <input type="checkbox" x-model="hasPaymentGateway" class="w-4 h-4 rounded text-emerald-500 focus:ring-emerald-500 accent-emerald-500">
-                                    <span class="text-slate-200 font-medium">Integrasi Payment Gateway QRIS & VA Bank</span>
+                                    <input type="checkbox" x-model="hasPaymentGateway" class="w-4 h-4 rounded text-[#C8F169] accent-[#C8F169]">
+                                    <span class="text-white font-medium">Payment Gateway QRIS & VA Otomatis</span>
                                 </div>
-                                <span class="text-slate-400 font-mono">+Rp 350.000</span>
+                                <span class="text-purple-300 font-mono">+Rp 350.000</span>
                             </label>
 
-                            <label class="flex items-center justify-between p-3 rounded-xl bg-slate-900/60 border border-slate-800/80 hover:border-slate-700 cursor-pointer text-xs">
+                            <label class="flex items-center justify-between p-3 rounded-xl bg-[#1D083A] border border-purple-500/20 hover:border-[#C8F169]/40 cursor-pointer text-xs">
                                 <div class="flex items-center gap-2.5">
-                                    <input type="checkbox" x-model="hasMultiLang" class="w-4 h-4 rounded text-emerald-500 focus:ring-emerald-500 accent-emerald-500">
-                                    <span class="text-slate-200 font-medium">Fitur Multi-Bahasa (Indonesia & English Switcher)</span>
+                                    <input type="checkbox" x-model="hasMultiLang" class="w-4 h-4 rounded text-[#C8F169] accent-[#C8F169]">
+                                    <span class="text-white font-medium">Fitur Multi-Bahasa (Indonesia & English)</span>
                                 </div>
-                                <span class="text-slate-400 font-mono">+Rp 400.000</span>
+                                <span class="text-purple-300 font-mono">+Rp 400.000</span>
                             </label>
 
-                            <label class="flex items-center justify-between p-3 rounded-xl bg-slate-900/60 border border-slate-800/80 hover:border-slate-700 cursor-pointer text-xs">
+                            <label class="flex items-center justify-between p-3 rounded-xl bg-[#1D083A] border border-purple-500/20 hover:border-[#C8F169]/40 cursor-pointer text-xs">
                                 <div class="flex items-center gap-2.5">
-                                    <input type="checkbox" x-model="hasWhatsAppBot" class="w-4 h-4 rounded text-emerald-500 focus:ring-emerald-500 accent-emerald-500">
-                                    <span class="text-slate-200 font-medium">Integrasi WhatsApp CRM & Chatbot Auto-Reply</span>
+                                    <input type="checkbox" x-model="hasWhatsAppBot" class="w-4 h-4 rounded text-[#C8F169] accent-[#C8F169]">
+                                    <span class="text-white font-medium">Integrasi WhatsApp CRM & Chatbot Auto-Reply</span>
                                 </div>
-                                <span class="text-slate-400 font-mono">+Rp 250.000</span>
+                                <span class="text-purple-300 font-mono">+Rp 250.000</span>
                             </label>
 
-                            <label class="flex items-center justify-between p-3 rounded-xl bg-slate-900/60 border border-slate-800/80 hover:border-slate-700 cursor-pointer text-xs">
+                            <label class="flex items-center justify-between p-3 rounded-xl bg-[#1D083A] border border-purple-500/20 hover:border-[#C8F169]/40 cursor-pointer text-xs">
                                 <div class="flex items-center gap-2.5">
-                                    <input type="checkbox" x-model="hasCopywriting" class="w-4 h-4 rounded text-emerald-500 focus:ring-emerald-500 accent-emerald-500">
-                                    <span class="text-slate-200 font-medium">Jasa Copywriting Naskah Konten Profesional</span>
+                                    <input type="checkbox" x-model="hasCopywriting" class="w-4 h-4 rounded text-[#C8F169] accent-[#C8F169]">
+                                    <span class="text-white font-medium">Jasa Copywriting Naskah Penjualan Profesional</span>
                                 </div>
-                                <span class="text-slate-400 font-mono">+Rp 300.000</span>
+                                <span class="text-purple-300 font-mono">+Rp 300.000</span>
                             </label>
 
-                            <label class="flex items-center justify-between p-3 rounded-xl bg-slate-900/60 border border-slate-800/80 hover:border-slate-700 cursor-pointer text-xs">
+                            <label class="flex items-center justify-between p-3 rounded-xl bg-[#1D083A] border border-purple-500/20 hover:border-[#C8F169]/40 cursor-pointer text-xs">
                                 <div class="flex items-center gap-2.5">
-                                    <input type="checkbox" x-model="hasExpress48h" class="w-4 h-4 rounded text-emerald-500 focus:ring-emerald-500 accent-emerald-500">
-                                    <span class="text-amber-300 font-medium">⚡ Prioritas Pengerjaan Kilat (Selesai 48 Jam)</span>
+                                    <input type="checkbox" x-model="hasExpress48h" class="w-4 h-4 rounded text-[#C8F169] accent-[#C8F169]">
+                                    <span class="text-[#C8F169] font-medium">⚡ Prioritas Pengerjaan Kilat (Selesai 48 Jam)</span>
                                 </div>
-                                <span class="text-amber-400 font-mono">+Rp 450.000</span>
+                                <span class="text-[#C8F169] font-mono">+Rp 450.000</span>
                             </label>
                         </div>
                     </div>
 
                     <!-- Right Summary Card -->
-                    <div class="lg:col-span-5 bg-slate-900 border border-slate-800 rounded-2xl p-6 space-y-6 sticky top-28">
-                        <div class="border-b border-slate-800 pb-4">
-                            <span class="text-xs font-bold text-slate-400 uppercase tracking-wide">Ringkasan Estimasi</span>
-                            <div class="text-xs text-emerald-400 mt-1" x-text="baseName"></div>
+                    <div class="lg:col-span-5 bg-[#17062E] border border-purple-500/30 rounded-2xl p-6 space-y-6 sticky top-28 shadow-xl">
+                        <div class="border-b border-purple-500/20 pb-4">
+                            <span class="text-xs font-bold text-purple-300 uppercase tracking-wide">Ringkasan Estimasi</span>
+                            <div class="text-xs text-[#C8F169] font-bold mt-1" x-text="baseName"></div>
                         </div>
 
-                        <div class="space-y-2.5 text-xs text-slate-300">
+                        <div class="space-y-2.5 text-xs text-purple-100">
                             <div class="flex justify-between">
-                                <span class="text-slate-400">Biaya Paket Dasar</span>
+                                <span class="text-purple-300">Biaya Paket Dasar</span>
                                 <span class="font-mono text-white" x-text="formatRupiah(baseTier)"></span>
                             </div>
                             <div x-show="extraPages > 0" class="flex justify-between">
-                                <span class="text-slate-400" x-text="'Halaman Tambahan (' + extraPages + ')'"></span>
+                                <span class="text-purple-300" x-text="'Halaman Tambahan (' + extraPages + ')'"></span>
                                 <span class="font-mono text-white" x-text="formatRupiah(extraPagesCost)"></span>
                             </div>
                             <div x-show="hasPaymentGateway" class="flex justify-between">
-                                <span class="text-slate-400">Payment Gateway</span>
+                                <span class="text-purple-300">Payment Gateway</span>
                                 <span class="font-mono text-white">Rp 350.000</span>
                             </div>
                             <div x-show="hasMultiLang" class="flex justify-between">
-                                <span class="text-slate-400">Multi-Bahasa (ID/EN)</span>
+                                <span class="text-purple-300">Multi-Bahasa (ID/EN)</span>
                                 <span class="font-mono text-white">Rp 400.000</span>
                             </div>
                             <div x-show="hasWhatsAppBot" class="flex justify-between">
-                                <span class="text-slate-400">WhatsApp CRM</span>
+                                <span class="text-purple-300">WhatsApp CRM</span>
                                 <span class="font-mono text-white">Rp 250.000</span>
                             </div>
                             <div x-show="hasCopywriting" class="flex justify-between">
-                                <span class="text-slate-400">Copywriting Naskah</span>
+                                <span class="text-purple-300">Copywriting Naskah</span>
                                 <span class="font-mono text-white">Rp 300.000</span>
                             </div>
                             <div x-show="hasExpress48h" class="flex justify-between">
-                                <span class="text-amber-400">Prioritas Kilat 48 Jam</span>
-                                <span class="font-mono text-amber-400">Rp 450.000</span>
+                                <span class="text-[#C8F169]">Prioritas Kilat 48 Jam</span>
+                                <span class="font-mono text-[#C8F169]">Rp 450.000</span>
                             </div>
                         </div>
 
                         <!-- Grand Total -->
-                        <div class="pt-4 border-t border-slate-800">
-                            <div class="text-xs text-slate-400 mb-1">Total Estimasi Investasi:</div>
-                            <div class="text-3xl font-extrabold text-white gradient-text" x-text="formatRupiah(grandTotal)"></div>
-                            <div class="text-[11px] text-slate-500 mt-1">Sudah termasuk setup, hosting 1 thn & garansi resmi.</div>
+                        <div class="pt-4 border-t border-purple-500/20">
+                            <div class="text-xs text-purple-300 mb-1">Total Estimasi Investasi:</div>
+                            <div class="text-3xl font-black text-[#C8F169]" x-text="formatRupiah(grandTotal)"></div>
+                            <div class="text-[11px] text-purple-400 mt-1">Sudah termasuk domain, server 1 thn & garansi resmi.</div>
                         </div>
 
                         <!-- Direct WhatsApp Order Button -->
                         <a :href="waLink" 
-                           target="_blank"
-                           class="w-full py-4 px-4 rounded-xl text-center text-xs font-bold text-slate-950 bg-gradient-to-r from-emerald-400 to-cyan-400 hover:opacity-95 shadow-xl shadow-emerald-500/25 flex items-center justify-center gap-2 transition-all">
-                            <svg class="w-4 h-4 fill-slate-950" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.174.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.086s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                           target="_blank" 
+                           class="lime-pill w-full py-4 px-4 rounded-xl text-center text-xs font-black shadow-xl shadow-[#C8F169]/25 flex items-center justify-center gap-2 transition-all">
                             <span>Pesan Sesuai Estimasi via WhatsApp</span>
+                            <span>→</span>
                         </a>
                     </div>
 
@@ -740,75 +818,75 @@
         </div>
     </section>
 
-    <!-- TESTIMONI KLIEN -->
+    <!-- SECTION: TESTIMONI KLIEN -->
     <section class="py-24 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-xs font-bold uppercase tracking-widest text-emerald-400 bg-emerald-950/40 px-3.5 py-1.5 rounded-full border border-emerald-800/40 inline-block mb-3">
+                <span class="text-xs font-bold uppercase tracking-widest text-[#C8F169] bg-[#C8F169]/10 px-4 py-1.5 rounded-full border border-[#C8F169]/30 inline-block mb-3">
                     Cerita Kepuasan Klien
                 </span>
-                <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-4">
-                    Dipercaya Lebih dari 120+ Pelaku Bisnis
+                <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight mb-4">
+                    Dipercaya Lebih dari <span class="text-[#C8F169]">120+ Pelaku Usaha</span>
                 </h2>
-                <p class="text-base text-slate-400">
-                    Bukan sekadar website bagus, tapi solusi nyata yang mendatangkan pesanan dan meningkatkan kredibilitas brand.
+                <p class="text-base text-purple-200/80">
+                    Bukan sekadar website cantik, tetapi alat konversi nyata yang meningkatkan omset dan kredibilitas brand Anda.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Testimonial 1 -->
-                <div class="glass-panel p-8 rounded-3xl border border-slate-800 flex flex-col justify-between">
+                <div class="studio-card-dark p-8 rounded-3xl border border-purple-500/20 flex flex-col justify-between">
                     <div class="space-y-4">
-                        <div class="flex text-amber-400 gap-1 text-sm">★★★★★</div>
-                        <p class="text-sm text-slate-300 leading-relaxed italic">
-                            "Sebelumnya saya hanya jualan lewat Instagram dan sering kewalahan balas chat. Sejak dibuatkan website oleh Webkita, pembeli langsung checkout mandiri lewat QRIS. Omset naik 3x lipat!"
+                        <div class="flex text-[#C8F169] gap-1 text-sm">★★★★★</div>
+                        <p class="text-sm text-purple-100 leading-relaxed italic">
+                            "Sebelumnya saya hanya jualan lewat medsos dan sering kewalahan balas chat. Sejak dibuatkan website oleh Webkita, pembeli langsung bayar mandiri lewat QRIS. Omset naik 3x lipat!"
                         </p>
                     </div>
-                    <div class="pt-6 border-t border-slate-800/80 flex items-center gap-3 mt-6">
-                        <div class="w-10 h-10 rounded-full bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center font-bold text-emerald-400 text-sm">
+                    <div class="pt-6 border-t border-purple-500/20 flex items-center gap-3 mt-6">
+                        <div class="w-10 h-10 rounded-full bg-[#C8F169] text-[#1E0A38] font-bold flex items-center justify-center text-sm">
                             MA
                         </div>
                         <div>
                             <div class="text-xs font-bold text-white">Maya Anggraini</div>
-                            <div class="text-[11px] text-slate-400">Founder Maya Artisan Bakery</div>
+                            <div class="text-[11px] text-purple-300">Founder Maya Artisan Bakery</div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Testimonial 2 -->
-                <div class="glass-panel p-8 rounded-3xl border border-slate-800 flex flex-col justify-between">
+                <div class="studio-card-dark p-8 rounded-3xl border border-purple-500/20 flex flex-col justify-between">
                     <div class="space-y-4">
-                        <div class="flex text-amber-400 gap-1 text-sm">★★★★★</div>
-                        <p class="text-sm text-slate-300 leading-relaxed italic">
+                        <div class="flex text-[#C8F169] gap-1 text-sm">★★★★★</div>
+                        <p class="text-sm text-purple-100 leading-relaxed italic">
                             "Pengerjaan tepat waktu, tim komunikatif dan sangat paham kebutuhan B2B. Company profile yang dibuat Webkita berhasil meyakinkan klien korporat besar untuk deal tender logistik kami."
                         </p>
                     </div>
-                    <div class="pt-6 border-t border-slate-800/80 flex items-center gap-3 mt-6">
-                        <div class="w-10 h-10 rounded-full bg-cyan-500/20 border border-cyan-500/30 flex items-center justify-center font-bold text-cyan-400 text-sm">
+                    <div class="pt-6 border-t border-purple-500/20 flex items-center gap-3 mt-6">
+                        <div class="w-10 h-10 rounded-full bg-white text-[#1E0A38] font-bold flex items-center justify-center text-sm">
                             HS
                         </div>
                         <div>
                             <div class="text-xs font-bold text-white">Hendro Santoso</div>
-                            <div class="text-[11px] text-slate-400">Direktur Sentosa Logistik</div>
+                            <div class="text-[11px] text-purple-300">Direktur Sentosa Logistik</div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Testimonial 3 -->
-                <div class="glass-panel p-8 rounded-3xl border border-slate-800 flex flex-col justify-between">
+                <div class="studio-card-dark p-8 rounded-3xl border border-purple-500/20 flex flex-col justify-between">
                     <div class="space-y-4">
-                        <div class="flex text-amber-400 gap-1 text-sm">★★★★★</div>
-                        <p class="text-sm text-slate-300 leading-relaxed italic">
+                        <div class="flex text-[#C8F169] gap-1 text-sm">★★★★★</div>
+                        <p class="text-sm text-purple-100 leading-relaxed italic">
                             "Paket Kilat-nya beneran kilat! Dalam 3 hari landing page kami sudah siap pakai untuk pasang iklan Meta Ads. Hasilnya luar biasa, biaya iklan jadi jauh lebih efisien karena websitenya ngebut."
                         </p>
                     </div>
-                    <div class="pt-6 border-t border-slate-800/80 flex items-center gap-3 mt-6">
-                        <div class="w-10 h-10 rounded-full bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center font-bold text-emerald-400 text-sm">
+                    <div class="pt-6 border-t border-purple-500/20 flex items-center gap-3 mt-6">
+                        <div class="w-10 h-10 rounded-full bg-[#C8F169] text-[#1E0A38] font-bold flex items-center justify-center text-sm">
                             RF
                         </div>
                         <div>
                             <div class="text-xs font-bold text-white">Rizky Fadillah</div>
-                            <div class="text-[11px] text-slate-400">Marketing Lead KopiKita</div>
+                            <div class="text-[11px] text-purple-300">Marketing Lead KopiKita</div>
                         </div>
                     </div>
                 </div>
@@ -816,84 +894,84 @@
         </div>
     </section>
 
-    <!-- FAQ SECTION (ACCORDION ALPINE.JS) -->
-    <section id="faq" class="py-24 bg-slate-950/70 border-y border-slate-900" x-data="{ activeFaq: null }">
+    <!-- SECTION: FAQ ACCORDION -->
+    <section id="faq" class="py-24 bg-[#230B48]/70 border-y border-purple-500/20" x-data="{ activeFaq: null }">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <span class="text-xs font-bold uppercase tracking-widest text-cyan-400 bg-cyan-950/40 px-3.5 py-1.5 rounded-full border border-cyan-800/40 inline-block mb-3">
+                <span class="text-xs font-bold uppercase tracking-widest text-[#C8F169] bg-[#C8F169]/10 px-4 py-1.5 rounded-full border border-[#C8F169]/30 inline-block mb-3">
                     Pertanyaan Umum
                 </span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-3">
+                <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight mb-3">
                     Sering Ditanyakan (FAQ)
                 </h2>
-                <p class="text-sm text-slate-400">
-                    Semua yang perlu Anda ketahui tentang proses pembuatan website di Webkita.
+                <p class="text-sm text-purple-200/80">
+                    Semua yang perlu Anda ketahui mengenai proses pembuatan website di Webkita.
                 </p>
             </div>
 
             <!-- Accordion List -->
             <div class="space-y-4">
                 <!-- Q1 -->
-                <div class="glass-panel rounded-2xl border border-slate-800 overflow-hidden">
+                <div class="studio-card-dark rounded-2xl border border-purple-500/20 overflow-hidden">
                     <button @click="activeFaq = (activeFaq === 1 ? null : 1)" 
                             type="button"
-                            class="w-full p-5 text-left flex items-center justify-between text-sm font-bold text-white hover:text-emerald-400 transition-colors">
+                            class="w-full p-5 text-left flex items-center justify-between text-sm font-bold text-white hover:text-[#C8F169] transition-colors">
                         <span>Apakah harga sudah termasuk domain dan hosting?</span>
-                        <span class="text-lg transition-transform duration-200" :class="activeFaq === 1 ? 'rotate-180 text-emerald-400' : 'text-slate-500'">↓</span>
+                        <span class="text-lg transition-transform duration-200" :class="activeFaq === 1 ? 'rotate-180 text-[#C8F169]' : 'text-purple-400'">↓</span>
                     </button>
-                    <div x-show="activeFaq === 1" x-collapse x-cloak class="px-5 pb-5 text-xs text-slate-400 leading-relaxed border-t border-slate-800/60 pt-3">
+                    <div x-show="activeFaq === 1" x-collapse x-cloak class="px-5 pb-5 text-xs text-purple-200/80 leading-relaxed border-t border-purple-500/20 pt-3">
                         Ya, seluruh paket layanan Webkita sudah mencakup nama domain resmi pilihan Anda dan cloud hosting berkecepatan tinggi selama 1 tahun pertama. Untuk tahun berikutnya, perpanjangan domain dan server sangat terjangkau.
                     </div>
                 </div>
 
                 <!-- Q2 -->
-                <div class="glass-panel rounded-2xl border border-slate-800 overflow-hidden">
+                <div class="studio-card-dark rounded-2xl border border-purple-500/20 overflow-hidden">
                     <button @click="activeFaq = (activeFaq === 2 ? null : 2)" 
                             type="button"
-                            class="w-full p-5 text-left flex items-center justify-between text-sm font-bold text-white hover:text-emerald-400 transition-colors">
+                            class="w-full p-5 text-left flex items-center justify-between text-sm font-bold text-white hover:text-[#C8F169] transition-colors">
                         <span>Berapa lama proses pengerjaan website hingga selesai?</span>
-                        <span class="text-lg transition-transform duration-200" :class="activeFaq === 2 ? 'rotate-180 text-emerald-400' : 'text-slate-500'">↓</span>
+                        <span class="text-lg transition-transform duration-200" :class="activeFaq === 2 ? 'rotate-180 text-[#C8F169]' : 'text-purple-400'">↓</span>
                     </button>
-                    <div x-show="activeFaq === 2" x-collapse x-cloak class="px-5 pb-5 text-xs text-slate-400 leading-relaxed border-t border-slate-800/60 pt-3">
-                        Waktu pengerjaan bergantung pada paket yang dipilih: Paket Kilat selesai dalam 3-4 hari kerja, Paket Bisnis 5-7 hari kerja, dan Paket Toko / Custom App sekitar 8-14 hari kerja setelah materi konten (logo, teks, dan foto) kami terima secara lengkap.
+                    <div x-show="activeFaq === 2" x-collapse x-cloak class="px-5 pb-5 text-xs text-purple-200/80 leading-relaxed border-t border-purple-500/20 pt-3">
+                        Waktu pengerjaan bergantung pada paket: Paket Kilat selesai 3-4 hari kerja, Paket Bisnis 5-7 hari kerja, dan Paket Toko / Custom App 8-14 hari kerja setelah materi konten (logo, teks brief, dan foto) kami terima secara lengkap.
                     </div>
                 </div>
 
                 <!-- Q3 -->
-                <div class="glass-panel rounded-2xl border border-slate-800 overflow-hidden">
+                <div class="studio-card-dark rounded-2xl border border-purple-500/20 overflow-hidden">
                     <button @click="activeFaq = (activeFaq === 3 ? null : 3)" 
                             type="button"
-                            class="w-full p-5 text-left flex items-center justify-between text-sm font-bold text-white hover:text-emerald-400 transition-colors">
+                            class="w-full p-5 text-left flex items-center justify-between text-sm font-bold text-white hover:text-[#C8F169] transition-colors">
                         <span>Apakah ada garansi jika terjadi error atau kendala teknis?</span>
-                        <span class="text-lg transition-transform duration-200" :class="activeFaq === 3 ? 'rotate-180 text-emerald-400' : 'text-slate-500'">↓</span>
+                        <span class="text-lg transition-transform duration-200" :class="activeFaq === 3 ? 'rotate-180 text-[#C8F169]' : 'text-purple-400'">↓</span>
                     </button>
-                    <div x-show="activeFaq === 3" x-collapse x-cloak class="px-5 pb-5 text-xs text-slate-400 leading-relaxed border-t border-slate-800/60 pt-3">
+                    <div x-show="activeFaq === 3" x-collapse x-cloak class="px-5 pb-5 text-xs text-purple-200/80 leading-relaxed border-t border-purple-500/20 pt-3">
                         Tentu saja! Kami memberikan garansi perbaikan gratis antara 14 hingga 60 hari (tergantung paket). Jika terjadi bug, error server, atau link rusak pasca-rilis, tim teknis Webkita akan memperbaikinya tanpa pungutan biaya tambahan.
                     </div>
                 </div>
 
                 <!-- Q4 -->
-                <div class="glass-panel rounded-2xl border border-slate-800 overflow-hidden">
+                <div class="studio-card-dark rounded-2xl border border-purple-500/20 overflow-hidden">
                     <button @click="activeFaq = (activeFaq === 4 ? null : 4)" 
                             type="button"
-                            class="w-full p-5 text-left flex items-center justify-between text-sm font-bold text-white hover:text-emerald-400 transition-colors">
+                            class="w-full p-5 text-left flex items-center justify-between text-sm font-bold text-white hover:text-[#C8F169] transition-colors">
                         <span>Apakah saya bisa mengelola isi konten website sendiri nantinya?</span>
-                        <span class="text-lg transition-transform duration-200" :class="activeFaq === 4 ? 'rotate-180 text-emerald-400' : 'text-slate-500'">↓</span>
+                        <span class="text-lg transition-transform duration-200" :class="activeFaq === 4 ? 'rotate-180 text-[#C8F169]' : 'text-purple-400'">↓</span>
                     </button>
-                    <div x-show="activeFaq === 4" x-collapse x-cloak class="px-5 pb-5 text-xs text-slate-400 leading-relaxed border-t border-slate-800/60 pt-3">
-                        Bisa! Untuk Paket Bisnis dan Toko Online, kami sediakan dashboard manajemen konten (CMS) yang sangat mudah digunakan bahkan bagi orang awam sekalipun. Anda juga akan mendapatkan video tutorial panduan penggunaan.
+                    <div x-show="activeFaq === 4" x-collapse x-cloak class="px-5 pb-5 text-xs text-purple-200/80 leading-relaxed border-t border-purple-500/20 pt-3">
+                        Bisa! Untuk Paket Bisnis dan Toko Online, kami sediakan dashboard manajemen konten (CMS) yang sangat mudah digunakan bahkan bagi orang awam sekalipun. Anda juga akan mendapatkan panduan video tutorial.
                     </div>
                 </div>
 
                 <!-- Q5 -->
-                <div class="glass-panel rounded-2xl border border-slate-800 overflow-hidden">
+                <div class="studio-card-dark rounded-2xl border border-purple-500/20 overflow-hidden">
                     <button @click="activeFaq = (activeFaq === 5 ? null : 5)" 
                             type="button"
-                            class="w-full p-5 text-left flex items-center justify-between text-sm font-bold text-white hover:text-emerald-400 transition-colors">
+                            class="w-full p-5 text-left flex items-center justify-between text-sm font-bold text-white hover:text-[#C8F169] transition-colors">
                         <span>Bagaimana tahapan pembayaran dan proses kerjasamanya?</span>
-                        <span class="text-lg transition-transform duration-200" :class="activeFaq === 5 ? 'rotate-180 text-emerald-400' : 'text-slate-500'">↓</span>
+                        <span class="text-lg transition-transform duration-200" :class="activeFaq === 5 ? 'rotate-180 text-[#C8F169]' : 'text-purple-400'">↓</span>
                     </button>
-                    <div x-show="activeFaq === 5" x-collapse x-cloak class="px-5 pb-5 text-xs text-slate-400 leading-relaxed border-t border-slate-800/60 pt-3">
+                    <div x-show="activeFaq === 5" x-collapse x-cloak class="px-5 pb-5 text-xs text-purple-200/80 leading-relaxed border-t border-purple-500/20 pt-3">
                         Alurnya sangat aman dan transparan: Anda memilih paket → konsultasi brief awal via WhatsApp → DP 50% untuk mulai pengerjaan → kami buatkan draft desain untuk Anda review → revisi hingga puas → pelunasan 50% saat website siap online (Go-Live).
                     </div>
                 </div>
@@ -901,40 +979,40 @@
         </div>
     </section>
 
-    <!-- KONTAK & KONSULTASI FORM SECTION -->
+    <!-- SECTION: KONTAK & KONSULTASI FORM -->
     <section id="kontak" class="py-24 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="glass-panel rounded-3xl p-8 sm:p-14 border border-slate-800 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="studio-glass rounded-3xl p-8 sm:p-14 border border-purple-500/20 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 
                 <div class="lg:col-span-6 space-y-6">
-                    <span class="text-xs font-bold uppercase tracking-widest text-emerald-400 bg-emerald-950/40 px-3.5 py-1.5 rounded-full border border-emerald-800/40 inline-block">
+                    <span class="text-xs font-bold uppercase tracking-widest text-[#C8F169] bg-[#C8F169]/10 px-4 py-1.5 rounded-full border border-[#C8F169]/30 inline-block">
                         Mulai Kolaborasi
                     </span>
-                    <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
-                        Wujudkan Website Impian Bisnis Anda Bersama <span class="gradient-text">Webkita</span>.
+                    <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
+                        Wujudkan Website Impian Bersama <span class="text-[#C8F169]">Webkita</span>.
                     </h2>
-                    <p class="text-sm text-slate-300 leading-relaxed">
-                        Punya pertanyaan khusus seputar ide website atau butuh rekomendasi strategi digital? Diskusikan langsung dengan konsultan senior kami secara gratis tanpa komitmen.
+                    <p class="text-sm text-purple-200/80 leading-relaxed">
+                        Punya pertanyaan seputar ide website atau butuh rekomendasi strategi digital? Diskusikan langsung dengan tim kami secara gratis tanpa komitmen.
                     </p>
 
-                    <div class="space-y-4 pt-4 text-xs text-slate-300">
+                    <div class="space-y-4 pt-4 text-xs text-purple-100">
                         <div class="flex items-center gap-3">
-                            <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold">✓</div>
+                            <div class="w-8 h-8 rounded-xl bg-[#C8F169] text-[#1E0A38] flex items-center justify-center font-bold">✓</div>
                             <span>Respon cepat dalam hitungan menit via WhatsApp resmi</span>
                         </div>
                         <div class="flex items-center gap-3">
-                            <div class="w-8 h-8 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold">✓</div>
-                            <span>Gratis konsultasi konsep, penentuan nama domain, dan arsitektur</span>
+                            <div class="w-8 h-8 rounded-xl bg-purple-400/20 text-[#C8F169] flex items-center justify-center font-bold">✓</div>
+                            <span>Gratis konsultasi konsep, pemilihan domain, dan arsitektur</span>
                         </div>
                         <div class="flex items-center gap-3">
-                            <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold">✓</div>
-                            <span>Invoice resmi & kontrak kerjasama berbadan hukum</span>
+                            <div class="w-8 h-8 rounded-xl bg-[#C8F169] text-[#1E0A38] flex items-center justify-center font-bold">✓</div>
+                            <span>Invoice resmi & garansi purna jual berbadan hukum</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Interactive Contact Form -->
-                <div class="lg:col-span-6 bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-8" 
+                <!-- Form Card -->
+                <div class="lg:col-span-6 bg-[#17062E] border border-purple-500/30 rounded-3xl p-6 sm:p-8" 
                      x-data="{
                          nama: '',
                          whatsapp: '',
@@ -958,40 +1036,40 @@
                     
                     <form @submit.prevent="kirimKeWhatsApp" class="space-y-4">
                         <div>
-                            <label class="block text-xs font-semibold text-slate-300 mb-1">Nama Lengkap / Nama Bisnis *</label>
+                            <label class="block text-xs font-semibold text-purple-200 mb-1">Nama Lengkap / Nama Bisnis *</label>
                             <input type="text" x-model="nama" required placeholder="Contoh: Budi Santoso (KopiKita)" 
-                                   class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white focus:outline-none focus:border-emerald-500">
+                                   class="w-full px-3.5 py-2.5 rounded-xl bg-[#230B48] border border-purple-500/30 text-xs text-white focus:outline-none focus:border-[#C8F169]">
                         </div>
 
                         <div>
-                            <label class="block text-xs font-semibold text-slate-300 mb-1">Nomor WhatsApp Aktif *</label>
+                            <label class="block text-xs font-semibold text-purple-200 mb-1">Nomor WhatsApp Aktif *</label>
                             <input type="tel" x-model="whatsapp" required placeholder="Contoh: 081234567890" 
-                                   class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white focus:outline-none focus:border-emerald-500">
+                                   class="w-full px-3.5 py-2.5 rounded-xl bg-[#230B48] border border-purple-500/30 text-xs text-white focus:outline-none focus:border-[#C8F169]">
                         </div>
 
                         <div>
-                            <label class="block text-xs font-semibold text-slate-300 mb-1">Paket yang Diminati</label>
-                            <select x-model="paketPilihan" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white focus:outline-none focus:border-emerald-500">
+                            <label class="block text-xs font-semibold text-purple-200 mb-1">Paket yang Diminati</label>
+                            <select x-model="paketPilihan" class="w-full px-3.5 py-2.5 rounded-xl bg-[#230B48] border border-purple-500/30 text-xs text-white focus:outline-none focus:border-[#C8F169]">
                                 <option value="Paket Webkita Kilat (Rp 499rb)">Paket Webkita Kilat (Rp 499.000)</option>
                                 <option value="Paket Webkita Bisnis (Rp 1.499rb)">Paket Webkita Bisnis (Rp 1.499.000) ⭐ Paling Populer</option>
                                 <option value="Paket Toko Online / Custom App (Rp 3.5jt+)">Paket Toko Online / Custom App (Rp 3.500.000+)</option>
-                                <option value="Belum Tahu, Butuh Saran Konsultan">Belum Tahu, Butuh Rekomendasi Konsultan</option>
+                                <option value="Belum Tahu, Butuh Saran Konsultan">Belum Tahu, Butuh Saran Konsultan</option>
                             </select>
                         </div>
 
                         <div>
-                            <label class="block text-xs font-semibold text-slate-300 mb-1">Ceritakan Sedikit Kebutuhan Website Anda</label>
+                            <label class="block text-xs font-semibold text-purple-200 mb-1">Ceritakan Kebutuhan Website Anda</label>
                             <textarea x-model="pesan" rows="3" placeholder="Contoh: Saya butuh website untuk jualan hijab dengan fitur katalog dan direct WhatsApp..." 
-                                      class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white focus:outline-none focus:border-emerald-500"></textarea>
+                                      class="w-full px-3.5 py-2.5 rounded-xl bg-[#230B48] border border-purple-500/30 text-xs text-white focus:outline-none focus:border-[#C8F169]"></textarea>
                         </div>
 
                         <button type="submit" 
-                                class="w-full py-3.5 rounded-xl font-bold text-xs text-slate-950 bg-gradient-to-r from-emerald-400 to-cyan-400 hover:opacity-95 shadow-lg shadow-emerald-500/20 transition-all flex items-center justify-center gap-2">
+                                class="lime-pill w-full py-3.5 rounded-xl font-black text-xs shadow-lg shadow-[#C8F169]/20 transition-all flex items-center justify-center gap-2">
                             <span>Hubungi Konsultan Sekarang via WhatsApp</span>
-                            <span class="text-sm">→</span>
+                            <span>→</span>
                         </button>
                         
-                        <p class="text-[10px] text-slate-500 text-center">
+                        <p class="text-[10px] text-purple-400 text-center">
                             Privasi Anda terjamin. Kami tidak pernah membagikan kontak Anda kepada pihak ketiga.
                         </p>
                     </form>
