@@ -48,6 +48,8 @@
       },
       "priceRange": "Rp 499.000 - Rp 3.500.000"
     }
+    </script>
+
     <!-- Analytics: GA4 & Meta Pixel -->
     @include('components.analytics')
 
