@@ -77,6 +77,24 @@
             </div>
         </div>
 
+        <!-- Newsletter Strip in Footer -->
+        <div class="my-8 p-6 rounded-2xl bg-[#240B4D] border border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="space-y-1 text-center md:text-left">
+                <span class="text-[10px] font-mono font-bold text-[#C8F169] uppercase tracking-wider block">BERLANGGANAN WAWASAN</span>
+                <h4 class="text-sm font-bold text-white">Dapatkan Tips SEO &amp; Strategi Digital Terbaru</h4>
+                <p class="text-xs text-purple-200/70">Wawasan praktis mingguan untuk pertumbuhan bisnis Anda, langsung ke inbox. Bebas spam.</p>
+            </div>
+            <form action="{{ route('newsletter.subscribe') }}" method="POST" class="flex items-center gap-2 max-w-sm w-full">
+                @csrf
+                <input type="hidden" name="source" value="website_footer">
+                <input type="email" name="email" required placeholder="Email Anda..." 
+                       class="w-full px-4 py-2.5 rounded-full bg-[#1A0630] border border-purple-400/30 text-xs text-white placeholder-purple-300/50 focus:outline-none focus:border-[#C8F169]">
+                <button type="submit" class="lime-pill px-5 py-2.5 rounded-full text-xs font-bold shrink-0">
+                    Kirim
+                </button>
+            </form>
+        </div>
+
         <!-- Bottom Copyright & Badges -->
         <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-purple-300/60">
             <div>

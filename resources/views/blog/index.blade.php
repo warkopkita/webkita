@@ -133,6 +133,35 @@
             </div>
         @endif
 
+        <!-- Newsletter Subscription Box -->
+        <div class="relative rounded-3xl bg-gradient-to-br from-[#2D0F5E] via-[#210947] to-[#170533] border border-[#C8F169]/30 p-8 sm:p-10 shadow-2xl overflow-hidden">
+            <div class="frame-corner frame-corner-tl"></div>
+            <div class="frame-corner frame-corner-tr"></div>
+            <div class="frame-corner frame-corner-bl"></div>
+            <div class="frame-corner frame-corner-br"></div>
+
+            <div class="max-w-2xl mx-auto text-center space-y-4">
+                <span class="text-xs font-mono font-bold tracking-widest text-[#C8F169] uppercase">NEWSLETTER EKSKLUSIF</span>
+                <h3 class="text-2xl sm:text-3xl font-black text-white">Dapatkan Wawasan Digital &amp; SEO Gratis</h3>
+                <p class="text-xs sm:text-sm text-purple-200/80 leading-relaxed">
+                    Panduan praktis melipatgandakan omset lewat website, tips SEO Google terupdate, dan arsitektur landing page konversi tinggi langsung ke email Anda. Tanpa spam.
+                </p>
+
+                <form action="{{ route('newsletter.subscribe') }}" method="POST" class="pt-2 max-w-md mx-auto flex flex-col sm:flex-row gap-2">
+                    @csrf
+                    <input type="hidden" name="source" value="blog_page">
+                    <input type="email" 
+                           name="email" 
+                           required 
+                           placeholder="Masukkan alamat email Anda..." 
+                           class="w-full px-4 py-3 rounded-full bg-[#1A0630] border border-purple-400/30 text-xs text-white placeholder-purple-300/50 focus:outline-none focus:border-[#C8F169] transition-all">
+                    <button type="submit" class="lime-pill px-6 py-3 rounded-full text-xs font-black shrink-0">
+                        Berlangganan
+                    </button>
+                </form>
+            </div>
+        </div>
+
         <!-- Call to Action Banner -->
         <div class="studio-card-dark p-8 sm:p-10 rounded-3xl border border-purple-400/20 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl">
             <div class="space-y-2 text-center md:text-left">

@@ -46,6 +46,9 @@ Route::post('/api/payment/notification', [CheckoutController::class, 'webhookNot
 // Lead Capture (Contact Brief Form with Rate Limiter)
 Route::post('/leads', [LeadController::class, 'store'])->middleware('throttle:6,1')->name('leads.store');
 
+// Newsletter & Wawasan Digital Subscription
+Route::post('/newsletter', [\App\Http\Controllers\NewsletterController::class, 'subscribe'])->middleware('throttle:5,1')->name('newsletter.subscribe');
+
 // Legal & Compliance Pages (UU PDP & SLA)
 Route::get('/kebijakan-privasi', [LegalController::class, 'privacyPolicy'])->name('legal.privacy');
 Route::get('/syarat-ketentuan', [LegalController::class, 'termsOfService'])->name('legal.terms');
