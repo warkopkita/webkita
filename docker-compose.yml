@@ -31,6 +31,9 @@ services:
     volumes:
       - storage_data:/var/www/html/storage
       - ./database:/var/www/html/database
+      - ./resources:/var/www/html/resources
+      - ./app:/var/www/html/app
+      - ./routes:/var/www/html/routes
     networks:
       - webkita-net
     depends_on:
@@ -109,6 +112,9 @@ services:
       <<: *app-environment
     volumes:
       - storage_data:/var/www/html/storage
+      - ./resources:/var/www/html/resources
+      - ./app:/var/www/html/app
+      - ./routes:/var/www/html/routes
     networks:
       - webkita-net
     depends_on:
@@ -134,6 +140,9 @@ services:
       <<: *app-environment
     volumes:
       - storage_data:/var/www/html/storage
+      - ./resources:/var/www/html/resources
+      - ./app:/var/www/html/app
+      - ./routes:/var/www/html/routes
     networks:
       - webkita-net
     depends_on:
