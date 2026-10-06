@@ -7,6 +7,7 @@ use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\LeadController;
 use App\Http\Controllers\LegalController;
 use App\Http\Controllers\PortalController;
+use App\Http\Controllers\SeoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 | Web Routes - Webkita Web Development & UI/UX Studio
 |--------------------------------------------------------------------------
 */
+
+// SEO & Search Engine Indexing
+Route::get('/sitemap.xml', [SeoController::class, 'sitemap'])->name('seo.sitemap');
+Route::get('/robots.txt', [SeoController::class, 'robots'])->name('seo.robots');
 
 // Public Presentation & Services Homepage
 Route::get('/', function () {
@@ -56,6 +61,7 @@ Route::middleware('auth')->group(function () {
     Route::prefix('portal')->name('portal.')->group(function () {
         Route::get('/dashboard', [PortalController::class, 'dashboard'])->name('dashboard');
         Route::post('/orders/{order}/brief', [PortalController::class, 'storeBrief'])->name('brief.store');
+        Route::get('/orders/{order}/invoice', [PortalController::class, 'invoice'])->name('orders.invoice');
     });
 
     // Admin Panel (Protected by 'admin' role middleware)
@@ -63,5 +69,6 @@ Route::middleware('auth')->group(function () {
         Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
         Route::patch('/orders/{order}/status', [AdminController::class, 'updateOrderStatus'])->name('orders.status');
         Route::patch('/leads/{lead}/status', [AdminController::class, 'updateLeadStatus'])->name('leads.status');
+        Route::get('/payments/export-csv', [AdminController::class, 'exportPaymentsCsv'])->name('payments.export');
     });
 });

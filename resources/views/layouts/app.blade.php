@@ -29,6 +29,23 @@
     <!-- Vite Styles & Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
+    <!-- Schema.org JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@@context": "https://schema.org",
+      "@@type": "ProfessionalService",
+      "name": "Webkita Web Development Studio",
+      "url": "{{ url('/') }}",
+      "logo": "{{ url('/') }}/logo.png",
+      "description": "Studio UI/UX and Web Development profesional berbasis Laravel di Indonesia. Solusi website bisnis, landing page, dan toko online otomatis.",
+      "address": {
+        "@@type": "PostalAddress",
+        "addressCountry": "ID"
+      },
+      "priceRange": "Rp 499.000 - Rp 3.500.000"
+    }
+    </script>
+
     @stack('styles')
 </head>
 <body class="bg-[#381867] text-white font-sans antialiased selection:bg-[#C8F169] selection:text-[#1E0A38]">
@@ -49,6 +66,9 @@
 
     <!-- Real-time Social Proof Notification -->
     @include('components.social-proof-popup')
+
+    <!-- Cookie Consent Banner (UU PDP Compliance) -->
+    @include('components.cookie-consent')
 
     @stack('scripts')
 </body>

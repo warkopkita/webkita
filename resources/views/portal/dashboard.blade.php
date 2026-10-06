@@ -146,11 +146,19 @@
                                     </button>
                                 @endif
 
-                                <a href="https://wa.me/6281234567890?text=Halo%20Webkita,%20saya%20ingin%20cek%20update%20pesanan%20nomor%20{{ $order->order_code }}." 
-                                   target="_blank" 
-                                   class="glass-pill px-4 py-2.5 rounded-xl text-xs font-bold text-purple-200 hover:text-white">
-                                    Tanya WA
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="{{ route('portal.orders.invoice', $order) }}" 
+                                       target="_blank"
+                                       class="glass-pill px-3 py-2.5 rounded-xl text-xs font-semibold text-purple-200 hover:text-white">
+                                        Invoice
+                                    </a>
+
+                                    <a href="https://wa.me/6281234567890?text=Halo%20Webkita,%20saya%20ingin%20cek%20update%20pesanan%20nomor%20{{ $order->order_code }}." 
+                                       target="_blank" 
+                                       class="glass-pill px-3 py-2.5 rounded-xl text-xs font-bold text-purple-200 hover:text-white">
+                                        Tanya WA
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     @endforeach

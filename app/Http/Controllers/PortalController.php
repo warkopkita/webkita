@@ -62,4 +62,19 @@ class PortalController extends Controller
 
         return back()->with('success', 'Brief proyek berhasil disimpan! Tim Webkita akan segera memproses desain Anda.');
     }
+
+    /**
+     * Show printable invoice for an order.
+     */
+    public function invoice(Order $order): View
+    {
+        // Authorize that order belongs to current user or user is admin
+        if ($order->user_id !== Auth::id() && ! Auth::user()->isAdmin()) {
+            abort(403, 'Akses invoice tidak diizinkan.');
+        }
+
+        $order->load(['package', 'latestPayment']);
+
+        return view('portal.invoice', compact('order'));
+    }
 }

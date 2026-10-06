@@ -80,11 +80,14 @@
 
         <!-- Section 1: Recent Orders Table -->
         <div class="studio-card-dark p-6 sm:p-8 rounded-3xl border border-purple-400/20 shadow-xl space-y-4">
-            <div class="flex items-center justify-between pb-3 border-b border-purple-500/20">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-purple-500/20">
                 <div>
                     <span class="text-xs font-mono font-bold text-[#C8F169] uppercase">DAFTAR PESANAN MASUK</span>
                     <h3 class="text-lg font-bold text-white mt-0.5">Kelola Status Proyek, Brief Klien & Pembayaran</h3>
                 </div>
+                <a href="{{ route('admin.payments.export') }}" class="lime-pill px-4 py-2 rounded-full text-xs font-bold text-center self-start sm:self-auto">
+                    Export Laporan CSV →
+                </a>
             </div>
 
             @if ($recentOrders->isEmpty())
@@ -100,7 +103,7 @@
                                 <th class="pb-3 pr-4">Klien & WA</th>
                                 <th class="pb-3 pr-4">Paket & Domain</th>
                                 <th class="pb-3 pr-4">Total</th>
-                                <th class="pb-3 pr-4">Brief Materi</th>
+                                <th class="pb-3 pr-4">Brief & Invoice</th>
                                 <th class="pb-3 pr-4">Status</th>
                                 <th class="pb-3 text-right">Ubah Status</th>
                             </tr>
@@ -121,15 +124,21 @@
                                     </td>
                                     <td class="py-3.5 pr-4 font-mono">Rp {{ number_format($order->total_price, 0, ',', '.') }}</td>
                                     <td class="py-3.5 pr-4">
-                                        @if($order->brief)
-                                            <button type="button" 
-                                                    @click="viewBrief = {{ json_encode($order->brief) }}"
-                                                    class="px-2.5 py-1 rounded-lg bg-[#C8F169]/20 text-[#C8F169] font-bold text-[10px] hover:bg-[#C8F169]/30 transition-colors">
-                                                Lihat Brief →
-                                            </button>
-                                        @else
-                                            <span class="text-purple-400 text-[11px]">Belum diisi</span>
-                                        @endif
+                                        <div class="flex items-center gap-1.5 flex-wrap">
+                                            @if($order->brief)
+                                                <button type="button" 
+                                                        @click="viewBrief = {{ json_encode($order->brief) }}"
+                                                        class="px-2 py-0.5 rounded bg-[#C8F169]/20 text-[#C8F169] font-bold text-[10px] hover:bg-[#C8F169]/30 transition-colors">
+                                                    Brief →
+                                                </button>
+                                            @else
+                                                <span class="text-purple-400 text-[10px]">No brief</span>
+                                            @endif
+                                            <a href="{{ route('portal.orders.invoice', $order) }}" target="_blank" 
+                                               class="px-2 py-0.5 rounded bg-white/10 text-purple-200 hover:text-white font-mono text-[10px]">
+                                                Inv ↗
+                                            </a>
+                                        </div>
                                     </td>
                                     <td class="py-3.5 pr-4">
                                         <span class="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase
