@@ -41,6 +41,9 @@
                 <a href="{{ route('blog.index') }}" class="glass-pill px-3.5 py-2 rounded-full text-xs font-semibold hover:text-[#C8F169] transition-all">
                     Wawasan
                 </a>
+                <a href="{{ route('katalog') }}" class="glass-pill px-3.5 py-2 rounded-full text-xs font-semibold text-[#C8F169] hover:bg-[#C8F169]/10 transition-all">
+                    Katalog
+                </a>
                 <a href="{{ url('/#kontak') }}" class="glass-pill px-3.5 py-2 rounded-full text-xs font-semibold hover:text-[#C8F169] transition-all">
                     Contact Us
                 </a>
@@ -124,6 +127,7 @@
         <a @click="mobileOpen = false" href="{{ url('/#paket') }}" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-white hover:bg-white/10">Paket Harga</a>
         <a @click="mobileOpen = false" href="{{ url('/#kalkulator') }}" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-[#C8F169] hover:bg-[#C8F169]/10">Cek Biaya (Kalkulator)</a>
         <a @click="mobileOpen = false" href="{{ route('blog.index') }}" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-white hover:bg-white/10">Wawasan & Blog</a>
+        <a @click="mobileOpen = false" href="{{ route('katalog') }}" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-[#C8F169] hover:bg-white/10">Katalog & Brosur</a>
         <a @click="mobileOpen = false" href="{{ url('/#kontak') }}" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-white hover:bg-white/10">Contact Us</a>
         
         <!-- Mobile Language Switcher -->

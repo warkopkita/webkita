@@ -29,6 +29,9 @@ Route::get('/', function () {
 // Services Catalog & Deep-dive Details
 Route::get('/layanan', [ServiceController::class, 'index'])->name('services.index');
 Route::get('/layanan/{slug}', [ServiceController::class, 'show'])->name('services.show');
+Route::get('/katalog', function () {
+    return view('katalog');
+})->name('katalog');
 
 // Blog & Educational Insights Engine
 Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
