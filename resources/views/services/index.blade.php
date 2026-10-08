@@ -191,7 +191,7 @@
                     Tim arsitek web kami siap memberikan analisis gratis mengenai arsitektur sistem, estimasi waktu, dan anggaran terbaik untuk bisnis Anda.
                 </p>
                 <div class="pt-2 flex flex-wrap justify-center gap-4">
-                    <a href="https://wa.me/6281234567890?text={{ urlencode('Halo Webkita, saya ingin konsultasi kebutuhan website bisnis saya.') }}" 
+                    <a href="https://wa.me/6281288990536?text={{ urlencode('Halo Webkita, saya ingin konsultasi kebutuhan website bisnis saya.') }}" 
                        target="_blank" 
                        class="lime-pill px-8 py-3 rounded-full text-xs font-bold inline-block">
                         Konsultasi via WhatsApp (Fast Response)

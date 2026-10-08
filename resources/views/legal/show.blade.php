@@ -41,7 +41,7 @@
                 <div>
                     Ada pertanyaan hukum atau privasi? Hubungi tim kami di <a href="mailto:legal@webkita.id" class="text-[#C8F169] font-bold hover:underline">legal@webkita.id</a>
                 </div>
-                <a href="https://wa.me/6281234567890?text=Halo%20Webkita,%20saya%20memiliki%20pertanyaan%20mengenai%20syarat%20atau%20kebijakan%20layanan." target="_blank" class="lime-pill px-4 py-2 rounded-xl text-xs font-bold text-center">
+                <a href="https://wa.me/6281288990536?text=Halo%20Webkita,%20saya%20memiliki%20pertanyaan%20mengenai%20syarat%20atau%20kebijakan%20layanan." target="_blank" class="lime-pill px-4 py-2 rounded-xl text-xs font-bold text-center">
                     Hubungi Konsultan WA
                 </a>
             </div>

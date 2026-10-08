@@ -32,7 +32,7 @@
                         <span>[UNDUH] Simpan Brosur Gambar HD</span>
                         <span>↓</span>
                     </a>
-                    <a href="https://wa.me/6281234567890?text=Halo%20Webkita,%20saya%20tertarik%20dengan%20katalog%20paket%20pembuatan%20website." target="_blank" class="glass-pill px-6 py-3 rounded-full text-xs font-bold text-white flex items-center gap-2">
+                    <a href="https://wa.me/6281288990536?text=Halo%20Webkita,%20saya%20tertarik%20dengan%20katalog%20paket%20pembuatan%20website." target="_blank" class="glass-pill px-6 py-3 rounded-full text-xs font-bold text-white flex items-center gap-2">
                         <span class="text-[#C8F169]">[WA]</span>
                         <span>Konsultasi Gratis via WhatsApp</span>
                     </a>
@@ -84,7 +84,7 @@
                     </ul>
 
                     <div class="flex items-center gap-3 pt-3 border-t border-white/10">
-                        <a href="https://wa.me/6281234567890?text=Halo%20Webkita,%20saya%20mau%20pesan%20Paket%20Starter%20Landing%20Page%20(Rp%20499rb)." target="_blank" class="lime-pill px-5 py-2.5 rounded-full text-xs font-bold flex-1 text-center">
+                        <a href="https://wa.me/6281288990536?text=Halo%20Webkita,%20saya%20mau%20pesan%20Paket%20Starter%20Landing%20Page%20(Rp%20499rb)." target="_blank" class="lime-pill px-5 py-2.5 rounded-full text-xs font-bold flex-1 text-center">
                             Pesan Paket Ini via WhatsApp →
                         </a>
                         <a href="{{ route('checkout.show', 'starter') }}" class="glass-pill px-4 py-2.5 rounded-full text-xs font-bold text-white text-center">
@@ -122,7 +122,7 @@
                     </ul>
 
                     <div class="flex items-center gap-3 pt-3 border-t border-white/10">
-                        <a href="https://wa.me/6281234567890?text=Halo%20Webkita,%20saya%20mau%20pesan%20Paket%20Bisnis%20UMKM%20(Rp%201.2jt)." target="_blank" class="lime-pill px-5 py-2.5 rounded-full text-xs font-black flex-1 text-center shadow-lg shadow-[#C8F169]/30">
+                        <a href="https://wa.me/6281288990536?text=Halo%20Webkita,%20saya%20mau%20pesan%20Paket%20Bisnis%20UMKM%20(Rp%201.2jt)." target="_blank" class="lime-pill px-5 py-2.5 rounded-full text-xs font-black flex-1 text-center shadow-lg shadow-[#C8F169]/30">
                             Pesan Paket Bisnis via WhatsApp →
                         </a>
                         <a href="{{ route('checkout.show', 'pro') }}" class="glass-pill px-4 py-2.5 rounded-full text-xs font-bold text-white text-center">
@@ -154,7 +154,7 @@
                     </ul>
 
                     <div class="flex items-center gap-3 pt-3 border-t border-white/10">
-                        <a href="https://wa.me/6281234567890?text=Halo%20Webkita,%20saya%20mau%20pesan%20Paket%20Toko%20Online%20Otomatis%20(Rp%202.5jt)." target="_blank" class="lime-pill px-5 py-2.5 rounded-full text-xs font-bold flex-1 text-center">
+                        <a href="https://wa.me/6281288990536?text=Halo%20Webkita,%20saya%20mau%20pesan%20Paket%20Toko%20Online%20Otomatis%20(Rp%202.5jt)." target="_blank" class="lime-pill px-5 py-2.5 rounded-full text-xs font-bold flex-1 text-center">
                             Pesan Toko Online via WhatsApp →
                         </a>
                         <a href="{{ route('checkout.show', 'enterprise') }}" class="glass-pill px-4 py-2.5 rounded-full text-xs font-bold text-white text-center">

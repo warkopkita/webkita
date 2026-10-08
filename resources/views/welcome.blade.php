@@ -105,7 +105,7 @@
                             <span class="w-6 h-6 rounded-full bg-[#C8F169] text-[#1A0630] flex items-center justify-center font-black text-sm group-hover:translate-x-1 transition-transform">→</span>
                         </a>
 
-                        <a href="https://wa.me/6281234567890?text=Halo%20Webkita,%20saya%20tertarik%20dengan%20layanan%20pembuatan%20website%20dan%20UI/UX." 
+                        <a href="https://wa.me/6281288990536?text=Halo%20Webkita,%20saya%20tertarik%20dengan%20layanan%20pembuatan%20website%20dan%20UI/UX." 
                            target="_blank" 
                            class="glass-pill px-5 py-3.5 rounded-full text-xs font-bold text-white hover:text-[#C8F169]">
                             Konsultasi WhatsApp
@@ -424,7 +424,7 @@
                         </p>
                         <div class="flex items-center justify-between text-xs pt-3 border-t border-purple-500/20">
                             <span class="text-purple-300">F&B / Kuliner UMKM</span>
-                            <a href="https://wa.me/6281234567890?text=Halo%20Webkita,%20saya%20tertarik%20dengan%20studi%20kasus%20Maya%20Bakery." target="_blank" class="text-[#C8F169] font-bold hover:underline">Konsultasi Serupa →</a>
+                            <a href="https://wa.me/6281288990536?text=Halo%20Webkita,%20saya%20tertarik%20dengan%20studi%20kasus%20Maya%20Bakery." target="_blank" class="text-[#C8F169] font-bold hover:underline">Konsultasi Serupa →</a>
                         </div>
                     </div>
                 </div>
@@ -449,7 +449,7 @@
                         </p>
                         <div class="flex items-center justify-between text-xs pt-3 border-t border-purple-500/20">
                             <span class="text-purple-300">Logistik & Cargo</span>
-                            <a href="https://wa.me/6281234567890?text=Halo%20Webkita,%20saya%20tertarik%20dengan%20studi%20kasus%20Sentosa%20Logistik." target="_blank" class="text-[#C8F169] font-bold hover:underline">Konsultasi Serupa →</a>
+                            <a href="https://wa.me/6281288990536?text=Halo%20Webkita,%20saya%20tertarik%20dengan%20studi%20kasus%20Sentosa%20Logistik." target="_blank" class="text-[#C8F169] font-bold hover:underline">Konsultasi Serupa →</a>
                         </div>
                     </div>
                 </div>
@@ -474,7 +474,7 @@
                         </p>
                         <div class="flex items-center justify-between text-xs pt-3 border-t border-purple-500/20">
                             <span class="text-purple-300">Retail & E-Commerce</span>
-                            <a href="https://wa.me/6281234567890?text=Halo%20Webkita,%20saya%20tertarik%20dengan%20studi%20kasus%20Lumina%20Store." target="_blank" class="text-[#C8F169] font-bold hover:underline">Konsultasi Serupa →</a>
+                            <a href="https://wa.me/6281288990536?text=Halo%20Webkita,%20saya%20tertarik%20dengan%20studi%20kasus%20Lumina%20Store." target="_blank" class="text-[#C8F169] font-bold hover:underline">Konsultasi Serupa →</a>
                         </div>
                     </div>
                 </div>
@@ -627,7 +627,7 @@
                            class="lime-pill w-full py-3.5 px-4 rounded-xl text-center text-xs font-black shadow-lg shadow-[#C8F169]/20 hover:scale-[1.02] transition-all block">
                             Pesan Paket Kilat Online →
                         </a>
-                        <a href="https://wa.me/6281234567890?text=Halo%20Webkita,%20saya%20tertarik%20dengan%20Paket%20Starter%20Landing%20Page%20(Rp%20499rb).%20Bisa%20konsultasi%20dulu?" 
+                        <a href="https://wa.me/6281288990536?text=Halo%20Webkita,%20saya%20tertarik%20dengan%20Paket%20Starter%20Landing%20Page%20(Rp%20499rb).%20Bisa%20konsultasi%20dulu?" 
                            target="_blank" 
                            class="glass-pill w-full py-2.5 px-4 rounded-xl text-center text-xs font-bold text-purple-200 hover:text-white transition-all block">
                             Konsultasi via WA
@@ -669,7 +669,7 @@
                                class="lime-pill w-full py-4 px-4 rounded-xl text-center text-xs font-black shadow-lg shadow-[#C8F169]/30 hover:scale-[1.02] transition-all block">
                                 Pilih Paket Bisnis Online →
                             </a>
-                            <a href="https://wa.me/6281234567890?text=Halo%20Webkita,%20saya%20ingin%20membuat%20Website%20Paket%20Bisnis%20Company%20Profile%20(Rp%201.499rb).%20Mohon%20infonya." 
+                            <a href="https://wa.me/6281288990536?text=Halo%20Webkita,%20saya%20ingin%20membuat%20Website%20Paket%20Bisnis%20Company%20Profile%20(Rp%201.499rb).%20Mohon%20infonya." 
                                target="_blank" 
                                class="glass-pill w-full py-2.5 px-4 rounded-xl text-center text-xs font-bold text-purple-200 hover:text-white transition-all block">
                                 Konsultasi via WA
@@ -710,7 +710,7 @@
                            class="lime-pill w-full py-3.5 px-4 rounded-xl text-center text-xs font-black shadow-lg shadow-[#C8F169]/20 hover:scale-[1.02] transition-all block">
                             Pesan Paket Toko Online →
                         </a>
-                        <a href="https://wa.me/6281234567890?text=Halo%20Webkita,%20saya%20ingin%20membuat%20Toko%20Online%20dengan%20fitur%20pembayaran%20otomatis%20(Rp%203.5jt).%20Mohon%20infonya." 
+                        <a href="https://wa.me/6281288990536?text=Halo%20Webkita,%20saya%20ingin%20membuat%20Toko%20Online%20dengan%20fitur%20pembayaran%20otomatis%20(Rp%203.5jt).%20Mohon%20infonya." 
                            target="_blank" 
                            class="glass-pill w-full py-2.5 px-4 rounded-xl text-center text-xs font-bold text-purple-200 hover:text-white transition-all block">
                             Konsultasi via WA
@@ -773,7 +773,7 @@
                     if (this.hasCopywriting) text += '- Copywriting Profesional (Rp 300.000)%0A';
                     if (this.hasExpress48h) text += '- Prioritas Kilat 48 Jam (Rp 450.000)%0A';
                     text += '%0A*Total Estimasi: ' + this.formatRupiah(this.grandTotal) + '*%0A%0AMohon info jadwal pengerjaan.';
-                    return 'https://wa.me/6281234567890?text=' + text;
+                    return 'https://wa.me/6281288990536?text=' + text;
                 }
             }" class="studio-card-dark p-6 sm:p-10 rounded-3xl border border-purple-400/20 shadow-2xl">
 
@@ -1173,7 +1173,7 @@
                                  t += '- Minat Paket: ' + encodeURIComponent(this.paketPilihan) + '%0A';
                                  if(this.pesan) t += '- Keterangan: ' + encodeURIComponent(this.pesan) + '%0A';
                                  t += '%0AMohon informasi lebih lanjut.';
-                                 window.open('https://wa.me/6281234567890?text=' + t, '_blank');
+                                 window.open('https://wa.me/6281288990536?text=' + t, '_blank');
                              } finally {
                                  this.submitting = false;
                              }

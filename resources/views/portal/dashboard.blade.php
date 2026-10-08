@@ -204,7 +204,7 @@
                                         Invoice
                                     </a>
 
-                                    <a href="https://wa.me/6281234567890?text=Halo%20Webkita,%20saya%20ingin%20cek%20update%20pesanan%20nomor%20{{ $order->order_code }}." 
+                                    <a href="https://wa.me/6281288990536?text=Halo%20Webkita,%20saya%20ingin%20cek%20update%20pesanan%20nomor%20{{ $order->order_code }}." 
                                        target="_blank" 
                                        class="glass-pill px-3 py-2.5 rounded-xl text-xs font-bold text-purple-200 hover:text-white">
                                         Tanya WA

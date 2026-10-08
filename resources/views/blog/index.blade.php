@@ -172,7 +172,7 @@
                 </p>
             </div>
             <div class="flex items-center gap-3 shrink-0">
-                <a href="https://wa.me/6281234567890?text=Halo%20Webkita,%20saya%20telah%20membaca%20artikel%20dan%20ingin%20konsultasi%20website%20bisnis." 
+                <a href="https://wa.me/6281288990536?text=Halo%20Webkita,%20saya%20telah%20membaca%20artikel%20dan%20ingin%20konsultasi%20website%20bisnis." 
                    target="_blank" 
                    class="glass-pill px-5 py-3 rounded-full text-xs font-bold text-white hover:text-[#C8F169]">
                     Konsultasi WhatsApp

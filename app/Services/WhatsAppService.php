@@ -134,7 +134,7 @@ class WhatsAppService
      */
     public function sendAdminNewLeadNotification(Lead $lead): array
     {
-        $adminPhone = env('WHATSAPP_ADMIN_NUMBER', '6281234567890');
+        $adminPhone = env('WHATSAPP_ADMIN_NUMBER', '6281288990536');
         $phone = $lead->whatsapp ?? $lead->phone ?? '-';
         $notes = $lead->notes ?? $lead->message ?? '-';
         $interested = $lead->interested_package ?? 'Konsultasi Web';

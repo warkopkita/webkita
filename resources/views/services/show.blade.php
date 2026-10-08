@@ -156,7 +156,7 @@
                 <span>&larr;</span>
                 <span>Kembali ke Semua Layanan</span>
             </a>
-            <a href="https://wa.me/6281234567890?text={{ urlencode('Halo Webkita, saya ingin konsultasi mengenai layanan ' . $service->name) }}" 
+            <a href="https://wa.me/6281288990536?text={{ urlencode('Halo Webkita, saya ingin konsultasi mengenai layanan ' . $service->name) }}" 
                target="_blank" 
                class="glass-pill px-6 py-2.5 rounded-full text-xs font-bold text-white">
                 Konsultasikan Layanan Ini via WhatsApp

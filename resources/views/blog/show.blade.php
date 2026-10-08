@@ -110,7 +110,7 @@
                 </div>
 
                 <div class="flex flex-col sm:flex-row items-center gap-3 shrink-0">
-                    <a href="https://wa.me/6281234567890?text=Halo%20Webkita,%20saya%20tertarik%20dengan%20layanan%20website%20setelah%20membaca%20artikel%20{{ urlencode($post->title) }}." 
+                    <a href="https://wa.me/6281288990536?text=Halo%20Webkita,%20saya%20tertarik%20dengan%20layanan%20website%20setelah%20membaca%20artikel%20{{ urlencode($post->title) }}." 
                        target="_blank" 
                        class="glass-pill px-5 py-3 rounded-full text-xs font-bold text-white hover:text-[#C8F169]">
                         Konsultasi via WA

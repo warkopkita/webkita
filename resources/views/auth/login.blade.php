@@ -50,7 +50,7 @@
                 <div>
                     <div class="flex items-center justify-between mb-1.5">
                         <label for="password" class="block text-xs font-semibold text-purple-200">Kata Sandi</label>
-                        <a href="https://wa.me/6281234567890?text=Halo%20Webkita,%20saya%20lupa%20kata%20sandi%20akun%20saya." target="_blank" class="text-[11px] text-[#C8F169] hover:underline">
+                        <a href="https://wa.me/6281288990536?text=Halo%20Webkita,%20saya%20lupa%20kata%20sandi%20akun%20saya." target="_blank" class="text-[11px] text-[#C8F169] hover:underline">
                             Lupa sandi?
                         </a>
                     </div>

@@ -138,7 +138,7 @@
 
                         <div class="pt-4 border-t border-purple-500/20 space-y-3">
                             <span class="text-[11px] font-bold text-white block">Atau Konfirmasi Manual Melalui Admin:</span>
-                            <a href="https://wa.me/6281234567890?text=Halo%20Webkita,%20saya%20sudah%20melakukan%20pembayaran%20untuk%20pesanan%20nomor%20{{ $order->order_code }}%20senilai%20Rp%20{{ number_format($order->total_price, 0, ',', '.') }}." 
+                            <a href="https://wa.me/6281288990536?text=Halo%20Webkita,%20saya%20sudah%20melakukan%20pembayaran%20untuk%20pesanan%20nomor%20{{ $order->order_code }}%20senilai%20Rp%20{{ number_format($order->total_price, 0, ',', '.') }}." 
                                target="_blank" 
                                class="glass-pill block w-full py-3 rounded-xl text-center text-xs font-bold text-white hover:text-[#C8F169]">
                                 Kirim Bukti Transfer ke WhatsApp
