@@ -24,10 +24,36 @@ class CheckoutController extends Controller
     }
 
     /**
+     * Resolve package by slug or common alias.
+     */
+    protected function resolvePackage(string|Package $identifier): Package
+    {
+        if ($identifier instanceof Package) {
+            return $identifier;
+        }
+
+        $aliasMap = [
+            'starter' => 'paket-kilat',
+            'kilat' => 'paket-kilat',
+            'pro' => 'paket-bisnis',
+            'bisnis' => 'paket-bisnis',
+            'enterprise' => 'paket-toko',
+            'toko' => 'paket-toko',
+        ];
+
+        $slug = $aliasMap[$identifier] ?? $identifier;
+
+        return Package::where('slug', $slug)
+            ->orWhere('id', is_numeric($identifier) ? (int)$identifier : 0)
+            ->firstOrFail();
+    }
+
+    /**
      * Show package checkout page.
      */
-    public function show(Package $package): View
+    public function show(string|Package $package): View
     {
+        $package = $this->resolvePackage($package);
         $allPackages = Package::where('is_active', true)->orderBy('sort_order')->get();
         $user = Auth::user();
 
@@ -37,8 +63,9 @@ class CheckoutController extends Controller
     /**
      * Process checkout form submission.
      */
-    public function process(Request $request, Package $package): RedirectResponse
+    public function process(Request $request, string|Package $package): RedirectResponse
     {
+        $package = $this->resolvePackage($package);
         $validated = $request->validate([
             'customer_name' => 'required|string|max:150',
             'customer_email' => 'required|email|max:150',

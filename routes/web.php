@@ -38,8 +38,8 @@ Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
 Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
 
 // Package Checkout & Payment Routes
-Route::get('/checkout/{package:slug}', [CheckoutController::class, 'show'])->name('checkout.show');
-Route::post('/checkout/{package:slug}', [CheckoutController::class, 'process'])->middleware('throttle:10,1')->name('checkout.process');
+Route::get('/checkout/{package}', [CheckoutController::class, 'show'])->name('checkout.show');
+Route::post('/checkout/{package}', [CheckoutController::class, 'process'])->middleware('throttle:10,1')->name('checkout.process');
 Route::get('/checkout/payment/{order:order_code}', [CheckoutController::class, 'payment'])->name('checkout.payment');
 Route::post('/checkout/payment/{order:order_code}/simulate', [CheckoutController::class, 'simulatePayment'])->name('checkout.simulate');
 
